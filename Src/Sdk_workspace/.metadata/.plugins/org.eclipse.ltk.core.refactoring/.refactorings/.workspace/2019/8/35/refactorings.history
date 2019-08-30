@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;OpcServer/open62541_lib&apos;" deleteContents="false" description="Delete resource &apos;OpcServer/open62541_lib&apos;" element1="/OpcServer/open62541_lib" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1567160063558"/>
+</session>
