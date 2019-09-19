@@ -10,9 +10,10 @@ BEGIN OS
  PARAMETER SYSTMR_DEV = *
  PARAMETER SYSTMR_SPEC = true
  PARAMETER check_for_stack_overflow = 1
+ PARAMETER minimal_stack_size = 2048
  PARAMETER stdin = axi_uartlite_0
  PARAMETER stdout = axi_uartlite_0
- PARAMETER total_heap_size = 2097152
+ PARAMETER total_heap_size = 41943040
 END
 
 

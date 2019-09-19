@@ -74,9 +74,9 @@
 
 #define configMAX_CO_ROUTINE_PRIORITIES 2
 
-#define configMINIMAL_STACK_SIZE ( ( unsigned short ) 200)
+#define configMINIMAL_STACK_SIZE ( ( unsigned short ) 2048)
 
-#define configTOTAL_HEAP_SIZE ( ( size_t ) ( 2097152 ) )
+#define configTOTAL_HEAP_SIZE ( ( size_t ) ( 41943040 ) )
 
 #define configMAX_TASK_NAME_LEN 10
 

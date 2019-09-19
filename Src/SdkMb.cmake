@@ -11,6 +11,15 @@ set (UA_ARCHITECTURE "freertosLWIP" CACHE STRING "Architecture to build open6254
 set (UA_ENABLE_AMALGAMATION ON CACHE STRING "" FORCE)
 set (UA_ENABLE_HARDENING OFF CACHE STRING "" FORCE)
 
+set(UA_ENABLE_PUBSUB ON CACHE STRING "" FORCE)
+set(UA_ENBALE_PUBSUB_INFORMATIONMODEL ON CACHE STRING "" FORCE)
+# set(UA_NAMESPACE_ZERO FULL)
+
+# set(UA_FILE_NS0 "C:/open62541/tools/schema/iic.tsn.NodeSet2.Minimal.xml")
+# set(UA_FILE_NS0 "C:/open62541/deps/ua-nodeset/Schema/Opc.Ua.NodeSet2.xml")
+# set(UA_FILE_NS0 "C:/open62541/deps/ua-nodeset/Sercos/Sercos.NodeSet2.xml")
+
+
 SET (UA_ARCH_EXTRA_INCLUDES "C:/NetTimeLogic/TimeSync/CLK/Refdesign/Xilinx/Arty/Open62541/MicroblazeArtyA7/MicroblazeArtyA7.sdk/OpcServer_bsp/microblaze_0/include" CACHE STRING "" FORCE)
 
 SET (UA_ARCH_REMOVE_FLAGS "-Wpedantic -Wno-static-in-inline -Wredundant-decls" CACHE STRING "" FORCE)

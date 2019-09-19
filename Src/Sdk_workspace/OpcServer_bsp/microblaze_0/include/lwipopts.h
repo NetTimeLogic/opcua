@@ -125,5 +125,7 @@
 #define LWIP_DNS 1
 #define SO_REUSE 1
 #define LWIP_TIMEVAL_PRIVATE 0
+#define LWIP_IGMP 1
+#define LWIP_MULTICAST_TX_OPTIONS 1
 
 #endif
