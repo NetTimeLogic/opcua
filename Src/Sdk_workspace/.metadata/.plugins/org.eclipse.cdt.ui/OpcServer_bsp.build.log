@@ -1,4 +1,4 @@
-12:13:02 **** Build of project OpcServer_bsp ****
+14:24:46 **** Build of project OpcServer_bsp ****
 make -k all 
 "Running Make include in microblaze_0/libsrc/bram_v4_3/src"
 make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
@@ -24,6 +24,7 @@ make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=
 "Running Make libs in microblaze_0/libsrc/bram_v4_3/src"
 make -C microblaze_0/libsrc/bram_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling bram"
+mb-ar: creating ../../../lib/libxil.a
 "Running Make libs in microblaze_0/libsrc/cpu_v2_9/src"
 make -C microblaze_0/libsrc/cpu_v2_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling cpu"
@@ -46,6 +47,14 @@ make -C microblaze_0/libsrc/intc_v3_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc"
 "Running Make libs in microblaze_0/libsrc/lwip211_v1_0/src"
 make -C microblaze_0/libsrc/lwip211_v1_0/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling lwip src and adapter files"
+contrib/ports/xilinx/netif/xadapter.c: In function 'eth_link_detect':
+contrib/ports/xilinx/netif/xadapter.c:364:8: warning: unused variable 'link_speed' [-Wunused-variable]
+  u32_t link_speed, phy_link_status;
+        ^~~~~~~~~~
+contrib/ports/xilinx/netif/xemacliteif.c: In function 'arp_timer':
+contrib/ports/xilinx/netif/xemacliteif.c:476:17: warning: unused parameter 'arg' [-Wunused-parameter]
+ arp_timer(void *arg)
+           ~~~~~~^~~
 "Running Make libs in microblaze_0/libsrc/sysmon_v7_5/src"
 make -C microblaze_0/libsrc/sysmon_v7_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling sysmon"
@@ -57,5 +66,5 @@ make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-
 "Compiling uartlite"
 'Finished building libraries'
 
-12:13:13 Build Finished (took 11s.127ms)
+14:25:03 Build Finished (took 16s.387ms)
 

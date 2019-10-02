@@ -20,6 +20,7 @@
 #include "myNs.h"
 
 #define THREAD_STACKSIZE 102400
+//#define THREAD_STACKSIZE 16384
 
 int main_thread();
 
@@ -91,7 +92,6 @@ addPublishedDataSet(UA_Server *server) {
     memset(&publishedDataSetConfig, 0, sizeof(UA_PublishedDataSetConfig));
     publishedDataSetConfig.publishedDataSetType = UA_PUBSUB_DATASET_PUBLISHEDITEMS;
     publishedDataSetConfig.name = UA_STRING("iic TSN test");
-
     UA_Server_addPublishedDataSet(server, &publishedDataSetConfig, &publishedDataSetIdent);
 }
 
@@ -227,9 +227,6 @@ addDataSetWriter(UA_Server *server) {
     UA_UadpDataSetWriterMessageDataType_delete(dataSetWriterMessage);
 }
 
-
-
-
 static int opcua_pubsub() {
 
     UA_Boolean running = true;
@@ -270,8 +267,7 @@ static int opcua_pubsub() {
     xil_printf("--------- Calloc PubSubConnection ---------\r\n");
     /* Details about the connection configuration and handling are located in
      * the pubsub connection tutorial */
-    config->pubsubTransportLayers =
-        (UA_PubSubTransportLayer *) UA_calloc(2, sizeof(UA_PubSubTransportLayer));
+    config->pubsubTransportLayers = (UA_PubSubTransportLayer *) UA_calloc(2, sizeof(UA_PubSubTransportLayer));
     if(!config->pubsubTransportLayers) {
         UA_Server_delete(server);
         return EXIT_FAILURE;
@@ -313,7 +309,7 @@ static int opcua_pubsub() {
 
            UA_Server_writeValue(server, myNodeId, myVar);
            UA_StatusCode retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing ApplicationSpecificData returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing ApplicationSpecificData returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // Byte
            addDataSetField(server, 2, 6044, "ApplicationId");
@@ -323,8 +319,7 @@ static int opcua_pubsub() {
            UA_Variant_setScalar(&myVar, &byteValue, &UA_TYPES[UA_TYPES_BYTE]);
            UA_Server_writeValue(server, myNodeId, myVar);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing ApplicationId returned statuscode %s\n", UA_StatusCode_name(retval));
-
+           //printf("Writing ApplicationId returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // Byte
            addDataSetField(server, 2, 6054, "AS_GrandmasterChanges");
@@ -333,7 +328,7 @@ static int opcua_pubsub() {
            UA_Variant_init(&myVar);
            UA_Variant_setScalar(&myVar, &byteValue, &UA_TYPES[UA_TYPES_BYTE]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing AS_GrandmasterChanges returned statuscode %s\n", UA_StatusCode_name(retval));;
+           //printf("Writing AS_GrandmasterChanges returned statuscode %s\n", UA_StatusCode_name(retval));;
 
            // int32
            addDataSetField(server, 2, 6074, "As_TimeOffset");
@@ -342,19 +337,16 @@ static int opcua_pubsub() {
            UA_Variant_init(&myVar);
            UA_Variant_setScalar(&myVar, &int32Value, &UA_TYPES[UA_TYPES_INT32]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing As_TimeOffset returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing As_TimeOffset returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // ByteString (8 Bytes)
            addDataSetField(server, 2, 6055, "As_GrandmasterId");
            myNodeId = UA_NODEID_NUMERIC(2, 6055);
-
-
-
            UA_ByteString GmIdByteString[1];
            GmIdByteString[0] = UA_STRING("12345678");
            UA_Variant_setArray(&myVar, &GmIdByteString, (UA_Int32) 1, &UA_TYPES[UA_TYPES_BYTESTRING]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing As_GrandmasterId returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing As_GrandmasterId returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // Byte
            addDataSetField(server, 2, 6073, "As_State");
@@ -363,7 +355,7 @@ static int opcua_pubsub() {
            UA_Variant_init(&myVar);
            UA_Variant_setScalar(&myVar, &byteValue, &UA_TYPES[UA_TYPES_BYTE]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing As_State returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing As_State returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // int64
            addDataSetField(server, 2, 6047, "ApplicationTimeStamp");
@@ -372,7 +364,7 @@ static int opcua_pubsub() {
            UA_Variant_init(&myVar);
            UA_Variant_setScalar(&myVar, &uint64Value, &UA_TYPES[UA_TYPES_UINT64]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing ApplicationTimeStamp returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing ApplicationTimeStamp returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // unsigned int16
            addDataSetField(server, 2, 6045, "ApplicationSequenceNr");
@@ -381,7 +373,7 @@ static int opcua_pubsub() {
            UA_Variant_init(&myVar);
            UA_Variant_setScalar(&myVar, &uint16Value, &UA_TYPES[UA_TYPES_UINT16]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing ApplicationSequenceNr returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing ApplicationSequenceNr returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // unsigned int64
            addDataSetField(server, 2, 6076, "Tsn_LastTxTimeStamp");
@@ -390,7 +382,7 @@ static int opcua_pubsub() {
            UA_Variant_init(&myVar);
            UA_Variant_setScalar(&myVar, &uint64Value, &UA_TYPES[UA_TYPES_UINT64]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing Tsn_LastTxTimeStamp returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing Tsn_LastTxTimeStamp returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // unsigned int32
            addDataSetField(server, 2, 6075, "ExpectedTxOffset");
@@ -399,7 +391,7 @@ static int opcua_pubsub() {
            UA_Variant_init(&myVar);
            UA_Variant_setScalar(&myVar, &uint32Value, &UA_TYPES[UA_TYPES_UINT32]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing ExpectedTxOffset returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing ExpectedTxOffset returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // 10 Bytes (String size 10)
            addDataSetField(server, 2, 6048, "DeviceName");
@@ -410,7 +402,7 @@ static int opcua_pubsub() {
            DeviceNameString[0] = UA_STRING("Arty A7_-_");
            UA_Variant_setArray(&myVar, &DeviceNameString, (UA_Int32) 1, &UA_TYPES[UA_TYPES_STRING]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing DeviceName returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing DeviceName returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // 32 Bytes (String size 32)
            addDataSetField(server, 2, 6053, "VendorName");
@@ -420,7 +412,7 @@ static int opcua_pubsub() {
            VendorNameString[0] = UA_STRING("NetTimeLogic_GmbH_-_-_-_-_-_-_-_");
            UA_Variant_setArray(&myVar, &VendorNameString, (UA_Int32) 1, &UA_TYPES[UA_TYPES_STRING]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing VendorName returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing VendorName returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // Byte
            addDataSetField(server, 2, 6049, "InteropAppCmd");
@@ -428,7 +420,7 @@ static int opcua_pubsub() {
            byteValue = 0x0;
            UA_Variant_setScalar(&myVar, &byteValue, &UA_TYPES[UA_TYPES_BYTE]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing InteropAppCmd returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing InteropAppCmd returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // Byte
            addDataSetField(server, 2, 6050, "InteropAppStatus");
@@ -436,8 +428,7 @@ static int opcua_pubsub() {
            byteValue = 0xC;
            UA_Variant_setScalar(&myVar, &byteValue, &UA_TYPES[UA_TYPES_BYTE]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing InteropAppStatus returned statuscode %s\n", UA_StatusCode_name(retval));
-
+           //printf("Writing InteropAppStatus returned statuscode %s\n", UA_StatusCode_name(retval));
 
            // Byte
            addDataSetField(server, 2, 6051, "InteropAppVersion");
@@ -445,7 +436,7 @@ static int opcua_pubsub() {
            byteValue = 0xEE;
            UA_Variant_setScalar(&myVar, &byteValue, &UA_TYPES[UA_TYPES_BYTE]);
            retval = UA_Server_writeValue(server, myNodeId, myVar);
-           printf("Writing InteropAppVersion returned statuscode %s\n", UA_StatusCode_name(retval));
+           //printf("Writing InteropAppVersion returned statuscode %s\n", UA_StatusCode_name(retval));
 
 
            //addDataSetField(server, 2, 6052, "TalkedId");
@@ -470,151 +461,6 @@ static int opcua_pubsub() {
 
     UA_Server_delete(server);
     return retval == UA_STATUSCODE_GOOD ? EXIT_SUCCESS : EXIT_FAILURE;
-}
-
-
-
-static void addObject(UA_Server *server) {
-    UA_NodeId NetTimeLogicId = UA_NODEID_STRING(1, "NetTimeLogic");
-    UA_ObjectAttributes oAttr = UA_ObjectAttributes_default;
-    oAttr.displayName = UA_LOCALIZEDTEXT("en-US", "NetTimeLogic GmbH");
-    UA_Server_addObjectNode(server, UA_NODEID_NULL,
-                            UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER),
-                            UA_NODEID_NUMERIC(0, UA_NS0ID_ORGANIZES),
-                            UA_QUALIFIEDNAME(1, "NetTimeLogic"), 
-                            UA_NODEID_NUMERIC(0, UA_NS0ID_BASEOBJECTTYPE),
-                            oAttr, NULL, &NetTimeLogicId);
-}
-
-static void addVariable(UA_Server *server) {
-    UA_Boolean ledValue = false;
-
-    UA_VariableAttributes vAttr = UA_VariableAttributes_default;
-    vAttr.description = UA_LOCALIZEDTEXT("en_US","LED on/off");
-    vAttr.displayName = UA_LOCALIZEDTEXT("en_US","LED");
-    vAttr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
-
-    UA_Variant_setScalar(&vAttr.value, &ledValue, &UA_TYPES[UA_TYPES_BOOLEAN]);
-
-    UA_NodeId currentNodeId  = UA_NODEID_STRING(1, "LedNode");
-    UA_Server_addVariableNode(server, currentNodeId, 
-                            UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER),
-                            UA_NODEID_NUMERIC(0, UA_NS0ID_ORGANIZES), 
-                            UA_QUALIFIEDNAME(1, "LedNode"),
-                            UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE), 
-                            vAttr, NULL, NULL);
-
-}
-
-static void readValue(UA_Server *server, const UA_NodeId *sessionId, void *sessionContext,
-               const UA_NodeId *nodeid, void *nodeContext, const UA_NumericRange *range, const UA_DataValue *data) {
-    // Do something
-    // xil_printf("--------- Client read value ---------\r\n");
-}
-
-static void writeValue(UA_Server *server, const UA_NodeId *sessionId, void *sessionContext,
-                    const UA_NodeId *nodeId, void *nodeContext,const UA_NumericRange *range, const UA_DataValue *data) {
-
-    UA_LOG_INFO(UA_Log_Stdout, UA_LOGCATEGORY_USERLAND, "The variable was updated");
-
-    // Get the value after write
-    UA_Boolean ledValue = *(UA_Boolean *)data->value.data;
-
-    // Switch on/off LEDs
-    if (ledValue == true) {
-        XGpio_DiscreteWrite(&Gpio, 1, 0x0F);
-    }
-    else {
-        XGpio_DiscreteClear(&Gpio, 1, 0x0F);
-    }
-
-}
-
-static void addVariableCallback(UA_Server *server) {
-    UA_NodeId currentNodeId = UA_NODEID_STRING(1, "LedNode");
-    UA_ValueCallback callback ;
-    callback.onRead = readValue;
-    callback.onWrite = writeValue;
-    UA_Server_setVariableNode_valueCallback(server, currentNodeId, callback);
-}
-
-static void opcua_thread(void *arg) {
-
-    UA_Boolean running = true;
-
-    xil_printf("--------- Init OPC UA Server (client/Server) ---------\r\n");
-
-    UA_Server *server = UA_Server_new();
-    UA_ServerConfig *config = UA_Server_getConfig(server);
-    UA_ServerConfig_setDefault(UA_Server_getConfig(server));
-
-    // Server buffer size config
-    config->networkLayers->localConnectionConfig.recvBufferSize = 32768;
-    config->networkLayers->localConnectionConfig.sendBufferSize = 32768;
-    config->networkLayers->localConnectionConfig.maxMessageSize = 32768;
-
-    // Discovery/Url config
-    UA_String UaUrl = UA_String_fromChars("opc.tcp://192.168.1.10:4840");
-    config->networkLayers[0].discoveryUrl = UA_STRING("opc.tcp://192.168.1.10:4840");
-
-    config->applicationDescription.discoveryUrls = &UaUrl;
-    config->applicationDescription.discoveryUrlsSize = 1;
-    config->applicationDescription.applicationUri = UA_STRING("192.168.1.10");
-    config->applicationDescription.applicationName = UA_LOCALIZEDTEXT("en-US", "NetTimeLogic");
-    config->applicationDescription.applicationType = UA_APPLICATIONTYPE_SERVER;
-
-    UA_ServerConfig_setCustomHostname(config, UA_STRING("192.168.1.10"));
-
-    // Define object and variables
-   // addObject(server);
-   // addVariable(server);
-   // addVariableCallback(server);
-
-    xil_printf("---------Starting UA Server ---------\r\n");
-
-
-
-    UA_StatusCode retval;
-    /* create nodes from nodeset */
- /*   if (iicNs(server) != UA_STATUSCODE_GOOD) {
-            UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the example nodeset. "
-               "Check previous output for any error.");
-           retval = UA_STATUSCODE_BADUNEXPECTEDERROR;
-       } else {
-
-
-           UA_NodeId createdNodeId;
-           UA_ObjectAttributes object_attr = UA_ObjectAttributes_default;
-
-           object_attr.description = UA_LOCALIZEDTEXT("en-US", "A pump!");
-           object_attr.displayName = UA_LOCALIZEDTEXT("en-US", "Pump1");
-
-           // we assume that the myNS nodeset was added in namespace 2.
-           // You should always use UA_Server_addNamespace to check what the
-           // namespace index is for a given namespace URI. UA_Server_addNamespace
-           // will just return the index if it is already added.
-           UA_Server_addObjectNode(server, UA_NODEID_NUMERIC(1, 0),
-                                   UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER),
-                                   UA_NODEID_NUMERIC(0, UA_NS0ID_ORGANIZES),
-                                   UA_QUALIFIEDNAME(1, "Pump1"),
-                                   UA_NODEID_NUMERIC(2, 1002),
-                                   object_attr, NULL, &createdNodeId);
-
-
-
-
-*/
-
-           retval = UA_Server_run(server, &running);
-     // }
-
-
-
-    //UA_StatusCode retval = UA_Server_run(server, &running);
-    xil_printf("--------- Stopping UA Server---------\r\n");
-
-    UA_Server_delete(server);
-    vTaskDelete(NULL);
 }
 
 static void network_thread(void *arg) {
@@ -691,10 +537,6 @@ int main_thread(){
             THREAD_STACKSIZE,
             DEFAULT_THREAD_PRIO);
 
-    // starting OPC UA thread
-    /*sys_thread_new("opcua_thread", opcua_thread, NULL,
-           THREAD_STACKSIZE,
-           DEFAULT_THREAD_PRIO);*/
 
     vTaskDelete(NULL);
     return 0;

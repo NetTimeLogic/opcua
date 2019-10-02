@@ -39,6 +39,7 @@
 								<option id="xilinx.gnu.compiler.inferred.swplatform.flags.858758672" name="Software Platform Inferred Flags" superClass="xilinx.gnu.compiler.inferred.swplatform.flags" value=" " valueType="string"/>
 								<option id="xilinx.gnu.compiler.symbols.defined.679992204" name="Defined symbols (-D)" superClass="xilinx.gnu.compiler.symbols.defined" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="UA_ARCHITECTURE_FREERTOSLWIP"/>
+									<listOptionValue builtIn="false" value="UA_ENABLE_AMALGAMATION"/>
 								</option>
 								<inputType id="xilinx.gnu.compiler.input.1826907399" name="C source files" superClass="xilinx.gnu.compiler.input"/>
 							</tool>
@@ -72,7 +73,6 @@
 									<listOptionValue builtIn="false" value="../../../open62541_pregenearated"/>
 									<listOptionValue builtIn="false" value="../../OpcServer_bsp/microblaze_0/lib"/>
 								</option>
-								<option id="xilinx.gnu.c.link.option.libs.1994131448" name="Libraries (-l)" superClass="xilinx.gnu.c.link.option.libs" valueType="libs"/>
 								<inputType id="xilinx.gnu.linker.input.425556864" superClass="xilinx.gnu.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -212,6 +212,14 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.MBGCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/OpcServer"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/OpcServer"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

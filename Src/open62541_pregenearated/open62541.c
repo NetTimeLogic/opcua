@@ -1162,7 +1162,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "C:/open62541_lib/src_generated/open62541/types_generated_encoding_binary.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2019-09-12 04:19:18 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2019-10-02 08:07:42 */
 
 #ifdef UA_ENABLE_AMALGAMATION
 #else
@@ -4323,7 +4323,7 @@ UA_PubSubConnectionDataType_decodeBinary(const UA_ByteString *src, size_t *offse
 /*********************************** amalgamated original file "C:/open62541_lib/src_generated/open62541/transport_generated.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd, Custom.Opc.Ua.Transport.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2019-09-11 08:03:52 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2019-10-02 08:07:44 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -4497,7 +4497,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "C:/open62541_lib/src_generated/open62541/transport_generated_handling.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd, Custom.Opc.Ua.Transport.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2019-09-11 08:03:52 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2019-10-02 08:07:44 */
 
 
 
@@ -4899,7 +4899,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "C:/open62541_lib/src_generated/open62541/transport_generated_encoding_binary.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd, Custom.Opc.Ua.Transport.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2019-09-11 08:03:52 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2019-10-02 08:07:44 */
 
 #ifdef UA_ENABLE_AMALGAMATION
 #else
@@ -11018,7 +11018,7 @@ UA_calcSizeBinary(const void *p, const UA_DataType *type) {
 /*********************************** amalgamated original file "C:/open62541_lib/src_generated/open62541/types_generated.c" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2019-09-12 04:19:18 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2019-10-02 08:07:42 */
 
 
 /* Boolean */
@@ -19494,7 +19494,7 @@ const UA_DataType UA_TYPES[UA_TYPES_COUNT] = {
 /*********************************** amalgamated original file "C:/open62541_lib/src_generated/open62541/transport_generated.c" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd, Custom.Opc.Ua.Transport.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2019-09-11 08:03:52 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2019-10-02 08:07:44 */
 
 
 /* SecureConversationMessageAbortBody */

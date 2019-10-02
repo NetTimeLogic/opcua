@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="-Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-groupup" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<item value="${workspace_loc:/OpcServer_bsp/microblaze_0/include}" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="0" key="askReindex.detail"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

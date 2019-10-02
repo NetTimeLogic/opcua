@@ -13566,7 +13566,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "C:/open62541_lib/src_generated/open62541/types_generated.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2019-09-12 04:19:18 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2019-10-02 08:07:42 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -16591,7 +16591,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "C:/open62541_lib/src_generated/open62541/types_generated_handling.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2019-09-12 04:19:18 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2019-10-02 08:07:42 */
 
 
 
