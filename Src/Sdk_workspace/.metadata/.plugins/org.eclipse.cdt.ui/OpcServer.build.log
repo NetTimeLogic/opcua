@@ -1,14 +1,14 @@
-14:41:03 **** Incremental Build of configuration Debug for project OpcServer ****
+15:22:56 **** Build of configuration Debug for project OpcServer ****
 make all 
 'Building file: ../src/OpcServer.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -DUA_ARCHITECTURE_FREERTOSLWIP -DUA_ENABLE_AMALGAMATION -Wall -O0 -g3 -I../../../open62541_pregenearated -c -fmessage-length=0 -MT"src/OpcServer.o" -I"C:\opcua\Src\Sdk_workspace\OpcServer_bsp\microblaze_0\include" -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/OpcServer.d" -MT"src/OpcServer.o" -o "src/OpcServer.o" "../src/OpcServer.c"
 ../src/OpcServer.c: In function 'opcua_pubsub':
-../src/OpcServer.c:311:26: warning: variable 'retval' set but not used [-Wunused-but-set-variable]
+../src/OpcServer.c:310:26: warning: variable 'retval' set but not used [-Wunused-but-set-variable]
             UA_StatusCode retval = UA_Server_writeValue(server, myNodeId, myVar);
                           ^~~~~~
 ../src/OpcServer.c: In function 'main_thread':
-../src/OpcServer.c:536:36: warning: passing argument 2 of 'sys_thread_new' from incompatible pointer type [-Wincompatible-pointer-types]
+../src/OpcServer.c:535:36: warning: passing argument 2 of 'sys_thread_new' from incompatible pointer type [-Wincompatible-pointer-types]
      sys_thread_new("opcua_pubsub", opcua_pubsub, NULL,
                                     ^~~~~~~~~~~~
 In file included from C:\opcua\Src\Sdk_workspace\OpcServer_bsp\microblaze_0\include/lwip/timeouts.h:44,
@@ -24,11 +24,6 @@ C:\opcua\Src\Sdk_workspace\OpcServer_bsp\microblaze_0\include/lwip/sys.h:425:62:
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -DUA_ARCHITECTURE_FREERTOSLWIP -DUA_ENABLE_AMALGAMATION -Wall -O0 -g3 -I../../../open62541_pregenearated -c -fmessage-length=0 -MT"src/iicNs.o" -I"C:\opcua\Src\Sdk_workspace\OpcServer_bsp\microblaze_0\include" -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/iicNs.d" -MT"src/iicNs.o" -o "src/iicNs.o" "../src/iicNs.c"
 'Finished building: ../src/iicNs.c'
-' '
-'Building file: ../src/myNs.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -DUA_ARCHITECTURE_FREERTOSLWIP -DUA_ENABLE_AMALGAMATION -Wall -O0 -g3 -I../../../open62541_pregenearated -c -fmessage-length=0 -MT"src/myNs.o" -I"C:\opcua\Src\Sdk_workspace\OpcServer_bsp\microblaze_0\include" -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/myNs.d" -MT"src/myNs.o" -o "src/myNs.o" "../src/myNs.c"
-'Finished building: ../src/myNs.c'
 ' '
 'Building file: C:/opcua/Src/open62541_pregenearated/open62541.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -2784,7 +2779,7 @@ C:/opcua/Src/open62541_pregenearated/open62541.c:63258:48: note: format string i
 ' '
 'Building target: OpcServer.elf'
 'Invoking: MicroBlaze gcc linker'
-mb-gcc -L../../../open62541_pregenearated -L../../OpcServer_bsp/microblaze_0/lib -Wl,-T -Wl,../src/lscript.ld -L"C:\opcua\Src\Sdk_workspace\OpcServer_bsp\microblaze_0\lib" -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "OpcServer.elf"  ./src/OpcServer.o ./src/iicNs.o ./src/myNs.o  ./open62541_pregenearated/open62541.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+mb-gcc -L../../../open62541_pregenearated -L../../OpcServer_bsp/microblaze_0/lib -Wl,-T -Wl,../src/lscript.ld -L"C:\opcua\Src\Sdk_workspace\OpcServer_bsp\microblaze_0\lib" -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "OpcServer.elf"  ./src/OpcServer.o ./src/iicNs.o  ./open62541_pregenearated/open62541.o   -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
 'Finished building target: OpcServer.elf'
 ' '
 'Invoking: MicroBlaze Print Size'
@@ -2794,5 +2789,5 @@ mb-size OpcServer.elf  |tee "OpcServer.elf.size"
 'Finished building: OpcServer.elf.size'
 ' '
 
-14:41:16 Build Finished (took 12s.581ms)
+15:23:08 Build Finished (took 11s.861ms)
 

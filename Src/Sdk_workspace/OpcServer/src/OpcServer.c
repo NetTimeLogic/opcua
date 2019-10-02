@@ -17,7 +17,6 @@
 #include "xgpio.h"
 
 #include "iicNs.h"
-#include "myNs.h"
 
 #define THREAD_STACKSIZE 102400
 //#define THREAD_STACKSIZE 16384
