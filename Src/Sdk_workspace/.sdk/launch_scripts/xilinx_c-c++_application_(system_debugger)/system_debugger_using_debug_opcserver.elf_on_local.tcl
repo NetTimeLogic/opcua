@@ -6,5 +6,4 @@ targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag
 rst -processor
 targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Arty A7-100T 210319A8C6C7A"} -index 0
 dow C:/opcua/Src/Sdk_workspace/OpcServer/Debug/OpcServer.elf
-targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Arty A7-100T 210319A8C6C7A"} -index 0
-con
+bpadd -addr &main

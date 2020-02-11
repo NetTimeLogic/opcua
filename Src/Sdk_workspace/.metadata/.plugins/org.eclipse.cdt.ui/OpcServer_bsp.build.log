@@ -1,4 +1,4 @@
-15:22:40 **** Build of project OpcServer_bsp ****
+10:50:02 **** Incremental Build of project OpcServer_bsp ****
 make -k all 
 "Running Make include in microblaze_0/libsrc/bram_v4_3/src"
 make -C microblaze_0/libsrc/bram_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
@@ -38,6 +38,7 @@ microblaze_sleep.c:77:9: note: #pragma message: For the sleep routines, assembly
  #pragma message ("For the sleep routines, assembly instructions are used")
          ^~~~~~~
 "Compiling FreeRTOS"
+mb-ar: creating ../../../lib/libfreertos.a
 "Running Make libs in microblaze_0/libsrc/gpio_v4_4/src"
 make -C microblaze_0/libsrc/gpio_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling gpio"
@@ -66,5 +67,5 @@ make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-
 "Compiling uartlite"
 'Finished building libraries'
 
-15:22:56 Build Finished (took 16s.531ms)
+10:50:18 Build Finished (took 16s.179ms)
 
