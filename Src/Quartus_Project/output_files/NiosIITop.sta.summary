@@ -1,0 +1,302 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 4.072
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 12.373
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'Mhz25Clk_ClkIn'
+Slack : 13.749
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 40.057
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Mhz25Clk_ClkIn'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.448
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 11.404
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'Mhz25Clk_ClkIn'
+Slack : 36.702
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 46.047
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'Mhz25Clk_ClkIn'
+Slack : 1.144
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.388
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 1.611
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 4.314
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 9.493
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Mhz25Clk_ClkIn'
+Slack : 19.582
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.446
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 2.990
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 3.940
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 4.379
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 4.756
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 4.773
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 4.798
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 4.996
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 13.044
+
+Type  : Slow 1200mV 85C Model Net Delay 'set_net_delay'
+Slack : 13.248
+
+Type  : Slow 1200mV 0C Model Setup 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 4.897
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 12.889
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'Mhz25Clk_ClkIn'
+Slack : 13.774
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 40.603
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Mhz25Clk_ClkIn'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.397
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 11.952
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'Mhz25Clk_ClkIn'
+Slack : 36.892
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 46.356
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'Mhz25Clk_ClkIn'
+Slack : 1.049
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 1.243
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 1.467
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 4.314
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 9.511
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Mhz25Clk_ClkIn'
+Slack : 19.586
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.309
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 3.111
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 4.037
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 4.436
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 4.800
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 4.822
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 4.852
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 5.065
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 13.202
+
+Type  : Slow 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 13.337
+
+Type  : Fast 1200mV 0C Model Setup 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 12.926
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 16.665
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'Mhz25Clk_ClkIn'
+Slack : 17.150
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 45.751
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 0.131
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Mhz25Clk_ClkIn'
+Slack : 0.149
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 15.993
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'Mhz25Clk_ClkIn'
+Slack : 38.474
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 48.357
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'Mhz25Clk_ClkIn'
+Slack : 0.486
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.574
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 0.693
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'u0|altpll_0|sd1|pll7|clk[1]'
+Slack : 9.543
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'u0|altpll_0|sd1|pll7|clk[0]'
+Slack : 9.726
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Mhz25Clk_ClkIn'
+Slack : 19.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.438
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 4.579
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 5.082
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 5.258
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 5.454
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 5.463
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 5.472
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 5.560
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 14.627
+
+Type  : Fast 1200mV 0C Model Net Delay 'set_net_delay'
+Slack : 14.761
+
+------------------------------------------------------------
