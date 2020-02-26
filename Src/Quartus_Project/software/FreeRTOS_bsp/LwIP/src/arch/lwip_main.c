@@ -494,7 +494,7 @@ void lwip_initialize_phys(void)
 			continue;
 
 		// search the PHY and it's ID
-		for (phyadd = 0x01; phyadd < 0x20; ++phyadd)
+		for (phyadd = 0x00; phyadd < 0x20; ++phyadd)
 		{
 			IOWR(&pmac->MDIO_ADDR1, 0, phyadd);
 

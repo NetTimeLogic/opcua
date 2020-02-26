@@ -114,8 +114,8 @@ low_level_input(struct netif *netif)
 		return NULL;
 	}
 
-	nextPkt = (void *) alt_remap_uncached(nextPkt,sizeof *nextPkt);
-	nextPkt->payload = (void *) alt_remap_uncached(nextPkt->payload, PBUF_POOL_BUFSIZE);
+	nextPkt = (void*)(((alt_u32)nextPkt));
+	nextPkt->payload = (void*)(((alt_u32)nextPkt->payload));
 
 	enh_alt_irq_disable_all();
 
@@ -282,8 +282,8 @@ ethernetif_init(struct netif *netif)
 		p = pbuf_alloc(PBUF_RAW, PBUF_POOL_BUFSIZE, PBUF_POOL);
 		if (p == NULL)
 			return ERR_MEM;
-		p = (void *) alt_remap_uncached(p,sizeof *p);
-		p->payload = (void *) alt_remap_uncached(p->payload,PBUF_POOL_BUFSIZE);
+		p = (void*)(((alt_u32) p));
+		p->payload = (void*)(((alt_u32) p->payload));
 		ethernetif->lwipRxPbuf[idx] = p;
 	}
 	ethernetif->lwipRxCount = 0;

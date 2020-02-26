@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'Nios'
  * SOPC Builder design path: ../../Nios.sopcinfo
  *
- * Generated: Wed Feb 19 16:21:10 CET 2020
+ * Generated: Wed Feb 26 11:16:03 CET 2020
  */
 
 /*
@@ -69,10 +69,9 @@
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
 #define ALT_CPU_CPU_IMPLEMENTATION "fast"
 #define ALT_CPU_DATA_ADDR_WIDTH 0x1a
-#define ALT_CPU_DCACHE_BYPASS_MASK 0x80000000
-#define ALT_CPU_DCACHE_LINE_SIZE 32
-#define ALT_CPU_DCACHE_LINE_SIZE_LOG2 5
-#define ALT_CPU_DCACHE_SIZE 1024
+#define ALT_CPU_DCACHE_LINE_SIZE 0
+#define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
+#define ALT_CPU_DCACHE_SIZE 0
 #define ALT_CPU_EXCEPTION_ADDR 0x02010020
 #define ALT_CPU_FLASH_ACCELERATOR_LINES 0
 #define ALT_CPU_FLASH_ACCELERATOR_LINE_SIZE 0
@@ -89,8 +88,7 @@
 #define ALT_CPU_HAS_JMPI_INSTRUCTION
 #define ALT_CPU_ICACHE_LINE_SIZE 32
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 5
-#define ALT_CPU_ICACHE_SIZE 1024
-#define ALT_CPU_INITDA_SUPPORTED
+#define ALT_CPU_ICACHE_SIZE 16384
 #define ALT_CPU_INST_ADDR_WIDTH 0x1a
 #define ALT_CPU_NAME "cpu_0"
 #define ALT_CPU_NUM_OF_SHADOW_REG_SETS 0
@@ -111,10 +109,9 @@
 #define NIOS2_CPU_ID_VALUE 0x00000000
 #define NIOS2_CPU_IMPLEMENTATION "fast"
 #define NIOS2_DATA_ADDR_WIDTH 0x1a
-#define NIOS2_DCACHE_BYPASS_MASK 0x80000000
-#define NIOS2_DCACHE_LINE_SIZE 32
-#define NIOS2_DCACHE_LINE_SIZE_LOG2 5
-#define NIOS2_DCACHE_SIZE 1024
+#define NIOS2_DCACHE_LINE_SIZE 0
+#define NIOS2_DCACHE_LINE_SIZE_LOG2 0
+#define NIOS2_DCACHE_SIZE 0
 #define NIOS2_EXCEPTION_ADDR 0x02010020
 #define NIOS2_FLASH_ACCELERATOR_LINES 0
 #define NIOS2_FLASH_ACCELERATOR_LINE_SIZE 0
@@ -130,8 +127,7 @@
 #define NIOS2_HAS_JMPI_INSTRUCTION
 #define NIOS2_ICACHE_LINE_SIZE 32
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 5
-#define NIOS2_ICACHE_SIZE 1024
-#define NIOS2_INITDA_SUPPORTED
+#define NIOS2_ICACHE_SIZE 16384
 #define NIOS2_INST_ADDR_WIDTH 0x1a
 #define NIOS2_NUM_OF_SHADOW_REG_SETS 0
 #define NIOS2_OCI_VERSION 1
@@ -169,24 +165,24 @@
 #define ALT_NUM_EXTERNAL_INTERRUPT_CONTROLLERS 0
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
-#define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x20210b0
-#define ALT_STDERR_DEV jtag_uart_0
-#define ALT_STDERR_IS_JTAG_UART
+#define ALT_STDERR "/dev/uart_0"
+#define ALT_STDERR_BASE 0x2021000
+#define ALT_STDERR_DEV uart_0
+#define ALT_STDERR_IS_UART
 #define ALT_STDERR_PRESENT
-#define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
-#define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x20210b0
-#define ALT_STDIN_DEV jtag_uart_0
-#define ALT_STDIN_IS_JTAG_UART
+#define ALT_STDERR_TYPE "altera_avalon_uart"
+#define ALT_STDIN "/dev/uart_0"
+#define ALT_STDIN_BASE 0x2021000
+#define ALT_STDIN_DEV uart_0
+#define ALT_STDIN_IS_UART
 #define ALT_STDIN_PRESENT
-#define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
-#define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x20210b0
-#define ALT_STDOUT_DEV jtag_uart_0
-#define ALT_STDOUT_IS_JTAG_UART
+#define ALT_STDIN_TYPE "altera_avalon_uart"
+#define ALT_STDOUT "/dev/uart_0"
+#define ALT_STDOUT_BASE 0x2021000
+#define ALT_STDOUT_DEV uart_0
+#define ALT_STDOUT_IS_UART
 #define ALT_STDOUT_PRESENT
-#define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
+#define ALT_STDOUT_TYPE "altera_avalon_uart"
 #define ALT_SYSTEM_NAME "Nios"
 
 
@@ -195,7 +191,7 @@
  *
  */
 
-#define ALTPLL_0_BASE 0x20210a0
+#define ALTPLL_0_BASE 0x2021040
 #define ALTPLL_0_IRQ -1
 #define ALTPLL_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define ALTPLL_0_NAME "/dev/altpll_0"
@@ -252,7 +248,6 @@
  *
  */
 
-#define ALT_INCLUDE_INSTRUCTION_RELATED_EXCEPTION_API
 #define ALT_MAX_FD 32
 #define ALT_SYS_CLK TIMER_0
 #define ALT_TIMESTAMP_CLK none
@@ -264,7 +259,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x20210b0
+#define JTAG_UART_0_BASE 0x2021050
 #define JTAG_UART_0_IRQ 2
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -597,11 +592,11 @@
 
 #define ALT_MODULE_CLASS_timer_0 altera_avalon_timer
 #define TIMER_0_ALWAYS_RUN 0
-#define TIMER_0_BASE 0x2021040
+#define TIMER_0_BASE 0x2021020
 #define TIMER_0_COUNTER_SIZE 32
 #define TIMER_0_FIXED_PERIOD 0
 #define TIMER_0_FREQ 50000000
-#define TIMER_0_IRQ 4
+#define TIMER_0_IRQ 3
 #define TIMER_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define TIMER_0_LOAD_VALUE 49999
 #define TIMER_0_MULT 0.001
@@ -614,32 +609,6 @@
 #define TIMER_0_TICKS_PER_SEC 1000
 #define TIMER_0_TIMEOUT_PULSE_OUTPUT 0
 #define TIMER_0_TYPE "altera_avalon_timer"
-
-
-/*
- * timer_1 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_timer_1 altera_avalon_timer
-#define TIMER_1_ALWAYS_RUN 0
-#define TIMER_1_BASE 0x2021000
-#define TIMER_1_COUNTER_SIZE 64
-#define TIMER_1_FIXED_PERIOD 0
-#define TIMER_1_FREQ 50000000
-#define TIMER_1_IRQ 3
-#define TIMER_1_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_1_LOAD_VALUE 49
-#define TIMER_1_MULT 1.0E-6
-#define TIMER_1_NAME "/dev/timer_1"
-#define TIMER_1_PERIOD 1
-#define TIMER_1_PERIOD_UNITS "us"
-#define TIMER_1_RESET_OUTPUT 0
-#define TIMER_1_SNAPSHOT 1
-#define TIMER_1_SPAN 64
-#define TIMER_1_TICKS_PER_SEC 1000000
-#define TIMER_1_TIMEOUT_PULSE_OUTPUT 0
-#define TIMER_1_TYPE "altera_avalon_timer"
 
 
 /*
@@ -706,12 +675,12 @@
  */
 
 #define ALT_MODULE_CLASS_uart_0 altera_avalon_uart
-#define UART_0_BASE 0x2021080
+#define UART_0_BASE 0x2021000
 #define UART_0_BAUD 115200
 #define UART_0_DATA_BITS 8
 #define UART_0_FIXED_BAUD 1
 #define UART_0_FREQ 50000000
-#define UART_0_IRQ 5
+#define UART_0_IRQ 4
 #define UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define UART_0_NAME "/dev/uart_0"
 #define UART_0_PARITY 'N'

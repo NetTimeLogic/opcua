@@ -18,8 +18,7 @@ obj/LwIP/src/arch/lwip_tse_mac.o: LwIP/src/arch/lwip_tse_mac.c \
  drivers/inc/altera_avalon_sgdma_regs.h \
  drivers/inc/altera_avalon_sgdma_descriptor.h LwIP/inc/netif/etharp.h \
  LwIP/inc/ipv4/lwip/ip.h LwIP/inc/lwip/stats.h LwIP/inc/lwip/mem.h \
- LwIP/inc/lwip/memp.h LwIP/inc/lwip/memp_std.h LwIP/inc/lwip/mem.h \
- LwIP/inc/ipv4/lwip/icmp.h
+ LwIP/inc/lwip/memp.h LwIP/inc/lwip/memp_std.h LwIP/inc/ipv4/lwip/icmp.h
 
 HAL/inc/io.h:
 
@@ -122,7 +121,5 @@ LwIP/inc/lwip/mem.h:
 LwIP/inc/lwip/memp.h:
 
 LwIP/inc/lwip/memp_std.h:
-
-LwIP/inc/lwip/mem.h:
 
 LwIP/inc/ipv4/lwip/icmp.h:

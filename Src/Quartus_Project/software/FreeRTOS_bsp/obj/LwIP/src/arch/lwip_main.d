@@ -7,7 +7,7 @@ obj/LwIP/src/arch/lwip_main.o: LwIP/src/arch/lwip_main.c system.h \
  LwIP/inc/lwip/def.h LwIP/inc/lwip/pbuf.h LwIP/inc/lwip/dhcp.h \
  LwIP/inc/lwip/udp.h LwIP/inc/ipv4/lwip/ip.h LwIP/inc/lwip/tcp.h \
  LwIP/inc/lwip/mem.h LwIP/inc/ipv4/lwip/icmp.h LwIP/inc/lwip/stats.h \
- LwIP/inc/lwip/memp.h LwIP/inc/lwip/memp_std.h LwIP/inc/lwip/mem.h \
+ LwIP/inc/lwip/memp.h LwIP/inc/lwip/memp_std.h \
  LwIP/inc/ipv4/lwip/ip_frag.h LwIP/inc/lwip/tcp_impl.h \
  LwIP/inc/lwip/tcpip.h LwIP/inc/lwip/api_msg.h LwIP/inc/lwip/sys.h \
  LwIP/inc/arch/sys_arch.h LwIP/inc/arch/cc.h FreeRTOS/inc/FreeRTOS.h \
@@ -79,8 +79,6 @@ LwIP/inc/lwip/stats.h:
 LwIP/inc/lwip/memp.h:
 
 LwIP/inc/lwip/memp_std.h:
-
-LwIP/inc/lwip/mem.h:
 
 LwIP/inc/ipv4/lwip/ip_frag.h:
 

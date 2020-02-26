@@ -413,7 +413,7 @@ err_t tse_mac_raw_send(struct netif *netif, struct pbuf *pkt)
 		}
 
 		// uncache the ethernet frame
-		ActualData = (void *)alt_remap_uncached (data, len);
+		ActualData = (void*)(((alt_u32)data));
 
 		/* Write data to Tx FIFO using the DMA */
 		alt_avalon_sgdma_construct_mem_to_stream_desc(
@@ -499,7 +499,7 @@ err_t tse_mac_raw_send(struct netif *netif, struct pbuf *pkt)
 			data = (alt_u32 *)buf2;
 		}
 
-		ActualData = (void *)alt_remap_uncached (data, len<4 ? 4 : len);
+		ActualData =  (void*)(((alt_u32)data));
 		printf("<%d @ 0x%08X/0x%08X>\r\n", len, (unsigned int)p->payload, (unsigned int)ActualData);
 		if(len<4)
 			len=4;

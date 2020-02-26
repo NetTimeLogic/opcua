@@ -1,0 +1,253 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\opcua\Src\Quartus_Project\Nios.qsys --block-symbol-file --output-directory=C:\opcua\Src\Quartus_Project\Nios --family="Cyclone 10 LP" --part=10CL055YU484C8G
+Progress: Loading Quartus_Project/Nios.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 18.1]
+Progress: Parameterizing module altpll_0
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding clock_bridge_0 [altera_clock_bridge 18.1]
+Progress: Parameterizing module clock_bridge_0
+Progress: Adding cpu_0 [altera_nios2_gen2 18.1]
+Progress: Parameterizing module cpu_0
+Progress: Adding ethernet_bridge [altera_avalon_mm_bridge 18.1]
+Progress: Parameterizing module ethernet_bridge
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding mem_0 [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module mem_0
+Progress: Adding reset_bridge_0 [altera_reset_bridge 18.1]
+Progress: Parameterizing module reset_bridge_0
+Progress: Adding sdram_controller_0 [altera_avalon_new_sdram_controller 18.1]
+Progress: Parameterizing module sdram_controller_0
+Progress: Adding sgdma_bridge [altera_avalon_mm_bridge 18.1]
+Progress: Parameterizing module sgdma_bridge
+Progress: Adding sgdma_tse_rx_0 [altera_avalon_sgdma 18.1]
+Progress: Parameterizing module sgdma_tse_rx_0
+Progress: Adding sgdma_tse_tx_0 [altera_avalon_sgdma 18.1]
+Progress: Parameterizing module sgdma_tse_tx_0
+Progress: Adding timer_0 [altera_avalon_timer 18.1]
+Progress: Parameterizing module timer_0
+Progress: Adding tse_descriptor_memory_0 [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module tse_descriptor_memory_0
+Progress: Adding tse_mac_0 [altera_eth_tse 18.1]
+Progress: Parameterizing module tse_mac_0
+Progress: Adding uart_0 [altera_avalon_uart 18.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Nios.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: Nios.sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: Nios.sgdma_tse_rx_0: Scatter-Gather DMA Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: Nios.sgdma_tse_tx_0: Scatter-Gather DMA Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: Nios.tse_mac_0.receive/sgdma_tse_rx_0.in: Ready latency is 2 for source and 0 for sink. Avalon-ST Adapter will be inserted..
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\opcua\Src\Quartus_Project\Nios.qsys --synthesis=VHDL --output-directory=C:\opcua\Src\Quartus_Project\Nios\synthesis --family="Cyclone 10 LP" --part=10CL055YU484C8G
+Progress: Loading Quartus_Project/Nios.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 18.1]
+Progress: Parameterizing module altpll_0
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding clock_bridge_0 [altera_clock_bridge 18.1]
+Progress: Parameterizing module clock_bridge_0
+Progress: Adding cpu_0 [altera_nios2_gen2 18.1]
+Progress: Parameterizing module cpu_0
+Progress: Adding ethernet_bridge [altera_avalon_mm_bridge 18.1]
+Progress: Parameterizing module ethernet_bridge
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding mem_0 [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module mem_0
+Progress: Adding reset_bridge_0 [altera_reset_bridge 18.1]
+Progress: Parameterizing module reset_bridge_0
+Progress: Adding sdram_controller_0 [altera_avalon_new_sdram_controller 18.1]
+Progress: Parameterizing module sdram_controller_0
+Progress: Adding sgdma_bridge [altera_avalon_mm_bridge 18.1]
+Progress: Parameterizing module sgdma_bridge
+Progress: Adding sgdma_tse_rx_0 [altera_avalon_sgdma 18.1]
+Progress: Parameterizing module sgdma_tse_rx_0
+Progress: Adding sgdma_tse_tx_0 [altera_avalon_sgdma 18.1]
+Progress: Parameterizing module sgdma_tse_tx_0
+Progress: Adding timer_0 [altera_avalon_timer 18.1]
+Progress: Parameterizing module timer_0
+Progress: Adding tse_descriptor_memory_0 [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module tse_descriptor_memory_0
+Progress: Adding tse_mac_0 [altera_eth_tse 18.1]
+Progress: Parameterizing module tse_mac_0
+Progress: Adding uart_0 [altera_avalon_uart 18.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Nios.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: Nios.sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: Nios.sgdma_tse_rx_0: Scatter-Gather DMA Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: Nios.sgdma_tse_tx_0: Scatter-Gather DMA Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: Nios.tse_mac_0.receive/sgdma_tse_rx_0.in: Ready latency is 2 for source and 0 for sink. Avalon-ST Adapter will be inserted..
+Info: Nios: Generating Nios "Nios" for QUARTUS_SYNTH
+Info: Inserting clock-crossing logic between cmd_demux.src2 and cmd_mux_002.sink0
+Info: Inserting clock-crossing logic between rsp_demux_002.src0 and rsp_mux.sink2
+Info: avalon_st_adapter: Inserting timing_adapter: timing_adapter_0
+Info: altpll_0: "Nios" instantiated altpll "altpll_0"
+Info: cpu_0: "Nios" instantiated altera_nios2_gen2 "cpu_0"
+Info: ethernet_bridge: "Nios" instantiated altera_avalon_mm_bridge "ethernet_bridge"
+Info: jtag_uart_0: Starting RTL generation for module 'Nios_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec C:/altera/18.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/18.1/quartus/bin64/perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=Nios_jtag_uart_0 --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0005_jtag_uart_0_gen/ --quartus_dir=C:/altera/18.1/quartus --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0005_jtag_uart_0_gen//Nios_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0: Done RTL generation for module 'Nios_jtag_uart_0'
+Info: jtag_uart_0: "Nios" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: mem_0: Starting RTL generation for module 'Nios_mem_0'
+Info: mem_0:   Generation command is [exec C:/altera/18.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/18.1/quartus/bin64/perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=Nios_mem_0 --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0006_mem_0_gen/ --quartus_dir=C:/altera/18.1/quartus --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0006_mem_0_gen//Nios_mem_0_component_configuration.pl  --do_build_sim=0  ]
+Info: mem_0: Done RTL generation for module 'Nios_mem_0'
+Info: mem_0: "Nios" instantiated altera_avalon_onchip_memory2 "mem_0"
+Info: sdram_controller_0: Starting RTL generation for module 'Nios_sdram_controller_0'
+Info: sdram_controller_0:   Generation command is [exec C:/altera/18.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/18.1/quartus/bin64/perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=Nios_sdram_controller_0 --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0007_sdram_controller_0_gen/ --quartus_dir=C:/altera/18.1/quartus --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0007_sdram_controller_0_gen//Nios_sdram_controller_0_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram_controller_0: Done RTL generation for module 'Nios_sdram_controller_0'
+Info: sdram_controller_0: "Nios" instantiated altera_avalon_new_sdram_controller "sdram_controller_0"
+Info: sgdma_tse_rx_0: Starting RTL generation for module 'Nios_sgdma_tse_rx_0'
+Info: sgdma_tse_rx_0:   Generation command is [exec C:/altera/18.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/18.1/quartus/bin64/perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_sgdma -- C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_sgdma/generate_rtl.pl --name=Nios_sgdma_tse_rx_0 --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0008_sgdma_tse_rx_0_gen/ --quartus_dir=C:/altera/18.1/quartus --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0008_sgdma_tse_rx_0_gen//Nios_sgdma_tse_rx_0_component_configuration.pl  --do_build_sim=0  ]
+Info: sgdma_tse_rx_0: Done RTL generation for module 'Nios_sgdma_tse_rx_0'
+Info: sgdma_tse_rx_0: "Nios" instantiated altera_avalon_sgdma "sgdma_tse_rx_0"
+Info: sgdma_tse_tx_0: Starting RTL generation for module 'Nios_sgdma_tse_tx_0'
+Info: sgdma_tse_tx_0:   Generation command is [exec C:/altera/18.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/18.1/quartus/bin64/perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_sgdma -- C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_sgdma/generate_rtl.pl --name=Nios_sgdma_tse_tx_0 --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0009_sgdma_tse_tx_0_gen/ --quartus_dir=C:/altera/18.1/quartus --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0009_sgdma_tse_tx_0_gen//Nios_sgdma_tse_tx_0_component_configuration.pl  --do_build_sim=0  ]
+Info: sgdma_tse_tx_0: Done RTL generation for module 'Nios_sgdma_tse_tx_0'
+Info: sgdma_tse_tx_0: "Nios" instantiated altera_avalon_sgdma "sgdma_tse_tx_0"
+Info: timer_0: Starting RTL generation for module 'Nios_timer_0'
+Info: timer_0:   Generation command is [exec C:/Altera/18.1/quartus/bin64//perl/bin/perl.exe -I C:/Altera/18.1/quartus/bin64//perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=Nios_timer_0 --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0010_timer_0_gen/ --quartus_dir=C:/altera/18.1/quartus --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0010_timer_0_gen//Nios_timer_0_component_configuration.pl  --do_build_sim=0  ]
+Info: timer_0: Done RTL generation for module 'Nios_timer_0'
+Info: timer_0: "Nios" instantiated altera_avalon_timer "timer_0"
+Info: tse_descriptor_memory_0: Starting RTL generation for module 'Nios_tse_descriptor_memory_0'
+Info: tse_descriptor_memory_0:   Generation command is [exec C:/altera/18.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/18.1/quartus/bin64/perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=Nios_tse_descriptor_memory_0 --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0011_tse_descriptor_memory_0_gen/ --quartus_dir=C:/altera/18.1/quartus --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0011_tse_descriptor_memory_0_gen//Nios_tse_descriptor_memory_0_component_configuration.pl  --do_build_sim=0  ]
+Info: tse_descriptor_memory_0: Done RTL generation for module 'Nios_tse_descriptor_memory_0'
+Info: tse_descriptor_memory_0: "Nios" instantiated altera_avalon_onchip_memory2 "tse_descriptor_memory_0"
+Info: tse_mac_0: "Nios" instantiated altera_eth_tse "tse_mac_0"
+Info: uart_0: Starting RTL generation for module 'Nios_uart_0'
+Info: uart_0:   Generation command is [exec C:/altera/18.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/18.1/quartus/bin64/perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- C:/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=Nios_uart_0 --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0012_uart_0_gen/ --quartus_dir=C:/altera/18.1/quartus --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0012_uart_0_gen//Nios_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: uart_0: Done RTL generation for module 'Nios_uart_0'
+Info: uart_0: "Nios" instantiated altera_avalon_uart "uart_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "Nios" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_1: "Nios" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_2: "Nios" instantiated altera_mm_interconnect "mm_interconnect_2"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_3: "Nios" instantiated altera_mm_interconnect "mm_interconnect_3"
+Info: irq_mapper: "Nios" instantiated altera_irq_mapper "irq_mapper"
+Info: avalon_st_adapter: "Nios" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: rst_controller: "Nios" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'Nios_cpu_0_cpu'
+Info: cpu:   Generation command is [exec C:/Altera/18.1/quartus/bin64//eperlcmd.exe -I C:/Altera/18.1/quartus/bin64//perl/lib -I C:/altera/18.1/quartus/sopc_builder/bin/europa -I C:/altera/18.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/18.1/quartus/sopc_builder/bin -I C:/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=Nios_cpu_0_cpu --dir=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0015_cpu_gen/ --quartus_bindir=C:/Altera/18.1/quartus/bin64/ --verilog --config=C:/Users/thomas/AppData/Local/Temp/alt8318_2195470437294171806.dir/0015_cpu_gen//Nios_cpu_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2020.02.26 11:09:43 (*) Starting Nios II generation
+Info: cpu: # 2020.02.26 11:09:43 (*)   Checking for plaintext license.
+Info: cpu: # 2020.02.26 11:09:44 (*)   Couldn't query license setup in Quartus directory C:/Altera/18.1/quartus/bin64/
+Info: cpu: # 2020.02.26 11:09:44 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2020.02.26 11:09:44 (*)   Plaintext license not found.
+Info: cpu: # 2020.02.26 11:09:44 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2020.02.26 11:09:44 (*)   Couldn't query license setup in Quartus directory C:/Altera/18.1/quartus/bin64/
+Info: cpu: # 2020.02.26 11:09:44 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2020.02.26 11:09:44 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info: cpu: # 2020.02.26 11:09:44 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2020.02.26 11:09:44 (*)   Creating all objects for CPU
+Info: cpu: # 2020.02.26 11:09:44 (*)     Testbench
+Info: cpu: # 2020.02.26 11:09:44 (*)     Instruction decoding
+Info: cpu: # 2020.02.26 11:09:44 (*)       Instruction fields
+Info: cpu: # 2020.02.26 11:09:44 (*)       Instruction decodes
+Info: cpu: # 2020.02.26 11:09:45 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2020.02.26 11:09:45 (*)       Instruction controls
+Info: cpu: # 2020.02.26 11:09:45 (*)     Pipeline frontend
+Info: cpu: # 2020.02.26 11:09:45 (*)     Pipeline backend
+Info: cpu: # 2020.02.26 11:09:47 (*)   Generating RTL from CPU objects
+Info: cpu: # 2020.02.26 11:09:49 (*)   Creating encrypted RTL
+Info: cpu: # 2020.02.26 11:09:49 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'Nios_cpu_0_cpu'
+Info: cpu: "cpu_0" instantiated altera_nios2_gen2_unit "cpu"
+Info: i_tse_mac: "tse_mac_0" instantiated altera_eth_tse_mac "i_tse_mac"
+Info: cpu_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "cpu_0_data_master_translator"
+Info: jtag_uart_0_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_0_avalon_jtag_slave_translator"
+Info: cpu_0_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "cpu_0_data_master_agent"
+Info: jtag_uart_0_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_0_avalon_jtag_slave_agent"
+Info: jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
+Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
+Info: cpu_0_instruction_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "cpu_0_instruction_master_limiter"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: sdram_controller_0_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_controller_0_s1_burst_adapter"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_004"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
+Info: rsp_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_004"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: sdram_controller_0_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_controller_0_s1_rsp_width_adapter"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_std_synchronizer_nocut.v
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_004: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_004"
+Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: router_004: "mm_interconnect_1" instantiated altera_merlin_router "router_004"
+Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
+Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: router: "mm_interconnect_3" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_3" instantiated altera_merlin_router "router_002"
+Info: cmd_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_3" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_3" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/opcua/Src/Quartus_Project/Nios/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: timing_adapter_0: "avalon_st_adapter" instantiated timing_adapter "timing_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_004" instantiated error_adapter "error_adapter_0"
+Info: Nios: Done "Nios" with 74 modules, 225 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

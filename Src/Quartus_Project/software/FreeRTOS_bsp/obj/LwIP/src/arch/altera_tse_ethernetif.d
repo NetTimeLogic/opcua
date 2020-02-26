@@ -11,7 +11,7 @@ obj/LwIP/src/arch/altera_tse_ethernetif.o: \
  FreeRTOS/inc/queue.h FreeRTOS/inc/task.h FreeRTOS/inc/list.h \
  FreeRTOS/inc/queue.h FreeRTOS/inc/task.h FreeRTOS/inc/portmacro.h \
  LwIP/inc/lwip/stats.h LwIP/inc/lwip/memp.h LwIP/inc/lwip/memp_std.h \
- LwIP/inc/lwip/mem.h LwIP/inc/lwip/snmp.h LwIP/inc/ipv4/lwip/ip_addr.h \
+ LwIP/inc/lwip/snmp.h LwIP/inc/ipv4/lwip/ip_addr.h \
  LwIP/inc/netif/etharp.h LwIP/inc/lwip/netif.h LwIP/inc/ipv4/lwip/ip.h \
  LwIP/inc/netif/ppp_oe.h LwIP/inc/altera_tse_ethernetif.h \
  LwIP/inc/altera_avalon_tse.h LwIP/inc/triple_speed_ethernet_regs.h \
@@ -88,8 +88,6 @@ LwIP/inc/lwip/stats.h:
 LwIP/inc/lwip/memp.h:
 
 LwIP/inc/lwip/memp_std.h:
-
-LwIP/inc/lwip/mem.h:
 
 LwIP/inc/lwip/snmp.h:
 

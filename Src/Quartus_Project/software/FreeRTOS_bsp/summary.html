@@ -22,10 +22,10 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>19.02.2020 16:21:29</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>26.02.2020 11:16:27</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1582125689428</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1582712187002</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</td>
@@ -38,19 +38,16 @@
 <th align="left" width="20%">Slave Descriptor</th><th align="left" width="40%">Address Range</th><th align="left" width="20%">Size</th><th align="left" width="20%">Attributes</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>jtag_uart_0</td><td>0x020210B0 - 0x020210B7</td><td>8</td><td class="listing">printable</td>
+<td>jtag_uart_0</td><td>0x02021050 - 0x02021057</td><td>8</td><td class="listing">printable</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>altpll_0</td><td>0x020210A0 - 0x020210AF</td><td>16</td><td class="listing">&nbsp;</td>
+<td>altpll_0</td><td>0x02021040 - 0x0202104F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>uart_0</td><td>0x02021080 - 0x0202109F</td><td>32</td><td class="listing">printable</td>
+<td>timer_0</td><td>0x02021020 - 0x0202103F</td><td>32</td><td class="listing">timer</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>timer_0</td><td>0x02021040 - 0x0202105F</td><td>32</td><td class="listing">timer</td>
-</tr>
-<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>timer_1</td><td>0x02021000 - 0x0202103F</td><td>64</td><td class="listing">timer</td>
+<td>uart_0</td><td>0x02021000 - 0x0202101F</td><td>32</td><td class="listing">printable</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>mem_0</td><td>0x02010000 - 0x0201FFFF</td><td>65536</td><td class="listing">memory</td>
@@ -1353,7 +1350,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>false</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>true</td>
+<td width="20%">Value:</td><td>false</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>BooleanDefineOnly</td>
@@ -1407,7 +1404,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>0</td>
+<td width="20%">Value:</td><td>1</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -1758,7 +1755,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>sdram_controller_0</td>
+<td width="20%">Value:</td><td>mem_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -1812,7 +1809,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>sdram_controller_0</td>
+<td width="20%">Value:</td><td>mem_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -3027,7 +3024,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>jtag_uart_0</td>
+<td width="20%">Value:</td><td>uart_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -3054,7 +3051,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>jtag_uart_0</td>
+<td width="20%">Value:</td><td>uart_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -3081,7 +3078,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>none</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>jtag_uart_0</td>
+<td width="20%">Value:</td><td>uart_0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>

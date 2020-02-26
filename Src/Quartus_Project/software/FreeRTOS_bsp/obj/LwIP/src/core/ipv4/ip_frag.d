@@ -6,7 +6,7 @@ obj/LwIP/src/core/ipv4/ip_frag.o: LwIP/src/core/ipv4/ip_frag.c \
  LwIP/inc/ipv4/lwip/ip_addr.h LwIP/inc/lwip/def.h LwIP/inc/ipv4/lwip/ip.h \
  LwIP/inc/ipv4/lwip/inet_chksum.h LwIP/inc/lwip/snmp.h \
  LwIP/inc/lwip/stats.h LwIP/inc/lwip/mem.h LwIP/inc/lwip/memp.h \
- LwIP/inc/lwip/memp_std.h LwIP/inc/lwip/mem.h LwIP/inc/ipv4/lwip/icmp.h
+ LwIP/inc/lwip/memp_std.h LwIP/inc/ipv4/lwip/icmp.h
 
 LwIP/inc/lwip/opt.h:
 
@@ -51,7 +51,5 @@ LwIP/inc/lwip/mem.h:
 LwIP/inc/lwip/memp.h:
 
 LwIP/inc/lwip/memp_std.h:
-
-LwIP/inc/lwip/mem.h:
 
 LwIP/inc/ipv4/lwip/icmp.h:

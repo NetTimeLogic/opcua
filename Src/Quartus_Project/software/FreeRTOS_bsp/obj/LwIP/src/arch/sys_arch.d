@@ -12,7 +12,7 @@ obj/LwIP/src/arch/sys_arch.o: LwIP/src/arch/sys_arch.c \
  FreeRTOS/inc/queue.h FreeRTOS/inc/task.h FreeRTOS/inc/list.h \
  FreeRTOS/inc/queue.h FreeRTOS/inc/task.h FreeRTOS/inc/portmacro.h \
  LwIP/inc/lwip/stats.h LwIP/inc/lwip/mem.h LwIP/inc/lwip/memp.h \
- LwIP/inc/lwip/memp_std.h LwIP/inc/lwip/mem.h
+ LwIP/inc/lwip/memp_std.h
 
 HAL/inc/sys/alt_timestamp.h:
 
@@ -89,5 +89,3 @@ LwIP/inc/lwip/mem.h:
 LwIP/inc/lwip/memp.h:
 
 LwIP/inc/lwip/memp_std.h:
-
-LwIP/inc/lwip/mem.h:

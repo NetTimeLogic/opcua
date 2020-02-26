@@ -9,8 +9,8 @@ obj/LwIP/src/api/tcpip.o: LwIP/src/api/tcpip.c LwIP/inc/lwip/opt.h \
  FreeRTOS/inc/queue.h FreeRTOS/inc/task.h FreeRTOS/inc/list.h \
  FreeRTOS/inc/queue.h FreeRTOS/inc/task.h FreeRTOS/inc/portmacro.h \
  LwIP/inc/lwip/memp.h LwIP/inc/lwip/memp_std.h LwIP/inc/lwip/mem.h \
- LwIP/inc/lwip/mem.h LwIP/inc/lwip/pbuf.h LwIP/inc/lwip/tcpip.h \
- LwIP/inc/lwip/api_msg.h LwIP/inc/ipv4/lwip/ip_addr.h LwIP/inc/lwip/def.h \
+ LwIP/inc/lwip/pbuf.h LwIP/inc/lwip/tcpip.h LwIP/inc/lwip/api_msg.h \
+ LwIP/inc/ipv4/lwip/ip_addr.h LwIP/inc/lwip/def.h \
  LwIP/inc/ipv4/lwip/igmp.h LwIP/inc/lwip/netif.h LwIP/inc/lwip/api.h \
  LwIP/inc/lwip/netbuf.h LwIP/inc/lwip/netifapi.h LwIP/inc/lwip/timers.h \
  LwIP/inc/lwip/init.h LwIP/inc/netif/etharp.h LwIP/inc/ipv4/lwip/ip.h \
@@ -75,8 +75,6 @@ FreeRTOS/inc/portmacro.h:
 LwIP/inc/lwip/memp.h:
 
 LwIP/inc/lwip/memp_std.h:
-
-LwIP/inc/lwip/mem.h:
 
 LwIP/inc/lwip/mem.h:
 

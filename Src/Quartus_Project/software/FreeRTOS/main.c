@@ -29,7 +29,7 @@
 
 #include <arch/cc.h>
 
-#define THREAD_STACKSIZE 32768
+#define THREAD_STACKSIZE 4096
 #define mssleep(x)						usleep((x) * 1000)
 #define MDIO_IFACE						mdio1
 
@@ -189,7 +189,7 @@ void xEthernetRun()
 	IP4_ADDR(&PingIp, 192, 168, 1, 100);
 	for (;;) {
 
-        lwip_ping_target(PingIp.addr, 10, 0, 100);
+        lwip_ping_target(PingIp.addr, 1, 0, 100);
 		// sleep for 1 second
 		//lwip_ping_target(PingIp.addr, 10, 0, 100);
 		alt_printf("Rx Count: %d \r\n", ethernetif_input((struct netif*)get_netif(0)));
@@ -289,8 +289,8 @@ int main_thread(){
 
 
 
-	vTaskStartScheduler();
-    for(;;)
+    vTaskStartScheduler();
+    while(1);
     return 0;
 }
 

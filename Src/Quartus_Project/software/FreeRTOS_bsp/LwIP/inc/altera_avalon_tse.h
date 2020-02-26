@@ -133,6 +133,19 @@ alt_32 tse_mac_initTransInfo2( tse_mac_trans_info *mi,
   */
 alt_32 tse_mac_sTxWrite( tse_mac_trans_info *mi,  
                        alt_sgdma_descriptor *txDesc);
+                       
+                       
+                       
+                                                                                    
+                                                                           
+   
+                          
+                                        
+                                                          
+                                           
+                          
+                                                  
+                                                                                                 
 
 
 
@@ -229,7 +242,9 @@ enum {
 #define ALTERA_TSE_SW_RESET_TIME_OUT_CNT        10000
 #define ALTERA_TSE_SGDMA_BUSY_TIME_OUT_CNT      1000000 
 
+                                                                      
 #define ALTERA_TSE_SGDMA_RX_DESC_CHAIN_SIZE     1
+                                                                                                   
 
 #define ALTERA_TSE_FIRST_TX_SGDMA_DESC_OFST     0
 #define ALTERA_TSE_SECOND_TX_SGDMA_DESC_OFST    1
@@ -253,10 +268,12 @@ enum {
 
 #define ALTERA_TSE_DUPLEX_MODE_DEFAULT          TSE_PHY_DUPLEX_FULL
 #define ALTERA_TSE_MAC_SPEED_DEFAULT            TSE_PHY_SPEED_100
+                                        
 #define ALTERA_AUTONEG_TIMEOUT_THRESHOLD        0xF8000000
 #define ALTERA_CHECKLINK_TIMEOUT_THRESHOLD      0xF8000000
 #define ALTERA_NOMDIO_TIMEOUT_THRESHOLD         1000000
 #define ALTERA_DISGIGA_TIMEOUT_THRESHOLD        5000000
+  
 
 #define ALTERA_TSE_PCS_IF_MODE                  0x14		/* 0x14th register of ALTERA PCS */
 
@@ -297,6 +314,13 @@ enum {
     DP83848C_MODEL     = 0x09,
     DP83848C_REV       = 0x0
 };
+
+                                     
+      
+                                                                  
+                                               
+                                       
+  
 
 
 
@@ -969,6 +993,12 @@ alt_32 alt_tse_phy_set_common_speed(alt_tse_mac_group *pmac_group, alt_32 common
  */
 alt_32 marvell_phy_cfg(np_tse_mac *pmac);
 
+                                                                  
+                        
+                                                                                        
+   
+                                        
+
 /* @Function Description: Change operating mode of Marvell PHY to GMII
  * @API Type:   Internal
  * @param pmac  Pointer to the first TSE MAC Control Interface Base address within MAC group
@@ -992,6 +1022,13 @@ alt_32 marvell_cfg_rgmii(np_tse_mac *pmac);
  * @param pmac  Pointer to the first TSE MAC Control Interface Base address within MAC group
  */
 alt_u32 DP83848C_link_status_read(np_tse_mac *pmac);
+
+                                                                                       
+                        
+                                                                                            
+   
+                                                   
+
 
 #ifdef __cplusplus
 }

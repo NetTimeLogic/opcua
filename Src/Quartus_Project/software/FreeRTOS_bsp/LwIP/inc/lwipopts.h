@@ -91,14 +91,14 @@
  * instead of the lwip internal allocator. Can save code size if you
  * already use it.
  */
-#define MEM_LIBC_MALLOC                 1
+#define MEM_LIBC_MALLOC                 0
 
 /**
 * MEMP_MEM_MALLOC==1: Use mem_malloc/mem_free instead of the lwip pool allocator.
 * Especially useful with MEM_LIBC_MALLOC but handle with care regarding execution
 * speed and usage from interrupts!
 */
-#define MEMP_MEM_MALLOC                 1
+#define MEMP_MEM_MALLOC                 0
 
 /**
  * MEM_ALIGNMENT: should be set to the alignment of the CPU

@@ -250,10 +250,6 @@ altera_avalon_uart_driver_C_LIB_SRCS := \
 altera_eth_tse_driver_hal_SRCS_ROOT := drivers
 
 # altera_eth_tse_driver_hal sources 
-altera_eth_tse_driver_hal_C_LIB_SRCS := \
-	$(altera_eth_tse_driver_hal_SRCS_ROOT)/src/altera_avalon_tse_system_info.c \
-	$(altera_eth_tse_driver_hal_SRCS_ROOT)/src/altera_avalon_tse.c
-
 # altera_nios2_gen2_hal_driver sources root 
 altera_nios2_gen2_hal_driver_SRCS_ROOT := HAL
 
@@ -378,6 +374,8 @@ lwip_C_LIB_SRCS := \
 	$(lwip_SRCS_ROOT)/src/api/sockets.c \
 	$(lwip_SRCS_ROOT)/src/api/tcpip.c \
 	$(lwip_SRCS_ROOT)/src/arch/altera_tse_ethernetif.c \
+	$(lwip_SRCS_ROOT)/src/arch/altera_avalon_tse.c \
+	$(lwip_SRCS_ROOT)/src/arch/altera_avalon_tse_system_info.c \
 	$(lwip_SRCS_ROOT)/src/arch/alt_lwip_close.c \
 	$(lwip_SRCS_ROOT)/src/arch/alt_lwip_fcntl.c \
 	$(lwip_SRCS_ROOT)/src/arch/alt_lwip_read.c \
@@ -439,7 +437,6 @@ COMPONENT_C_LIB_SRCS += \
 	$(altera_avalon_sgdma_driver_C_LIB_SRCS) \
 	$(altera_avalon_timer_driver_C_LIB_SRCS) \
 	$(altera_avalon_uart_driver_C_LIB_SRCS) \
-	$(altera_eth_tse_driver_hal_C_LIB_SRCS) \
 	$(altera_nios2_gen2_hal_driver_C_LIB_SRCS) \
 	$(freertos_C_LIB_SRCS) \
 	$(hal_C_LIB_SRCS) \

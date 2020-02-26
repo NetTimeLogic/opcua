@@ -8,8 +8,7 @@ obj/LwIP/src/core/ipv4/ip.o: LwIP/src/core/ipv4/ip.c LwIP/inc/lwip/opt.h \
  LwIP/inc/ipv4/lwip/igmp.h LwIP/inc/lwip/raw.h LwIP/inc/lwip/udp.h \
  LwIP/inc/lwip/tcp_impl.h LwIP/inc/lwip/tcp.h LwIP/inc/lwip/snmp.h \
  LwIP/inc/lwip/dhcp.h LwIP/inc/ipv4/lwip/autoip.h LwIP/inc/lwip/stats.h \
- LwIP/inc/lwip/memp.h LwIP/inc/lwip/memp_std.h LwIP/inc/lwip/mem.h \
- LwIP/inc/arch/perf.h
+ LwIP/inc/lwip/memp.h LwIP/inc/lwip/memp_std.h LwIP/inc/arch/perf.h
 
 LwIP/inc/lwip/opt.h:
 
@@ -70,7 +69,5 @@ LwIP/inc/lwip/stats.h:
 LwIP/inc/lwip/memp.h:
 
 LwIP/inc/lwip/memp_std.h:
-
-LwIP/inc/lwip/mem.h:
 
 LwIP/inc/arch/perf.h:

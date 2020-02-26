@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'Nios'
  * SOPC Builder design path: ../../Nios.sopcinfo
  *
- * Generated: Wed Feb 19 08:52:14 CET 2020
+ * Generated: Tue Feb 25 13:27:43 CET 2020
  */
 
 /*
@@ -74,7 +74,6 @@ ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_0, jtag_uart_0);
 ALTERA_AVALON_SGDMA_INSTANCE ( SGDMA_TSE_RX_0, sgdma_tse_rx_0);
 ALTERA_AVALON_SGDMA_INSTANCE ( SGDMA_TSE_TX_0, sgdma_tse_tx_0);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER_0, timer_0);
-ALTERA_AVALON_TIMER_INSTANCE ( TIMER_1, timer_1);
 ALTERA_AVALON_UART_INSTANCE ( UART_0, uart_0);
 ALTERA_ETH_TSE_INSTANCE ( TSE_MAC_0, tse_mac_0);
 
@@ -100,7 +99,6 @@ void alt_irq_init ( const void* base )
 void alt_sys_init( void )
 {
     ALTERA_AVALON_TIMER_INIT ( TIMER_0, timer_0);
-    ALTERA_AVALON_TIMER_INIT ( TIMER_1, timer_1);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
     ALTERA_AVALON_SGDMA_INIT ( SGDMA_TSE_RX_0, sgdma_tse_rx_0);
     ALTERA_AVALON_SGDMA_INIT ( SGDMA_TSE_TX_0, sgdma_tse_tx_0);

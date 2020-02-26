@@ -49,6 +49,6 @@ volatile void*
 alt_remap_uncached(void* ptr, alt_u32 len)
 {
   /* Generate a link time error, should this function ever be called. */
-  //ALT_LINK_ERROR("alt_remap_uncached() is not available because Nios II Gen2 cores with data caches don't support mixing cacheable and uncacheable data on the same line.");
+  ALT_LINK_ERROR("alt_remap_uncached() is not available because Nios II Gen2 cores with data caches don't support mixing cacheable and uncacheable data on the same line.");
   return NULL;
 }
