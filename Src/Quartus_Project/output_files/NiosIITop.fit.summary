@@ -1,16 +1,16 @@
-Fitter Status : Successful - Wed Feb 26 11:15:44 2020
+Fitter Status : Successful - Fri Feb 28 16:12:31 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : NiosIITop
 Top-level Entity Name : NiosIITop
 Family : Cyclone 10 LP
 Device : 10CL055YU484C8G
 Timing Models : Final
-Total logic elements : 12,034 / 55,856 ( 22 % )
-    Total combinational functions : 9,763 / 55,856 ( 17 % )
-    Dedicated logic registers : 8,289 / 55,856 ( 15 % )
-Total registers : 8357
+Total logic elements : 12,112 / 55,856 ( 22 % )
+    Total combinational functions : 9,813 / 55,856 ( 18 % )
+    Dedicated logic registers : 8,290 / 55,856 ( 15 % )
+Total registers : 8358
 Total pins : 69 / 322 ( 21 % )
 Total virtual pins : 0
-Total memory bits : 1,049,466 / 2,396,160 ( 44 % )
+Total memory bits : 1,573,754 / 2,396,160 ( 66 % )
 Embedded Multiplier 9-bit elements : 6 / 312 ( 2 % )
 Total PLLs : 1 / 4 ( 25 % )

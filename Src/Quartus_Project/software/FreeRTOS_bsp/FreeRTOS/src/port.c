@@ -1,55 +1,29 @@
 /*
-    FreeRTOS V7.1.0 - Copyright (C) 2011 Real Time Engineers Ltd.
-	
-
-    ***************************************************************************
-     *                                                                       *
-     *    FreeRTOS tutorial books are available in pdf and paperback.        *
-     *    Complete, revised, and edited pdf reference manuals are also       *
-     *    available.                                                         *
-     *                                                                       *
-     *    Purchasing FreeRTOS documentation will not only help you, by       *
-     *    ensuring you get running as quickly as possible and with an        *
-     *    in-depth knowledge of how to use FreeRTOS, it will also help       *
-     *    the FreeRTOS project to continue with its mission of providing     *
-     *    professional grade, cross platform, de facto standard solutions    *
-     *    for microcontrollers - completely free of charge!                  *
-     *                                                                       *
-     *    >>> See http://www.FreeRTOS.org/Documentation for details. <<<     *
-     *                                                                       *
-     *    Thank you for using FreeRTOS, and thank you for your support!      *
-     *                                                                       *
-    ***************************************************************************
-
-
-    This file is part of the FreeRTOS distribution.
-
-    FreeRTOS is free software; you can redistribute it and/or modify it under
-    the terms of the GNU General Public License (version 2) as published by the
-    Free Software Foundation AND MODIFIED BY the FreeRTOS exception.
-    >>>NOTE<<< The modification to the GPL is included to allow you to
-    distribute a combined work that includes FreeRTOS without being obliged to
-    provide the source code for proprietary components outside of the FreeRTOS
-    kernel.  FreeRTOS is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-    or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
-    more details. You should have received a copy of the GNU General Public
-    License and the FreeRTOS license exception along with FreeRTOS; if not it
-    can be viewed here: http://www.freertos.org/a00114.html and also obtained
-    by writing to Richard Barry, contact details for whom are available on the
-    FreeRTOS WEB site.
-
-    1 tab == 4 spaces!
-
-    http://www.FreeRTOS.org - Documentation, latest information, license and
-    contact details.
-
-    http://www.SafeRTOS.com - A version that is certified for use in safety
-    critical systems.
-
-    http://www.OpenRTOS.com - Commercial support, development, porting,
-    licensing and training services.
-*/
+ * FreeRTOS Kernel V10.3.0
+ * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * http://www.FreeRTOS.org
+ * http://aws.amazon.com/freertos
+ *
+ * 1 tab == 4 spaces!
+ */
 
 /*-----------------------------------------------------------
  * Implementation of functions defined in portable.h for the NIOS2 port.
@@ -67,19 +41,38 @@
 
 /* Scheduler includes. */
 #include "FreeRTOS.h"
-#include "projdefs.h"
 #include "task.h"
 
 /* Interrupts are enabled. */
-#define portINITIAL_ESTATUS     ( portSTACK_TYPE ) 0x01 
+#define portINITIAL_ESTATUS     ( StackType_t ) 0x01 
+
+// This most Altera Dev kits use SYS_CLK_TIMER as the name of the tick timer
+#ifdef ALT_SYS_CLK
+#define SYS_CLK_IRQ TIMER_0_IRQ
+#define SYS_CLK_BASE TIMER_0_BASE
+#define SYS_CLK_FREQ TIMER_0_FREQ
+#define SYS_CLK_IRQ_INTERRUPT_CONTROLLER_ID SYS_CLK_TIMER_IRQ_INTERRUPT_CONTROLLER_ID
+#endif
 
 /*-----------------------------------------------------------*/
 
-static inline void prvReadGp( unsigned long *ulValue )
+/* 
+ * Setup the timer to generate the tick interrupts.
+ */
+static void prvSetupTimerInterrupt( void );
+
+/*
+ * Call back for the alarm function.
+ */
+void vPortSysTickHandler( void * context, alt_u32 id );
+
+/*-----------------------------------------------------------*/
+
+static void prvReadGp( uint32_t *ulValue )
 {
-	asm volatile ( "stw gp, (%0)" : : "r"(ulValue) );
+	asm( "stw gp, (%0)" :: "r"(ulValue) );
 }
-/*-----------------------------------------------------------*/
+
 
 static volatile alt_irq_context lastContext;
 
@@ -96,21 +89,24 @@ void enh_alt_irq_enable_all()
 	alt_irq_enable_all(restore);
 }
 
+
+/*-----------------------------------------------------------*/
+
 /* 
  * See header file for description. 
  */
-portSTACK_TYPE *pxPortInitialiseStack( portSTACK_TYPE *pxTopOfStack, pdTASK_CODE pxCode, void *pvParameters )
+StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t pxCode, void *pvParameters )
 {    
-portSTACK_TYPE *pxFramePointer = pxTopOfStack - 1;
-portSTACK_TYPE xGlobalPointer;
+StackType_t *pxFramePointer = pxTopOfStack - 1;
+StackType_t xGlobalPointer;
 
     prvReadGp( &xGlobalPointer ); 
 
     /* End of stack marker. */
     *pxTopOfStack = 0xdeadbeef;
     pxTopOfStack--;
-
-    *pxTopOfStack = ( portSTACK_TYPE ) pxFramePointer;
+    
+    *pxTopOfStack = ( StackType_t ) pxFramePointer; 
     pxTopOfStack--;
     
     *pxTopOfStack = xGlobalPointer; 
@@ -118,22 +114,19 @@ portSTACK_TYPE xGlobalPointer;
     /* Space for R23 to R16. */
     pxTopOfStack -= 9;
 
-    *pxTopOfStack = ( portSTACK_TYPE ) pxCode;
+    *pxTopOfStack = ( StackType_t ) pxCode; 
     pxTopOfStack--;
 
-    *pxTopOfStack = portINITIAL_ESTATUS;
+    *pxTopOfStack = portINITIAL_ESTATUS; 
 
-    /* Space for R15 to R5. */
+    /* Space for R15 to R5. */    
     pxTopOfStack -= 12;
-
-    *pxTopOfStack = ( portSTACK_TYPE ) pvParameters;
+    
+    *pxTopOfStack = ( StackType_t ) pvParameters; 
 
     /* Space for R3 to R1, muldiv and RA. */
     pxTopOfStack -= 5;
-
-    /* Initialize stack pointer to prevent debugger crash. */
-    *pxTopOfStack = ( portSTACK_TYPE ) xPortStartScheduler;
-
+    
     return pxTopOfStack;
 }
 /*-----------------------------------------------------------*/
@@ -141,35 +134,97 @@ portSTACK_TYPE xGlobalPointer;
 /* 
  * See header file for description. 
  */
-portBASE_TYPE xPortStartScheduler( void )
+BaseType_t xPortStartScheduler( void )
 {
-	// Just load the task which is currently revered to by TCB
+	/* Start the timer that generates the tick ISR.  Interrupts are disabled
+	here already. */
+	prvSetupTimerInterrupt();
+	
+	/* Start the first task. */
     asm volatile (  " movia r2, restore_sp_from_pxCurrentTCB        \n"
                     " jmp r2                                          " );
 
-    // This should never be reached
-    return 0;
+	/* Should not get here! */
+	return 0;
 }
 /*-----------------------------------------------------------*/
 
 void vPortEndScheduler( void )
 {
-	// It is unlikely that the NIOS2 port will require this function as there is nothing to return to.
+	/* It is unlikely that the NIOS2 port will require this function as there
+	is nothing to return to.  */
 }
 /*-----------------------------------------------------------*/
 
-void vPortSysTickHandler( void )
+/*
+ * Setup the systick timer to generate the tick interrupts at the required
+ * frequency.
+ */
+void prvSetupTimerInterrupt( void )
 {
-	// only make ticks if the scheduler has been started.
-	if ( xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED )
-	{
-		// Increment the Kernel Tick.
-		xTaskIncrementTick();
-
-		// If using preemption, also force a context switch.
-#if configUSE_PREEMPTION == 1
-		vTaskSwitchContext();
-#endif
+	/* Try to register the interrupt handler. */
+	if ( -EINVAL == alt_irq_register( SYS_CLK_IRQ, 0x0, vPortSysTickHandler ) )
+	{ 
+		/* Failed to install the Interrupt Handler. */
+		asm( "break" );
 	}
+	else
+	{
+		/* Configure SysTick to interrupt at the requested rate. */
+		IOWR_ALTERA_AVALON_TIMER_CONTROL( SYS_CLK_BASE, ALTERA_AVALON_TIMER_CONTROL_STOP_MSK );
+		IOWR_ALTERA_AVALON_TIMER_PERIODL( SYS_CLK_BASE, ( configCPU_CLOCK_HZ / configTICK_RATE_HZ ) & 0xFFFF );
+		IOWR_ALTERA_AVALON_TIMER_PERIODH( SYS_CLK_BASE, ( configCPU_CLOCK_HZ / configTICK_RATE_HZ ) >> 16 );
+		IOWR_ALTERA_AVALON_TIMER_CONTROL( SYS_CLK_BASE, ALTERA_AVALON_TIMER_CONTROL_CONT_MSK | ALTERA_AVALON_TIMER_CONTROL_START_MSK | ALTERA_AVALON_TIMER_CONTROL_ITO_MSK );
+	} 
+
+	/* Clear any already pending interrupts generated by the Timer. */
+	IOWR_ALTERA_AVALON_TIMER_STATUS( SYS_CLK_BASE, ~ALTERA_AVALON_TIMER_STATUS_TO_MSK );
 }
 /*-----------------------------------------------------------*/
+
+void vPortSysTickHandler( void * context, alt_u32 id )
+{
+	/* Increment the kernel tick. */
+	if( xTaskIncrementTick() != pdFALSE )
+	{
+        vTaskSwitchContext();
+	}
+		
+	/* Clear the interrupt. */
+	IOWR_ALTERA_AVALON_TIMER_STATUS( SYS_CLK_BASE, ~ALTERA_AVALON_TIMER_STATUS_TO_MSK );
+}
+/*-----------------------------------------------------------*/
+
+/** This function is a re-implementation of the Altera provided function.
+ * The function is re-implemented to prevent it from enabling an interrupt
+ * when it is registered. Interrupts should only be enabled after the FreeRTOS.org
+ * kernel has its scheduler started so that contexts are saved and switched 
+ * correctly.
+ */
+int alt_irq_register( alt_u32 id, void* context, alt_isr_func handler)
+{
+	int rc = -EINVAL;  
+	alt_irq_context status;
+
+	if (id < ALT_NIRQ)
+	{
+		/* 
+		 * interrupts are disabled while the handler tables are updated to ensure
+		 * that an interrupt doesn't occur while the tables are in an inconsistent
+		 * state.
+		 */
+	
+		status = alt_irq_disable_all();
+	
+		alt_irq[id].handler = handler;
+		alt_irq[id].context = context;
+	
+		rc = (handler) ? alt_irq_enable (id): alt_irq_disable (id);
+	
+		/* alt_irq_enable_all(status); This line is removed to prevent the interrupt from being immediately enabled. */
+	}
+    
+	return rc; 
+}
+/*-----------------------------------------------------------*/
+

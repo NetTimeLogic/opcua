@@ -13,16 +13,32 @@ create_clock -name {SmiClk}        -period 20.000 -waveform {0.000 10.000}
 create_clock -name {Port1MiiRxClk} -period 40.000 -waveform {0.000 20.000} [get_ports {Port1MiiRxClk_ClkIn}]
 create_clock -name {Port1MiiTxClk} -period 40.000 -waveform {0.000 20.000} [get_ports {Port1MiiTxClk_ClkIn}]
 
-create_generated_clock -name {PllMhz50Clk} -source [get_pins {u0|altpll_0|sd1|pll7|clk[0]}]
-
-
 derive_pll_clocks
+
+create_generated_clock -name {PllMhz50Clk} -source [get_pins {u0|altpll_0|sd1|pll7|clk[0]}]
+create_generated_clock -name {PllMhz50ClkSdram} -source [get_pins {u0|altpll_0|sd1|pll7|clk[1]}] [get_ports {Sdram_ClkOut}]
+
 derive_clock_uncertainty
 
 #**************************************************************
-# RAM
+# SDRAM
 #**************************************************************
+# t_AC, max delay and t_OH, min delay
+# added 0.5 ns turn-around time to max delay
+set_input_delay -max -clock [get_clocks {PllMhz50ClkSdram}]  5.900 [get_ports {Sdram_DqInOut[*]}]
+set_input_delay -min -clock [get_clocks {PllMhz50ClkSdram}]  2.500 [get_ports {Sdram_DqInOut[*]}]
 
+# t_CS, max delay and t_CH, min delay
+set_output_delay -max -clock [get_clocks {PllMhz50ClkSdram}]  1.500 [get_ports {Sdram_CsNOut Sdram_RasNOut Sdram_CasNOut Sdram_WeNOut}]
+set_output_delay -min -clock [get_clocks {PllMhz50ClkSdram}]  -0.800 [get_ports {Sdram_CsNOut Sdram_RasNOut Sdram_CasNOut Sdram_WeNOut}]
+
+# t_AS, max delay and t_AH, min delay
+set_output_delay -max -clock [get_clocks {PllMhz50ClkSdram}]  1.500 [get_ports {Sdram_AddrOut[*] Sdram_BaOut[*]}]
+set_output_delay -min -clock [get_clocks {PllMhz50ClkSdram}]  -0.800 [get_ports {Sdram_AddrOut[*] Sdram_BaOut[*]}]
+
+# t_DS, max delay and Hold time t_DH, min delay
+set_output_delay -max -clock [get_clocks {PllMhz50ClkSdram}]  1.500 [get_ports {Sdram_DqInOut[*]}]
+set_output_delay -min -clock [get_clocks {PllMhz50ClkSdram}]  -0.800 [get_ports {Sdram_DqInOut[*]}]
 
 #**************************************************************
 # Port1

@@ -92,46 +92,46 @@ VCCIO7                       : A21       : power  :                   : 2.5V    
 GND                          : A22       : gnd    :                   :         :           :                
 GND                          : AA1       : gnd    :                   :         :           :                
 GND                          : AA2       : gnd    :                   :         :           :                
-Sdram_ClkOut                 : AA3       : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_CkenOut                : AA4       : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_AddrOut[9]             : AA5       : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_AddrOut[6]             : AA6       : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_AddrOut[7]             : AA7       : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_AddrOut[11]            : AA8       : output : 3.3-V LVCMOS      :         : 3         : Y              
+Sdram_ClkOut                 : AA3       : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_CkenOut                : AA4       : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_AddrOut[9]             : AA5       : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_AddrOut[6]             : AA6       : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_AddrOut[7]             : AA7       : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_AddrOut[11]            : AA8       : output : 3.3-V LVTTL       :         : 3         : Y              
 Led_DatOut[2]                : AA9       : output : 3.3-V LVCMOS      :         : 3         : Y              
 Led_DatOut[1]                : AA10      : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND+                         : AA11      :        :                   :         : 3         :                
 Mhz25Clk_ClkIn               : AA12      : input  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[10]            : AA13      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[14]            : AA14      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[13]            : AA15      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[2]             : AA16      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
+Sdram_DqInOut[10]            : AA13      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[14]            : AA14      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[13]            : AA15      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[2]             : AA16      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : AA17      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA18      :        :                   :         : 4         :                
-Sdram_DqInOut[3]             : AA19      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[5]             : AA20      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
+Sdram_DqInOut[3]             : AA19      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[5]             : AA20      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 Port1SmiMdio_DatInOut        : AA21      : bidir  : 3.3-V LVCMOS      :         : 5         : Y              
 Port1SmiMdc_ClkOut           : AA22      : output : 3.3-V LVCMOS      :         : 5         : Y              
 GND                          : AB1       : gnd    :                   :         :           :                
 VCCIO3                       : AB2       : power  :                   : 3.3V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :         : 3         :                
-Sdram_AddrOut[4]             : AB5       : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_AddrOut[5]             : AB6       : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_AddrOut[8]             : AB7       : output : 3.3-V LVCMOS      :         : 3         : Y              
+Sdram_AddrOut[4]             : AB5       : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_AddrOut[5]             : AB6       : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_AddrOut[8]             : AB7       : output : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 3         :                
 Led_DatOut[0]                : AB10      : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND+                         : AB11      :        :                   :         : 3         :                
 GND+                         : AB12      :        :                   :         : 4         :                
-Sdram_DqInOut[12]            : AB13      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[15]            : AB14      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[11]            : AB15      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[0]             : AB16      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
+Sdram_DqInOut[12]            : AB13      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[15]            : AB14      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[11]            : AB15      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[0]             : AB16      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : AB17      : gnd    :                   :         :           :                
-Sdram_DqInOut[4]             : AB18      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[6]             : AB19      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[7]             : AB20      : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
+Sdram_DqInOut[4]             : AB18      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[6]             : AB19      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[7]             : AB20      : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : AB21      : power  :                   : 3.3V    : 4         :                
 GND                          : AB22      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B1        :        :                   :         : 1         :                
@@ -490,10 +490,10 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : V1        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : V2        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V4        :        :                   :         : 2         :                
-Sdram_AddrOut[0]             : V5        : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_AddrOut[10]            : V6        : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_BaOut[1]               : V7        : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_RasNOut                : V8        : output : 3.3-V LVCMOS      :         : 3         : Y              
+Sdram_AddrOut[0]             : V5        : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_AddrOut[10]            : V6        : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_BaOut[1]               : V7        : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_RasNOut                : V8        : output : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : V9        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V10       :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : V11       :        :                   :         : 3         :                
@@ -513,14 +513,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : W2        :        :                   :      
 GND                          : W3        : gnd    :                   :         :           :                
 VCCIO2                       : W4        : power  :                   : 2.5V    : 2         :                
 VCCIO3                       : W5        : power  :                   : 3.3V    : 3         :                
-Sdram_AddrOut[2]             : W6        : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_CsNOut                 : W7        : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_WeNOut                 : W8        : output : 3.3-V LVCMOS      :         : 3         : Y              
+Sdram_AddrOut[2]             : W6        : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_CsNOut                 : W7        : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_WeNOut                 : W8        : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : W9        : power  :                   : 3.3V    : 3         :                
 Led_DatOut[4]                : W10       : output : 3.3-V LVCMOS      :         : 3         : Y              
 VCCIO3                       : W11       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : W12       : power  :                   : 3.3V    : 4         :                
-Sdram_DqmOut[1]              : W13       : output : 3.3-V LVCMOS      :         : 4         : Y              
+Sdram_DqmOut[1]              : W13       : output : 3.3-V LVTTL       :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : W14       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 4         :                
 VCCIO4                       : W16       : power  :                   : 3.3V    : 4         :                
@@ -532,21 +532,21 @@ Port1MiiRxDv_EnaIn           : W21       : input  : 3.3-V LVCMOS      :         
 Port1MiiRxData_DatIn[0]      : W22       : input  : 3.3-V LVCMOS      :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y1        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y2        :        :                   :         : 2         :                
-Sdram_AddrOut[1]             : Y3        : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_AddrOut[3]             : Y4        : output : 3.3-V LVCMOS      :         : 3         : Y              
+Sdram_AddrOut[1]             : Y3        : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_AddrOut[3]             : Y4        : output : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : Y5        : gnd    :                   :         :           :                
-Sdram_BaOut[0]               : Y6        : output : 3.3-V LVCMOS      :         : 3         : Y              
-Sdram_CasNOut                : Y7        : output : 3.3-V LVCMOS      :         : 3         : Y              
+Sdram_BaOut[0]               : Y6        : output : 3.3-V LVTTL       :         : 3         : Y              
+Sdram_CasNOut                : Y7        : output : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y8        :        :                   :         : 3         :                
 GND                          : Y9        : gnd    :                   :         :           :                
 Led_DatOut[3]                : Y10       : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND                          : Y11       : gnd    :                   :         :           :                
 GND                          : Y12       : gnd    :                   :         :           :                
-Sdram_DqInOut[8]             : Y13       : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqmOut[0]              : Y14       : output : 3.3-V LVCMOS      :         : 4         : Y              
-Sdram_DqInOut[9]             : Y15       : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
+Sdram_DqInOut[8]             : Y13       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqmOut[0]              : Y14       : output : 3.3-V LVTTL       :         : 4         : Y              
+Sdram_DqInOut[9]             : Y15       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : Y16       : gnd    :                   :         :           :                
-Sdram_DqInOut[1]             : Y17       : bidir  : 3.3-V LVCMOS      :         : 4         : Y              
+Sdram_DqInOut[1]             : Y17       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 GND                          : Y18       : gnd    :                   :         :           :                
 VCCIO5                       : Y19       : power  :                   : 3.3V    : 5         :                
 GND                          : Y20       : gnd    :                   :         :           :                

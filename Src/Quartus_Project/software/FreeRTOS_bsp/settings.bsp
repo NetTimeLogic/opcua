@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>freertos</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>26.02.2020 11:16:27</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1582712187002</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>28.02.2020 16:13:39</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1582902819331</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios.sopcinfo</SopcDesignFile>
@@ -1732,31 +1732,31 @@ configQUEUE_REGISTRY_SIZE defines the maximum number of queues and semaphores th
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>mem_0</slaveDescriptor>
-                <addressRange>0x02010000 - 0x0201FFFF</addressRange>
-                <addressSpan>65536</addressSpan>
+                <addressRange>0x02020000 - 0x0203FFFF</addressRange>
+                <addressSpan>131072</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>uart_0</slaveDescriptor>
-                <addressRange>0x02021000 - 0x0202101F</addressRange>
+                <addressRange>0x02041000 - 0x0204101F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>timer_0</slaveDescriptor>
-                <addressRange>0x02021020 - 0x0202103F</addressRange>
+                <addressRange>0x02041020 - 0x0204103F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>altpll_0</slaveDescriptor>
-                <addressRange>0x02021040 - 0x0202104F</addressRange>
+                <addressRange>0x02041040 - 0x0204104F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x02021050 - 0x02021057</addressRange>
+                <addressRange>0x02041050 - 0x02041057</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

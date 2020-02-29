@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'Nios'
  * SOPC Builder design path: ../../Nios.sopcinfo
  *
- * Generated: Wed Feb 26 10:41:16 CET 2020
+ * Generated: Wed Feb 26 14:47:35 CET 2020
  */
 
 /*
@@ -51,15 +51,15 @@
 MEMORY
 {
     tse_descriptor_memory_0 : ORIGIN = 0x0, LENGTH = 8192
-    sdram_controller_0 : ORIGIN = 0x1800000, LENGTH = 8388608
-    reset : ORIGIN = 0x2010000, LENGTH = 32
-    mem_0 : ORIGIN = 0x2010020, LENGTH = 65504
+    reset : ORIGIN = 0x1800000, LENGTH = 32
+    sdram_controller_0 : ORIGIN = 0x1800020, LENGTH = 8388576
+    mem_0 : ORIGIN = 0x2020000, LENGTH = 131072
 }
 
 /* Define symbols for each memory base-address */
 __alt_mem_tse_descriptor_memory_0 = 0x0;
 __alt_mem_sdram_controller_0 = 0x1800000;
-__alt_mem_mem_0 = 0x2010000;
+__alt_mem_mem_0 = 0x2020000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -95,7 +95,7 @@ SECTIONS
      *
      */
 
-    .exceptions : AT ( 0x1800000 )
+    .exceptions 0x1800020 : AT ( 0x1800020 )
     {
         PROVIDE (__ram_exceptions_start = ABSOLUTE(.));
         . = ALIGN(0x20);
@@ -122,7 +122,7 @@ SECTIONS
         KEEP (*(.exceptions.exit));
         KEEP (*(.exceptions));
         PROVIDE (__ram_exceptions_end = ABSOLUTE(.));
-    } > mem_0
+    } > sdram_controller_0
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
 

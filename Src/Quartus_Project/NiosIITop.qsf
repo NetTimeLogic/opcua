@@ -134,44 +134,44 @@ set_location_assignment PIN_W7 -to Sdram_CsNOut
 set_location_assignment PIN_Y14 -to Sdram_DqmOut[0]
 set_location_assignment PIN_W13 -to Sdram_DqmOut[1]
 set_location_assignment PIN_AA3 -to Sdram_ClkOut
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_CkenOut
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_RasNOut
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_WeNOut
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_ClkOut
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqmOut[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqmOut[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_BaOut[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_BaOut[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_CasNOut
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_CsNOut
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_DqInOut[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_CkenOut
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_RasNOut
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_WeNOut
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_ClkOut
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqmOut[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqmOut[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_BaOut[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_BaOut[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_CasNOut
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_CsNOut
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[4]
 
 #eth0
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Port1MiiTxEn_EnaOut
@@ -224,4 +224,5 @@ set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
 set_global_assignment -name SDC_FILE TimingConstraint.sdc
 set_global_assignment -name QSYS_FILE Nios.qsys
 set_global_assignment -name VHDL_FILE NiosIITop.vhd
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

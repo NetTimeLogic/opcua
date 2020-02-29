@@ -30,7 +30,7 @@
 #include <arch/cc.h>
 
 #define THREAD_STACKSIZE 4096
-#define mssleep(x)						usleep((x) * 1000)
+#define mssleep(x)						vTaskDelay(x)
 #define MDIO_IFACE						mdio1
 
 #define LWIP_DEBUG 1
@@ -186,15 +186,17 @@ void xEthernetRun()
     		THREAD_STACKSIZE,
             DEFAULT_THREAD_PRIO);*/
 
-	IP4_ADDR(&PingIp, 192, 168, 1, 100);
-	for (;;) {
+	struct netif* ethif;
+	ethif = get_netif(0);
 
-        lwip_ping_target(PingIp.addr, 1, 0, 100);
+	IP4_ADDR(&PingIp, 192, 168, 1, 100);
+	while(1) {
+
+        //lwip_ping_target(PingIp.addr, 1, 0, 100);
 		// sleep for 1 second
 		//lwip_ping_target(PingIp.addr, 10, 0, 100);
-		alt_printf("Rx Count: %d \r\n", ethernetif_input((struct netif*)get_netif(0)));
-
-        mssleep(1000);
+        ethernetif_input(ethif);
+        vTaskDelay(10);
 	}
 
 
