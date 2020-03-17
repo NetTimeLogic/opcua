@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>freertos</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>28.02.2020 16:13:39</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1582902819331</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>17.03.2020 14:57:30</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1584453450795</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios.sopcinfo</SopcDesignFile>
@@ -146,7 +146,7 @@
                 <SettingName>hal.linker.exception_stack_memory_region_name</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>mem_0</Value>
+                <Value>sdram_controller_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Name of the existing memory region that will be divided up to create the 'exception_stack' memory region. The selected region name will be adjusted automatically when the BSP is generated to create the 'exception_stack' memory region.</Description>
@@ -182,7 +182,7 @@
                 <SettingName>hal.linker.interrupt_stack_memory_region_name</SettingName>
                 <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>mem_0</Value>
+                <Value>sdram_controller_0</Value>
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Name of the existing memory region that will be divided up to create the 'interrupt_stack' memory region. The selected region name will be adjusted automatically when the BSP is generated to create the 'interrupt_stack' memory region.</Description>
@@ -1030,7 +1030,7 @@ Each available priority consumes RAM within the kernel so this value should not 
                 <SettingName>freertos.memory.check_for_stack_overflow</SettingName>
                 <Identifier>OS_CHECK_FOR_STACK_OVERFLOW</Identifier>
                 <Type>DecimalNumber</Type>
-                <Value>2</Value>
+                <Value>0</Value>
                 <DefaultValue>2</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Stack Overflow Detection - Method 1
@@ -1701,62 +1701,62 @@ configQUEUE_REGISTRY_SIZE defines the maximum number of queues and semaphores th
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <MemoryMap>
+                <slaveDescriptor>sdram_controller_0</slaveDescriptor>
+                <addressRange>0x02000000 - 0x03FFFFFF</addressRange>
+                <addressSpan>33554432</addressSpan>
+                <attributes>memory</attributes>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>tse_descriptor_memory_0</slaveDescriptor>
-                <addressRange>0x00000000 - 0x00001FFF</addressRange>
+                <addressRange>0x04000000 - 0x04001FFF</addressRange>
                 <addressSpan>8192</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>tse_mac_0</slaveDescriptor>
-                <addressRange>0x00002000 - 0x000023FF</addressRange>
+                <addressRange>0x04002000 - 0x040023FF</addressRange>
                 <addressSpan>1024</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sgdma_tse_rx_0</slaveDescriptor>
-                <addressRange>0x00002400 - 0x0000243F</addressRange>
+                <addressRange>0x04002400 - 0x0400243F</addressRange>
                 <addressSpan>64</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sgdma_tse_tx_0</slaveDescriptor>
-                <addressRange>0x00002440 - 0x0000247F</addressRange>
+                <addressRange>0x04002440 - 0x0400247F</addressRange>
                 <addressSpan>64</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sdram_controller_0</slaveDescriptor>
-                <addressRange>0x01800000 - 0x01FFFFFF</addressRange>
-                <addressSpan>8388608</addressSpan>
-                <attributes>memory</attributes>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>mem_0</slaveDescriptor>
-                <addressRange>0x02020000 - 0x0203FFFF</addressRange>
+                <addressRange>0x05020000 - 0x0503FFFF</addressRange>
                 <addressSpan>131072</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>uart_0</slaveDescriptor>
-                <addressRange>0x02041000 - 0x0204101F</addressRange>
+                <addressRange>0x05041000 - 0x0504101F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>timer_0</slaveDescriptor>
-                <addressRange>0x02041020 - 0x0204103F</addressRange>
+                <addressRange>0x05041020 - 0x0504103F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>altpll_0</slaveDescriptor>
-                <addressRange>0x02041040 - 0x0204104F</addressRange>
+                <addressRange>0x05041040 - 0x0504104F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x02041050 - 0x02041057</addressRange>
+                <addressRange>0x05041050 - 0x05041057</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

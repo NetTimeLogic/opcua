@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'Nios'
  * SOPC Builder design path: ../../Nios.sopcinfo
  *
- * Generated: Wed Feb 26 14:47:35 CET 2020
+ * Generated: Fri Mar 13 11:31:32 CET 2020
  */
 
 /*
@@ -50,16 +50,16 @@
 
 MEMORY
 {
-    tse_descriptor_memory_0 : ORIGIN = 0x0, LENGTH = 8192
-    reset : ORIGIN = 0x1800000, LENGTH = 32
-    sdram_controller_0 : ORIGIN = 0x1800020, LENGTH = 8388576
-    mem_0 : ORIGIN = 0x2020000, LENGTH = 131072
+    reset : ORIGIN = 0x2000000, LENGTH = 32
+    sdram_controller_0 : ORIGIN = 0x2000020, LENGTH = 33554400
+    tse_descriptor_memory_0 : ORIGIN = 0x4000000, LENGTH = 8192
+    mem_0 : ORIGIN = 0x5020000, LENGTH = 131072
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_tse_descriptor_memory_0 = 0x0;
-__alt_mem_sdram_controller_0 = 0x1800000;
-__alt_mem_mem_0 = 0x2020000;
+__alt_mem_sdram_controller_0 = 0x2000000;
+__alt_mem_tse_descriptor_memory_0 = 0x4000000;
+__alt_mem_mem_0 = 0x5020000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -95,7 +95,7 @@ SECTIONS
      *
      */
 
-    .exceptions 0x1800020 : AT ( 0x1800020 )
+    .exceptions 0x2000020 : AT ( 0x2000020 )
     {
         PROVIDE (__ram_exceptions_start = ABSOLUTE(.));
         . = ALIGN(0x20);
@@ -332,24 +332,7 @@ SECTIONS
      *
      */
 
-    .tse_descriptor_memory_0 : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
-    {
-        PROVIDE (_alt_partition_tse_descriptor_memory_0_start = ABSOLUTE(.));
-        *(.tse_descriptor_memory_0 .tse_descriptor_memory_0. tse_descriptor_memory_0.*)
-        . = ALIGN(4);
-        PROVIDE (_alt_partition_tse_descriptor_memory_0_end = ABSOLUTE(.));
-    } > tse_descriptor_memory_0
-
-    PROVIDE (_alt_partition_tse_descriptor_memory_0_load_addr = LOADADDR(.tse_descriptor_memory_0));
-
-    /*
-     *
-     * This section's LMA is set to the .text region.
-     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
-     *
-     */
-
-    .sdram_controller_0 LOADADDR (.tse_descriptor_memory_0) + SIZEOF (.tse_descriptor_memory_0) : AT ( LOADADDR (.tse_descriptor_memory_0) + SIZEOF (.tse_descriptor_memory_0) )
+    .sdram_controller_0 LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
         PROVIDE (_alt_partition_sdram_controller_0_start = ABSOLUTE(.));
         *(.sdram_controller_0 .sdram_controller_0. sdram_controller_0.*)
@@ -369,7 +352,24 @@ SECTIONS
      *
      */
 
-    .mem_0 : AT ( LOADADDR (.sdram_controller_0) + SIZEOF (.sdram_controller_0) )
+    .tse_descriptor_memory_0 : AT ( LOADADDR (.sdram_controller_0) + SIZEOF (.sdram_controller_0) )
+    {
+        PROVIDE (_alt_partition_tse_descriptor_memory_0_start = ABSOLUTE(.));
+        *(.tse_descriptor_memory_0 .tse_descriptor_memory_0. tse_descriptor_memory_0.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_tse_descriptor_memory_0_end = ABSOLUTE(.));
+    } > tse_descriptor_memory_0
+
+    PROVIDE (_alt_partition_tse_descriptor_memory_0_load_addr = LOADADDR(.tse_descriptor_memory_0));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .mem_0 : AT ( LOADADDR (.tse_descriptor_memory_0) + SIZEOF (.tse_descriptor_memory_0) )
     {
         PROVIDE (_alt_partition_mem_0_start = ABSOLUTE(.));
         *(.mem_0 .mem_0. mem_0.*)
@@ -426,7 +426,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x2000000;
+__alt_data_end = 0x4000000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -442,4 +442,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x2000000 );
+PROVIDE( __alt_heap_limit    = 0x4000000 );

@@ -283,7 +283,7 @@ int main_thread(){
     alt_printf("--------- contact@nettimelogic.com           ---------\r\n");
     alt_printf("------------------------------------------------------\r\n");
 
-	xTaskCreate(xEthernetRun, "eth0", KB(4), NULL, tskIDLE_PRIORITY + 2, NULL);
+	//xTaskCreate(xEthernetRun, "eth0", KB(4), NULL, tskIDLE_PRIORITY + 2, NULL);
 
 	sys_thread_new("NetworkInit", xEthernetRun, NULL,
     		THREAD_STACKSIZE,
@@ -291,7 +291,7 @@ int main_thread(){
 
 
 
-    vTaskStartScheduler();
+    //vTaskStartScheduler();
     while(1);
     return 0;
 }

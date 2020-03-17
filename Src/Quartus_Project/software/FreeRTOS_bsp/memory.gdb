@@ -3,7 +3,7 @@
 # Machine generated for CPU 'cpu_0' in SOPC Builder design 'Nios'
 # SOPC Builder design path: ../../Nios.sopcinfo
 #
-# Generated: Wed Feb 26 14:47:35 CET 2020
+# Generated: Fri Mar 13 11:31:32 CET 2020
 
 # DO NOT MODIFY THIS FILE
 #
@@ -46,11 +46,11 @@
 # The cache attribute is specified which improves GDB performance
 # by allowing GDB to cache memory contents on the host.
 
-# tse_descriptor_memory_0
-memory 0x0 0x2000 cache
-
 # sdram_controller_0
-memory 0x1800000 0x2000000 cache
+memory 0x2000000 0x4000000 cache
+
+# tse_descriptor_memory_0
+memory 0x4000000 0x4002000 cache
 
 # mem_0
-memory 0x2020000 0x2040000 cache
+memory 0x5020000 0x5040000 cache
