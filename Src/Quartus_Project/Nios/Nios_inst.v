@@ -1,6 +1,5 @@
 	Nios u0 (
 		.clk_clk                                   (<connected-to-clk_clk>),                                   //                                 clk.clk
-		.clk_300_clk                               (<connected-to-clk_300_clk>),                               //                             clk_300.clk
 		.clk_sdram_clk                             (<connected-to-clk_sdram_clk>),                             //                           clk_sdram.clk
 		.locked_export                             (<connected-to-locked_export>),                             //                              locked.export
 		.reset_reset_n                             (<connected-to-reset_reset_n>),                             //                               reset.reset_n

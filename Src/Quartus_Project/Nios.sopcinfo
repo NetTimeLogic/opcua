@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="Nios" kind="Nios" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2020.02.28.16:08:57 -->
+ <!-- 2020.03.17.10:59:37 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1582902537</value>
+  <value>1584439176</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -416,7 +416,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="CLK0_MULTIPLY_BY">
    <type>java.lang.String</type>
-   <value>2</value>
+   <value>4</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -424,7 +424,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="CLK1_MULTIPLY_BY">
    <type>java.lang.String</type>
-   <value>2</value>
+   <value>4</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -440,7 +440,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="CLK3_MULTIPLY_BY">
    <type>java.lang.String</type>
-   <value></value>
+   <value>2</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -552,7 +552,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="CLK3_DIVIDE_BY">
    <type>java.lang.String</type>
-   <value></value>
+   <value>1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -648,7 +648,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="CLK1_PHASE_SHIFT">
    <type>java.lang.String</type>
-   <value>-800</value>
+   <value>-1500</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -664,7 +664,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="CLK3_PHASE_SHIFT">
    <type>java.lang.String</type>
-   <value></value>
+   <value>0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -776,7 +776,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="CLK3_DUTY_CYCLE">
    <type>java.lang.String</type>
-   <value></value>
+   <value>50</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1008,7 +1008,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="PORT_clk2">
    <type>java.lang.String</type>
-   <value>PORT_USED</value>
+   <value>PORT_UNUSED</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1408,7 +1408,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="HIDDEN_CONSTANTS">
    <type>java.lang.String</type>
-   <value>CT#CLK2_DIVIDE_BY 1 CT#PORT_clk5 PORT_UNUSED CT#PORT_clk4 PORT_UNUSED CT#PORT_clk3 PORT_UNUSED CT#PORT_clk2 PORT_USED CT#PORT_clk1 PORT_USED CT#PORT_clk0 PORT_USED CT#CLK0_MULTIPLY_BY 2 CT#PORT_SCANWRITE PORT_UNUSED CT#PORT_SCANACLR PORT_UNUSED CT#PORT_PFDENA PORT_UNUSED CT#PORT_PLLENA PORT_UNUSED CT#PORT_SCANDATA PORT_UNUSED CT#PORT_SCANCLKENA PORT_UNUSED CT#WIDTH_CLOCK 5 CT#PORT_SCANDATAOUT PORT_UNUSED CT#LPM_TYPE altpll CT#PLL_TYPE AUTO CT#CLK0_PHASE_SHIFT 0 CT#CLK1_DUTY_CYCLE 50 CT#PORT_PHASEDONE PORT_UNUSED CT#OPERATION_MODE NORMAL CT#PORT_CONFIGUPDATE PORT_UNUSED CT#CLK1_MULTIPLY_BY 2 CT#COMPENSATE_CLOCK CLK0 CT#PORT_CLKSWITCH PORT_UNUSED CT#INCLK0_INPUT_FREQUENCY 40000 CT#PORT_SCANDONE PORT_UNUSED CT#PORT_CLKLOSS PORT_UNUSED CT#PORT_INCLK1 PORT_UNUSED CT#AVALON_USE_SEPARATE_SYSCLK NO CT#PORT_INCLK0 PORT_USED CT#PORT_clkena5 PORT_UNUSED CT#PORT_clkena4 PORT_UNUSED CT#PORT_clkena3 PORT_UNUSED CT#PORT_clkena2 PORT_UNUSED CT#PORT_clkena1 PORT_UNUSED CT#PORT_clkena0 PORT_UNUSED CT#CLK1_PHASE_SHIFT -800 CT#PORT_ARESET PORT_UNUSED CT#BANDWIDTH_TYPE AUTO CT#CLK2_MULTIPLY_BY 12 CT#INTENDED_DEVICE_FAMILY {Cyclone 10 LP} CT#PORT_SCANREAD PORT_UNUSED CT#CLK2_DUTY_CYCLE 50 CT#PORT_PHASESTEP PORT_UNUSED CT#PORT_SCANCLK PORT_UNUSED CT#PORT_CLKBAD1 PORT_UNUSED CT#PORT_CLKBAD0 PORT_UNUSED CT#PORT_FBIN PORT_UNUSED CT#PORT_PHASEUPDOWN PORT_UNUSED CT#PORT_extclk3 PORT_UNUSED CT#PORT_extclk2 PORT_UNUSED CT#PORT_extclk1 PORT_UNUSED CT#PORT_PHASECOUNTERSELECT PORT_UNUSED CT#PORT_extclk0 PORT_UNUSED CT#PORT_ACTIVECLOCK PORT_UNUSED CT#CLK2_PHASE_SHIFT 0 CT#CLK0_DUTY_CYCLE 50 CT#CLK0_DIVIDE_BY 1 CT#CLK1_DIVIDE_BY 1 CT#PORT_LOCKED PORT_USED</value>
+   <value>CT#CLK2_DIVIDE_BY 1 CT#PORT_clk5 PORT_UNUSED CT#PORT_clk4 PORT_UNUSED CT#PORT_clk3 PORT_UNUSED CT#PORT_clk2 PORT_UNUSED CT#PORT_clk1 PORT_USED CT#PORT_clk0 PORT_USED CT#CLK0_MULTIPLY_BY 4 CT#PORT_SCANWRITE PORT_UNUSED CT#PORT_SCANACLR PORT_UNUSED CT#PORT_PFDENA PORT_UNUSED CT#CLK3_DUTY_CYCLE 50 CT#CLK3_DIVIDE_BY 1 CT#PORT_PLLENA PORT_UNUSED CT#PORT_SCANDATA PORT_UNUSED CT#CLK3_PHASE_SHIFT 0 CT#PORT_SCANCLKENA PORT_UNUSED CT#WIDTH_CLOCK 5 CT#PORT_SCANDATAOUT PORT_UNUSED CT#LPM_TYPE altpll CT#PLL_TYPE AUTO CT#CLK0_PHASE_SHIFT 0 CT#CLK1_DUTY_CYCLE 50 CT#PORT_PHASEDONE PORT_UNUSED CT#OPERATION_MODE NORMAL CT#PORT_CONFIGUPDATE PORT_UNUSED CT#CLK1_MULTIPLY_BY 4 CT#COMPENSATE_CLOCK CLK0 CT#PORT_CLKSWITCH PORT_UNUSED CT#INCLK0_INPUT_FREQUENCY 40000 CT#PORT_SCANDONE PORT_UNUSED CT#PORT_CLKLOSS PORT_UNUSED CT#PORT_INCLK1 PORT_UNUSED CT#AVALON_USE_SEPARATE_SYSCLK NO CT#PORT_INCLK0 PORT_USED CT#PORT_clkena5 PORT_UNUSED CT#PORT_clkena4 PORT_UNUSED CT#PORT_clkena3 PORT_UNUSED CT#PORT_clkena2 PORT_UNUSED CT#PORT_clkena1 PORT_UNUSED CT#PORT_clkena0 PORT_UNUSED CT#CLK1_PHASE_SHIFT -1500 CT#PORT_ARESET PORT_UNUSED CT#BANDWIDTH_TYPE AUTO CT#CLK2_MULTIPLY_BY 12 CT#INTENDED_DEVICE_FAMILY {Cyclone 10 LP} CT#PORT_SCANREAD PORT_UNUSED CT#CLK2_DUTY_CYCLE 50 CT#PORT_PHASESTEP PORT_UNUSED CT#PORT_SCANCLK PORT_UNUSED CT#PORT_CLKBAD1 PORT_UNUSED CT#PORT_CLKBAD0 PORT_UNUSED CT#PORT_FBIN PORT_UNUSED CT#PORT_PHASEUPDOWN PORT_UNUSED CT#PORT_extclk3 PORT_UNUSED CT#PORT_extclk2 PORT_UNUSED CT#PORT_extclk1 PORT_UNUSED CT#PORT_PHASECOUNTERSELECT PORT_UNUSED CT#PORT_extclk0 PORT_UNUSED CT#PORT_ACTIVECLOCK PORT_UNUSED CT#CLK2_PHASE_SHIFT 0 CT#CLK0_DUTY_CYCLE 50 CT#CLK0_DIVIDE_BY 1 CT#CLK1_DIVIDE_BY 1 CT#CLK3_MULTIPLY_BY 2 CT#PORT_LOCKED PORT_USED</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1416,7 +1416,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="HIDDEN_PRIVATES">
    <type>java.lang.String</type>
-   <value>PT#GLOCKED_FEATURE_ENABLED 0 PT#SPREAD_FEATURE_ENABLED 0 PT#BANDWIDTH_FREQ_UNIT MHz PT#CUR_DEDICATED_CLK c0 PT#INCLK0_FREQ_EDIT 25.000 PT#BANDWIDTH_PRESET Low PT#PLL_LVDS_PLL_CHECK 0 PT#BANDWIDTH_USE_PRESET 0 PT#AVALON_USE_SEPARATE_SYSCLK NO PT#PLL_ENHPLL_CHECK 0 PT#OUTPUT_FREQ_UNIT2 MHz PT#OUTPUT_FREQ_UNIT1 MHz PT#OUTPUT_FREQ_UNIT0 MHz PT#PHASE_RECONFIG_FEATURE_ENABLED 1 PT#CREATE_CLKBAD_CHECK 0 PT#CLKSWITCH_CHECK 0 PT#INCLK1_FREQ_EDIT 100.000 PT#NORMAL_MODE_RADIO 1 PT#SRC_SYNCH_COMP_RADIO 0 PT#PLL_ARESET_CHECK 0 PT#LONG_SCAN_RADIO 1 PT#SCAN_FEATURE_ENABLED 1 PT#USE_CLK2 1 PT#PHASE_RECONFIG_INPUTS_CHECK 0 PT#USE_CLK1 1 PT#USE_CLK0 1 PT#PRIMARY_CLK_COMBO inclk0 PT#BANDWIDTH 1.000 PT#GLOCKED_COUNTER_EDIT_CHANGED 1 PT#PLL_FASTPLL_CHECK 0 PT#SPREAD_FREQ_UNIT KHz PT#PLL_AUTOPLL_CHECK 1 PT#LVDS_PHASE_SHIFT_UNIT2 deg PT#LVDS_PHASE_SHIFT_UNIT1 deg PT#OUTPUT_FREQ_MODE2 1 PT#LVDS_PHASE_SHIFT_UNIT0 deg PT#OUTPUT_FREQ_MODE1 1 PT#SWITCHOVER_FEATURE_ENABLED 0 PT#MIG_DEVICE_SPEED_GRADE Any PT#OUTPUT_FREQ_MODE0 1 PT#BANDWIDTH_FEATURE_ENABLED 1 PT#INCLK0_FREQ_UNIT_COMBO MHz PT#ZERO_DELAY_RADIO 0 PT#OUTPUT_FREQ2 300.00000000 PT#OUTPUT_FREQ1 50.00000000 PT#OUTPUT_FREQ0 50.00000000 PT#SHORT_SCAN_RADIO 0 PT#LVDS_MODE_DATA_RATE_DIRTY 0 PT#CUR_FBIN_CLK c0 PT#PLL_ADVANCED_PARAM_CHECK 0 PT#CLKBAD_SWITCHOVER_CHECK 0 PT#PHASE_SHIFT_STEP_ENABLED_CHECK 0 PT#DEVICE_SPEED_GRADE Any PT#PLL_FBMIMIC_CHECK 0 PT#LVDS_MODE_DATA_RATE {Not Available} PT#LOCKED_OUTPUT_CHECK 1 PT#SPREAD_PERCENT 0.500 PT#PHASE_SHIFT2 0.00000000 PT#PHASE_SHIFT1 -0.80000000 PT#DIV_FACTOR2 1 PT#PHASE_SHIFT0 0.00000000 PT#DIV_FACTOR1 1 PT#DIV_FACTOR0 1 PT#CNX_NO_COMPENSATE_RADIO 0 PT#USE_CLKENA2 0 PT#USE_CLKENA1 0 PT#USE_CLKENA0 0 PT#CREATE_INCLK1_CHECK 0 PT#GLOCK_COUNTER_EDIT 1048575 PT#INCLK1_FREQ_UNIT_COMBO MHz PT#EFF_OUTPUT_FREQ_VALUE2 300.000000 PT#EFF_OUTPUT_FREQ_VALUE1 50.000000 PT#EFF_OUTPUT_FREQ_VALUE0 50.000000 PT#SPREAD_FREQ 50.000 PT#USE_MIL_SPEED_GRADE 0 PT#EXPLICIT_SWITCHOVER_COUNTER 0 PT#STICKY_CLK2 1 PT#STICKY_CLK1 1 PT#STICKY_CLK0 1 PT#EXT_FEEDBACK_RADIO 0 PT#MIRROR_CLK2 0 PT#MIRROR_CLK1 0 PT#SWITCHOVER_COUNT_EDIT 1 PT#MIRROR_CLK0 0 PT#SELF_RESET_LOCK_LOSS 0 PT#PLL_PFDENA_CHECK 0 PT#INT_FEEDBACK__MODE_RADIO 1 PT#INCLK1_FREQ_EDIT_CHANGED 1 PT#SYNTH_WRAPPER_GEN_POSTFIX 0 PT#CLKLOSS_CHECK 0 PT#PHASE_SHIFT_UNIT2 deg PT#PHASE_SHIFT_UNIT1 ns PT#PHASE_SHIFT_UNIT0 deg PT#BANDWIDTH_USE_AUTO 1 PT#HAS_MANUAL_SWITCHOVER 1 PT#MULT_FACTOR2 1 PT#MULT_FACTOR1 1 PT#MULT_FACTOR0 1 PT#SPREAD_USE 0 PT#GLOCKED_MODE_CHECK 0 PT#DUTY_CYCLE2 50.00000000 PT#SACN_INPUTS_CHECK 0 PT#DUTY_CYCLE1 50.00000000 PT#INTENDED_DEVICE_FAMILY {Cyclone 10 LP} PT#DUTY_CYCLE0 50.00000000 PT#PLL_TARGET_HARCOPY_CHECK 0 PT#INCLK1_FREQ_UNIT_CHANGED 1 PT#RECONFIG_FILE ALTPLL1581496642162401.mif PT#ACTIVECLK_CHECK 0</value>
+   <value>PT#GLOCKED_FEATURE_ENABLED 0 PT#SPREAD_FEATURE_ENABLED 0 PT#BANDWIDTH_FREQ_UNIT MHz PT#CUR_DEDICATED_CLK c0 PT#INCLK0_FREQ_EDIT 25.000 PT#BANDWIDTH_PRESET Low PT#PLL_LVDS_PLL_CHECK 0 PT#BANDWIDTH_USE_PRESET 0 PT#AVALON_USE_SEPARATE_SYSCLK NO PT#OUTPUT_FREQ_UNIT3 MHz PT#PLL_ENHPLL_CHECK 0 PT#OUTPUT_FREQ_UNIT2 MHz PT#OUTPUT_FREQ_UNIT1 MHz PT#OUTPUT_FREQ_UNIT0 MHz PT#PHASE_RECONFIG_FEATURE_ENABLED 1 PT#CREATE_CLKBAD_CHECK 0 PT#CLKSWITCH_CHECK 0 PT#INCLK1_FREQ_EDIT 100.000 PT#NORMAL_MODE_RADIO 1 PT#SRC_SYNCH_COMP_RADIO 0 PT#PLL_ARESET_CHECK 0 PT#LONG_SCAN_RADIO 1 PT#SCAN_FEATURE_ENABLED 1 PT#USE_CLK3 1 PT#USE_CLK2 1 PT#PHASE_RECONFIG_INPUTS_CHECK 0 PT#USE_CLK1 1 PT#USE_CLK0 1 PT#PRIMARY_CLK_COMBO inclk0 PT#BANDWIDTH 1.000 PT#GLOCKED_COUNTER_EDIT_CHANGED 1 PT#PLL_FASTPLL_CHECK 0 PT#SPREAD_FREQ_UNIT KHz PT#LVDS_PHASE_SHIFT_UNIT3 deg PT#PLL_AUTOPLL_CHECK 1 PT#LVDS_PHASE_SHIFT_UNIT2 deg PT#OUTPUT_FREQ_MODE3 1 PT#LVDS_PHASE_SHIFT_UNIT1 deg PT#OUTPUT_FREQ_MODE2 1 PT#LVDS_PHASE_SHIFT_UNIT0 deg PT#OUTPUT_FREQ_MODE1 1 PT#SWITCHOVER_FEATURE_ENABLED 0 PT#MIG_DEVICE_SPEED_GRADE Any PT#OUTPUT_FREQ_MODE0 1 PT#BANDWIDTH_FEATURE_ENABLED 1 PT#INCLK0_FREQ_UNIT_COMBO MHz PT#ZERO_DELAY_RADIO 0 PT#OUTPUT_FREQ3 50.00000000 PT#OUTPUT_FREQ2 300.00000000 PT#OUTPUT_FREQ1 100.00000000 PT#OUTPUT_FREQ0 100.00000000 PT#SHORT_SCAN_RADIO 0 PT#LVDS_MODE_DATA_RATE_DIRTY 0 PT#CUR_FBIN_CLK c0 PT#PLL_ADVANCED_PARAM_CHECK 0 PT#CLKBAD_SWITCHOVER_CHECK 0 PT#PHASE_SHIFT_STEP_ENABLED_CHECK 0 PT#DEVICE_SPEED_GRADE Any PT#PLL_FBMIMIC_CHECK 0 PT#LVDS_MODE_DATA_RATE {Not Available} PT#LOCKED_OUTPUT_CHECK 1 PT#SPREAD_PERCENT 0.500 PT#PHASE_SHIFT3 0.00000000 PT#PHASE_SHIFT2 0.00000000 PT#DIV_FACTOR3 1 PT#PHASE_SHIFT1 -54.00000000 PT#DIV_FACTOR2 1 PT#PHASE_SHIFT0 0.00000000 PT#DIV_FACTOR1 1 PT#DIV_FACTOR0 1 PT#CNX_NO_COMPENSATE_RADIO 0 PT#USE_CLKENA3 0 PT#USE_CLKENA2 0 PT#USE_CLKENA1 0 PT#USE_CLKENA0 0 PT#CREATE_INCLK1_CHECK 0 PT#GLOCK_COUNTER_EDIT 1048575 PT#INCLK1_FREQ_UNIT_COMBO MHz PT#EFF_OUTPUT_FREQ_VALUE3 50.000000 PT#EFF_OUTPUT_FREQ_VALUE2 300.000000 PT#EFF_OUTPUT_FREQ_VALUE1 100.000000 PT#EFF_OUTPUT_FREQ_VALUE0 100.000000 PT#SPREAD_FREQ 50.000 PT#USE_MIL_SPEED_GRADE 0 PT#EXPLICIT_SWITCHOVER_COUNTER 0 PT#STICKY_CLK3 1 PT#STICKY_CLK2 1 PT#STICKY_CLK1 1 PT#STICKY_CLK0 1 PT#EXT_FEEDBACK_RADIO 0 PT#MIRROR_CLK3 0 PT#MIRROR_CLK2 0 PT#MIRROR_CLK1 0 PT#SWITCHOVER_COUNT_EDIT 1 PT#MIRROR_CLK0 0 PT#SELF_RESET_LOCK_LOSS 0 PT#PLL_PFDENA_CHECK 0 PT#INT_FEEDBACK__MODE_RADIO 1 PT#INCLK1_FREQ_EDIT_CHANGED 1 PT#SYNTH_WRAPPER_GEN_POSTFIX 0 PT#CLKLOSS_CHECK 0 PT#PHASE_SHIFT_UNIT3 deg PT#PHASE_SHIFT_UNIT2 deg PT#PHASE_SHIFT_UNIT1 deg PT#PHASE_SHIFT_UNIT0 deg PT#BANDWIDTH_USE_AUTO 1 PT#HAS_MANUAL_SWITCHOVER 1 PT#MULT_FACTOR3 1 PT#MULT_FACTOR2 1 PT#MULT_FACTOR1 1 PT#MULT_FACTOR0 1 PT#SPREAD_USE 0 PT#GLOCKED_MODE_CHECK 0 PT#DUTY_CYCLE3 50.00000000 PT#DUTY_CYCLE2 50.00000000 PT#SACN_INPUTS_CHECK 0 PT#DUTY_CYCLE1 50.00000000 PT#INTENDED_DEVICE_FAMILY {Cyclone 10 LP} PT#DUTY_CYCLE0 50.00000000 PT#PLL_TARGET_HARCOPY_CHECK 0 PT#INCLK1_FREQ_UNIT_CHANGED 1 PT#RECONFIG_FILE ALTPLL1581496642162401.mif PT#ACTIVECLK_CHECK 0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1424,7 +1424,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="HIDDEN_USED_PORTS">
    <type>java.lang.String</type>
-   <value>UP#locked used UP#c2 used UP#c1 used UP#c0 used UP#areset used UP#inclk0 used</value>
+   <value>UP#locked used UP#c3 used UP#c2 used UP#c1 used UP#c0 used UP#areset used UP#inclk0 used</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1432,7 +1432,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="HIDDEN_IS_NUMERIC">
    <type>java.lang.String</type>
-   <value>IN#WIDTH_CLOCK 1 IN#CLK0_DUTY_CYCLE 1 IN#CLK2_DIVIDE_BY 1 IN#PLL_TARGET_HARCOPY_CHECK 1 IN#CLK1_MULTIPLY_BY 1 IN#SWITCHOVER_COUNT_EDIT 1 IN#INCLK0_INPUT_FREQUENCY 1 IN#PLL_LVDS_PLL_CHECK 1 IN#PLL_AUTOPLL_CHECK 1 IN#PLL_FASTPLL_CHECK 1 IN#CLK1_DUTY_CYCLE 1 IN#PLL_ENHPLL_CHECK 1 IN#CLK2_MULTIPLY_BY 1 IN#DIV_FACTOR2 1 IN#DIV_FACTOR1 1 IN#DIV_FACTOR0 1 IN#LVDS_MODE_DATA_RATE_DIRTY 1 IN#GLOCK_COUNTER_EDIT 1 IN#CLK2_DUTY_CYCLE 1 IN#CLK0_DIVIDE_BY 1 IN#MULT_FACTOR2 1 IN#MULT_FACTOR1 1 IN#MULT_FACTOR0 1 IN#CLK0_MULTIPLY_BY 1 IN#USE_MIL_SPEED_GRADE 1 IN#CLK1_DIVIDE_BY 1</value>
+   <value>IN#WIDTH_CLOCK 1 IN#CLK0_DUTY_CYCLE 1 IN#CLK2_DIVIDE_BY 1 IN#PLL_TARGET_HARCOPY_CHECK 1 IN#CLK3_DIVIDE_BY 1 IN#CLK1_MULTIPLY_BY 1 IN#CLK3_DUTY_CYCLE 1 IN#SWITCHOVER_COUNT_EDIT 1 IN#INCLK0_INPUT_FREQUENCY 1 IN#PLL_LVDS_PLL_CHECK 1 IN#PLL_AUTOPLL_CHECK 1 IN#PLL_FASTPLL_CHECK 1 IN#CLK1_DUTY_CYCLE 1 IN#PLL_ENHPLL_CHECK 1 IN#CLK2_MULTIPLY_BY 1 IN#DIV_FACTOR3 1 IN#DIV_FACTOR2 1 IN#DIV_FACTOR1 1 IN#DIV_FACTOR0 1 IN#LVDS_MODE_DATA_RATE_DIRTY 1 IN#GLOCK_COUNTER_EDIT 1 IN#CLK2_DUTY_CYCLE 1 IN#CLK0_DIVIDE_BY 1 IN#CLK3_MULTIPLY_BY 1 IN#MULT_FACTOR3 1 IN#MULT_FACTOR2 1 IN#MULT_FACTOR1 1 IN#MULT_FACTOR0 1 IN#CLK0_MULTIPLY_BY 1 IN#USE_MIL_SPEED_GRADE 1 IN#CLK1_DIVIDE_BY 1</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1448,7 +1448,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="HIDDEN_IF_PORTS">
    <type>java.lang.String</type>
-   <value>IF#phasecounterselect {input 4} IF#locked {output 0} IF#reset {input 0} IF#clk {input 0} IF#phaseupdown {input 0} IF#scandone {output 0} IF#readdata {output 32} IF#write {input 0} IF#scanclk {input 0} IF#phasedone {output 0} IF#address {input 2} IF#c2 {output 0} IF#c1 {output 0} IF#c0 {output 0} IF#writedata {input 32} IF#read {input 0} IF#areset {input 0} IF#scanclkena {input 0} IF#scandataout {output 0} IF#configupdate {input 0} IF#phasestep {input 0} IF#scandata {input 0}</value>
+   <value>IF#phasecounterselect {input 4} IF#locked {output 0} IF#reset {input 0} IF#clk {input 0} IF#phaseupdown {input 0} IF#scandone {output 0} IF#readdata {output 32} IF#write {input 0} IF#scanclk {input 0} IF#phasedone {output 0} IF#c3 {output 0} IF#address {input 2} IF#c2 {output 0} IF#c1 {output 0} IF#c0 {output 0} IF#writedata {input 32} IF#read {input 0} IF#areset {input 0} IF#scanclkena {input 0} IF#scandataout {output 0} IF#configupdate {input 0} IF#phasestep {input 0} IF#scandata {input 0}</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1979,7 +1979,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -2150,7 +2150,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -2205,75 +2205,6 @@ parameters are a RESULT of the module parameters. -->
     <role>clk</role>
    </port>
   </interface>
-  <interface name="c2" kind="clock_source" version="18.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <parameter name="associatedDirectClock">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="clockRate">
-    <type>long</type>
-    <value>300000000</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="clockRateKnown">
-    <type>boolean</type>
-    <value>true</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="externallyDriven">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="ptfSchematicName">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>clock</type>
-   <isStart>true</isStart>
-   <port>
-    <name>c2</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>clk</role>
-   </port>
-  </interface>
   <interface name="locked_conduit" kind="conduit_end" version="18.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
@@ -2314,6 +2245,96 @@ parameters are a RESULT of the module parameters. -->
    <isStart>false</isStart>
    <port>
     <name>locked</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>export</role>
+   </port>
+  </interface>
+  <interface name="c3_conduit" kind="conduit_end" version="18.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>c3</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>export</role>
+   </port>
+  </interface>
+  <interface name="c2_conduit" kind="conduit_end" version="18.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>c2</name>
     <direction>Output</direction>
     <width>1</width>
     <role>export</role>
@@ -2633,7 +2654,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <parameter name="DERIVED_CLOCK_RATE">
    <type>long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -2719,7 +2740,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -2748,7 +2769,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -2817,7 +2838,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.BREAK_ADDR</name>
-   <value>0x02040820</value>
+   <value>0x05040820</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CPU_ARCH_NIOS2_R1</name>
@@ -2825,7 +2846,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CPU_FREQ</name>
-   <value>50000000u</value>
+   <value>100000000u</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CPU_ID_SIZE</name>
@@ -2841,7 +2862,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_ADDR_WIDTH</name>
-   <value>26</value>
+   <value>27</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DCACHE_LINE_SIZE</name>
@@ -2857,7 +2878,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.EXCEPTION_ADDR</name>
-   <value>0x01800020</value>
+   <value>0x02000020</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.FLASH_ACCELERATOR_LINES</name>
@@ -2921,7 +2942,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INST_ADDR_WIDTH</name>
-   <value>26</value>
+   <value>27</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.NUM_OF_SHADOW_REG_SETS</name>
@@ -2933,7 +2954,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.RESET_ADDR</name>
-   <value>0x01800000</value>
+   <value>0x02000000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.configuration.DataCacheVictimBufImpl</name>
@@ -2985,7 +3006,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,exception-addr</name>
-   <value>0x01800020</value>
+   <value>0x02000020</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,has-mul</name>
@@ -2997,11 +3018,11 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,reset-addr</name>
-   <value>0x01800000</value>
+   <value>0x02000000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.clock-frequency</name>
-   <value>50000000u</value>
+   <value>100000000u</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.dcache-line-size</name>
@@ -3681,7 +3702,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dcache_bursts">
    <type>java.lang.String</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>true</visible>
@@ -4153,7 +4174,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="resetAbsoluteAddr">
    <type>int</type>
-   <value>25165824</value>
+   <value>33554432</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -4161,7 +4182,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="exceptionAbsoluteAddr">
    <type>int</type>
-   <value>25165856</value>
+   <value>33554464</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -4169,7 +4190,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="breakAbsoluteAddr">
    <type>int</type>
-   <value>33818656</value>
+   <value>84150304</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4185,7 +4206,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dcache_bursts_derived">
    <type>java.lang.String</type>
-   <value>true</value>
+   <value>false</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4281,7 +4302,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instAddrWidth">
    <type>int</type>
-   <value>26</value>
+   <value>27</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4301,7 +4322,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataAddrWidth">
    <type>int</type>
-   <value>26</value>
+   <value>27</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4411,7 +4432,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='tse_descriptor_memory_0.s2' start='0x0' end='0x2000' type='altera_avalon_onchip_memory2.s2' /><slave name='tse_mac_0.control_port' start='0x2000' end='0x2400' type='altera_eth_tse.control_port' /><slave name='sgdma_tse_rx_0.csr' start='0x2400' end='0x2440' type='altera_avalon_sgdma.csr' /><slave name='sgdma_tse_tx_0.csr' start='0x2440' end='0x2480' type='altera_avalon_sgdma.csr' /><slave name='sdram_controller_0.s1' start='0x1800000' end='0x2000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='mem_0.s1' start='0x2020000' end='0x2040000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu_0.debug_mem_slave' start='0x2040800' end='0x2041000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='sdram_controller_0.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='tse_descriptor_memory_0.s2' start='0x4000000' end='0x4002000' type='altera_avalon_onchip_memory2.s2' /><slave name='tse_mac_0.control_port' start='0x4002000' end='0x4002400' type='altera_eth_tse.control_port' /><slave name='sgdma_tse_rx_0.csr' start='0x4002400' end='0x4002440' type='altera_avalon_sgdma.csr' /><slave name='sgdma_tse_tx_0.csr' start='0x4002440' end='0x4002480' type='altera_avalon_sgdma.csr' /><slave name='mem_0.s1' start='0x5020000' end='0x5040000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu_0.debug_mem_slave' start='0x5040800' end='0x5041000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4431,7 +4452,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='tse_descriptor_memory_0.s2' start='0x0' end='0x2000' type='altera_avalon_onchip_memory2.s2' /><slave name='tse_mac_0.control_port' start='0x2000' end='0x2400' type='altera_eth_tse.control_port' /><slave name='sgdma_tse_rx_0.csr' start='0x2400' end='0x2440' type='altera_avalon_sgdma.csr' /><slave name='sgdma_tse_tx_0.csr' start='0x2440' end='0x2480' type='altera_avalon_sgdma.csr' /><slave name='sdram_controller_0.s1' start='0x1800000' end='0x2000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='mem_0.s1' start='0x2020000' end='0x2040000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu_0.debug_mem_slave' start='0x2040800' end='0x2041000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='uart_0.s1' start='0x2041000' end='0x2041020' type='altera_avalon_uart.s1' /><slave name='timer_0.s1' start='0x2041020' end='0x2041040' type='altera_avalon_timer.s1' /><slave name='altpll_0.pll_slave' start='0x2041040' end='0x2041050' type='altpll.pll_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2041050' end='0x2041058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='sdram_controller_0.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='tse_descriptor_memory_0.s2' start='0x4000000' end='0x4002000' type='altera_avalon_onchip_memory2.s2' /><slave name='tse_mac_0.control_port' start='0x4002000' end='0x4002400' type='altera_eth_tse.control_port' /><slave name='sgdma_tse_rx_0.csr' start='0x4002400' end='0x4002440' type='altera_avalon_sgdma.csr' /><slave name='sgdma_tse_tx_0.csr' start='0x4002440' end='0x4002480' type='altera_avalon_sgdma.csr' /><slave name='mem_0.s1' start='0x5020000' end='0x5040000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu_0.debug_mem_slave' start='0x5040800' end='0x5041000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='uart_0.s1' start='0x5041000' end='0x5041020' type='altera_avalon_uart.s1' /><slave name='timer_0.s1' start='0x5041020' end='0x5041040' type='altera_avalon_timer.s1' /><slave name='altpll_0.pll_slave' start='0x5041040' end='0x5041050' type='altpll.pll_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x5041050' end='0x5041058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4541,7 +4562,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="clockFrequency">
    <type>long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4637,7 +4658,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_CLK_CLOCK_DOMAIN">
    <type>java.lang.Integer</type>
-   <value>9</value>
+   <value>8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4647,7 +4668,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_CLK_RESET_DOMAIN">
    <type>java.lang.Integer</type>
-   <value>9</value>
+   <value>8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4717,7 +4738,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -5052,7 +5073,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>d_address</name>
     <direction>Output</direction>
-    <width>26</width>
+    <width>27</width>
     <role>address</role>
    </port>
    <port>
@@ -5102,7 +5123,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_uart_0</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_uart_0.avalon_jtag_slave</name>
-    <baseAddress>33820752</baseAddress>
+    <baseAddress>84152400</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -5110,7 +5131,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>cpu_0</moduleName>
     <slaveName>debug_mem_slave</slaveName>
     <name>cpu_0.debug_mem_slave</name>
-    <baseAddress>33818624</baseAddress>
+    <baseAddress>84150272</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -5118,7 +5139,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>altpll_0</moduleName>
     <slaveName>pll_slave</slaveName>
     <name>altpll_0.pll_slave</name>
-    <baseAddress>33820736</baseAddress>
+    <baseAddress>84152384</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -5126,7 +5147,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>ethernet_bridge</moduleName>
     <slaveName>s0</slaveName>
     <name>ethernet_bridge.s0</name>
-    <baseAddress>0</baseAddress>
+    <baseAddress>67108864</baseAddress>
     <span>16384</span>
    </memoryBlock>
    <memoryBlock>
@@ -5134,7 +5155,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>tse_mac_0</moduleName>
     <slaveName>control_port</slaveName>
     <name>tse_mac_0.control_port</name>
-    <baseAddress>8192</baseAddress>
+    <baseAddress>67117056</baseAddress>
     <span>1024</span>
    </memoryBlock>
    <memoryBlock>
@@ -5142,7 +5163,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sgdma_tse_tx_0</moduleName>
     <slaveName>csr</slaveName>
     <name>sgdma_tse_tx_0.csr</name>
-    <baseAddress>9280</baseAddress>
+    <baseAddress>67118144</baseAddress>
     <span>64</span>
    </memoryBlock>
    <memoryBlock>
@@ -5150,7 +5171,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sgdma_tse_rx_0</moduleName>
     <slaveName>csr</slaveName>
     <name>sgdma_tse_rx_0.csr</name>
-    <baseAddress>9216</baseAddress>
+    <baseAddress>67118080</baseAddress>
     <span>64</span>
    </memoryBlock>
    <memoryBlock>
@@ -5158,7 +5179,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>tse_descriptor_memory_0</moduleName>
     <slaveName>s2</slaveName>
     <name>tse_descriptor_memory_0.s2</name>
-    <baseAddress>0</baseAddress>
+    <baseAddress>67108864</baseAddress>
     <span>8192</span>
    </memoryBlock>
    <memoryBlock>
@@ -5166,15 +5187,15 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sdram_controller_0</moduleName>
     <slaveName>s1</slaveName>
     <name>sdram_controller_0.s1</name>
-    <baseAddress>25165824</baseAddress>
-    <span>8388608</span>
+    <baseAddress>33554432</baseAddress>
+    <span>33554432</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>mem_0</moduleName>
     <slaveName>s1</slaveName>
     <name>mem_0.s1</name>
-    <baseAddress>33685504</baseAddress>
+    <baseAddress>84017152</baseAddress>
     <span>131072</span>
    </memoryBlock>
    <memoryBlock>
@@ -5182,7 +5203,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>timer_0</moduleName>
     <slaveName>s1</slaveName>
     <name>timer_0.s1</name>
-    <baseAddress>33820704</baseAddress>
+    <baseAddress>84152352</baseAddress>
     <span>32</span>
    </memoryBlock>
    <memoryBlock>
@@ -5190,7 +5211,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>uart_0</moduleName>
     <slaveName>s1</slaveName>
     <name>uart_0.s1</name>
-    <baseAddress>33820672</baseAddress>
+    <baseAddress>84152320</baseAddress>
     <span>32</span>
    </memoryBlock>
   </interface>
@@ -5459,7 +5480,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>i_address</name>
     <direction>Output</direction>
-    <width>26</width>
+    <width>27</width>
     <role>address</role>
    </port>
    <port>
@@ -5491,7 +5512,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>cpu_0</moduleName>
     <slaveName>debug_mem_slave</slaveName>
     <name>cpu_0.debug_mem_slave</name>
-    <baseAddress>33818624</baseAddress>
+    <baseAddress>84150272</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -5499,7 +5520,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>ethernet_bridge</moduleName>
     <slaveName>s0</slaveName>
     <name>ethernet_bridge.s0</name>
-    <baseAddress>0</baseAddress>
+    <baseAddress>67108864</baseAddress>
     <span>16384</span>
    </memoryBlock>
    <memoryBlock>
@@ -5507,7 +5528,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>tse_mac_0</moduleName>
     <slaveName>control_port</slaveName>
     <name>tse_mac_0.control_port</name>
-    <baseAddress>8192</baseAddress>
+    <baseAddress>67117056</baseAddress>
     <span>1024</span>
    </memoryBlock>
    <memoryBlock>
@@ -5515,7 +5536,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sgdma_tse_tx_0</moduleName>
     <slaveName>csr</slaveName>
     <name>sgdma_tse_tx_0.csr</name>
-    <baseAddress>9280</baseAddress>
+    <baseAddress>67118144</baseAddress>
     <span>64</span>
    </memoryBlock>
    <memoryBlock>
@@ -5523,7 +5544,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sgdma_tse_rx_0</moduleName>
     <slaveName>csr</slaveName>
     <name>sgdma_tse_rx_0.csr</name>
-    <baseAddress>9216</baseAddress>
+    <baseAddress>67118080</baseAddress>
     <span>64</span>
    </memoryBlock>
    <memoryBlock>
@@ -5531,7 +5552,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>tse_descriptor_memory_0</moduleName>
     <slaveName>s2</slaveName>
     <name>tse_descriptor_memory_0.s2</name>
-    <baseAddress>0</baseAddress>
+    <baseAddress>67108864</baseAddress>
     <span>8192</span>
    </memoryBlock>
    <memoryBlock>
@@ -5539,15 +5560,15 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sdram_controller_0</moduleName>
     <slaveName>s1</slaveName>
     <name>sdram_controller_0.s1</name>
-    <baseAddress>25165824</baseAddress>
-    <span>8388608</span>
+    <baseAddress>33554432</baseAddress>
+    <span>33554432</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>mem_0</moduleName>
     <slaveName>s1</slaveName>
     <name>mem_0.s1</name>
-    <baseAddress>33685504</baseAddress>
+    <baseAddress>84017152</baseAddress>
     <span>131072</span>
    </memoryBlock>
   </interface>
@@ -7291,7 +7312,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="clkFreq">
    <type>long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -7394,7 +7415,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -8818,7 +8839,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_CLK_CLOCK_RATE">
    <type>java.lang.Long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -8888,7 +8909,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -9019,7 +9040,7 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <assignment>
    <name>embeddedsw.CMacro.CAS_LATENCY</name>
-   <value>3</value>
+   <value>2</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CONTENTS_INFO</name>
@@ -9031,7 +9052,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INIT_REFRESH_COMMANDS</name>
-   <value>2</value>
+   <value>8</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.IS_INITIALIZED</name>
@@ -9039,7 +9060,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.POWERUP_DELAY</name>
-   <value>150.0</value>
+   <value>200.0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.REFRESH_PERIOD</name>
@@ -9051,7 +9072,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_ADDR_WIDTH</name>
-   <value>22</value>
+   <value>24</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_BANK_WIDTH</name>
@@ -9059,7 +9080,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_COL_WIDTH</name>
-   <value>8</value>
+   <value>9</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_DATA_WIDTH</name>
@@ -9075,7 +9096,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SDRAM_ROW_WIDTH</name>
-   <value>12</value>
+   <value>13</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SHARED_DATA</name>
@@ -9095,7 +9116,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.T_AC</name>
-   <value>5.4</value>
+   <value>8.0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.T_MRD</name>
@@ -9103,19 +9124,19 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.T_RCD</name>
-   <value>15.0</value>
+   <value>30.0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.T_RFC</name>
-   <value>60.0</value>
+   <value>90.0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.T_RP</name>
-   <value>15.0</value>
+   <value>30.0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.T_WR</name>
-   <value>14.0</value>
+   <value>30.0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.memoryInfo.DAT_SYM_INSTALL_DIR</name>
@@ -9131,7 +9152,7 @@ the requested settings for a module instance. -->
   </assignment>
   <parameter name="TAC">
    <type>double</type>
-   <value>5.4</value>
+   <value>8.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9139,7 +9160,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="TRCD">
    <type>double</type>
-   <value>15.0</value>
+   <value>30.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9147,7 +9168,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="TRFC">
    <type>double</type>
-   <value>60.0</value>
+   <value>90.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9155,7 +9176,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="TRP">
    <type>double</type>
-   <value>15.0</value>
+   <value>30.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9163,7 +9184,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="TWR">
    <type>double</type>
-   <value>14.0</value>
+   <value>30.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9171,7 +9192,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="casLatency">
    <type>int</type>
-   <value>3</value>
+   <value>2</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9179,7 +9200,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="columnWidth">
    <type>int</type>
-   <value>8</value>
+   <value>9</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9203,7 +9224,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="initRefreshCommands">
    <type>int</type>
-   <value>2</value>
+   <value>8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9243,7 +9264,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="powerUpDelay">
    <type>double</type>
-   <value>150.0</value>
+   <value>200.0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9259,7 +9280,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="rowWidth">
    <type>int</type>
-   <value>12</value>
+   <value>13</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9299,7 +9320,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="clockRate">
    <type>long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9318,7 +9339,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="size">
    <type>long</type>
-   <value>8388608</value>
+   <value>33554432</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9326,7 +9347,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="addressWidth">
    <type>int</type>
-   <value>22</value>
+   <value>24</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9402,7 +9423,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -9500,7 +9521,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>8388608</value>
+    <value>33554432</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -9799,7 +9820,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>az_addr</name>
     <direction>Input</direction>
-    <width>22</width>
+    <width>24</width>
     <role>address</role>
    </port>
    <port>
@@ -9892,7 +9913,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>zs_addr</name>
     <direction>Output</direction>
-    <width>12</width>
+    <width>13</width>
     <role>export</role>
    </port>
    <port>
@@ -9978,7 +9999,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="SYSINFO_ADDR_WIDTH">
    <type>int</type>
-   <value>26</value>
+   <value>27</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9996,7 +10017,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_ADDRESS_WIDTH">
    <type>int</type>
-   <value>26</value>
+   <value>27</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -10004,7 +10025,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="HDL_ADDR_WIDTH">
    <type>int</type>
-   <value>26</value>
+   <value>27</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -10214,7 +10235,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>67108864</value>
+    <value>134217728</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -10543,7 +10564,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>s0_address</name>
     <direction>Input</direction>
-    <width>26</width>
+    <width>27</width>
     <role>address</role>
    </port>
    <port>
@@ -10866,7 +10887,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>m0_address</name>
     <direction>Output</direction>
-    <width>26</width>
+    <width>27</width>
     <role>address</role>
    </port>
    <port>
@@ -10898,7 +10919,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>mem_0</moduleName>
     <slaveName>s1</slaveName>
     <name>mem_0.s1</name>
-    <baseAddress>33685504</baseAddress>
+    <baseAddress>84017152</baseAddress>
     <span>131072</span>
    </memoryBlock>
    <memoryBlock>
@@ -10906,8 +10927,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sdram_controller_0</moduleName>
     <slaveName>s1</slaveName>
     <name>sdram_controller_0.s1</name>
-    <baseAddress>25165824</baseAddress>
-    <span>8388608</span>
+    <baseAddress>33554432</baseAddress>
+    <span>33554432</span>
    </memoryBlock>
   </interface>
  </module>
@@ -12812,14 +12833,14 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s0</slaveName>
     <name>sgdma_bridge.s0</name>
     <baseAddress>0</baseAddress>
-    <span>67108864</span>
+    <span>134217728</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>mem_0</moduleName>
     <slaveName>s1</slaveName>
     <name>mem_0.s1</name>
-    <baseAddress>33685504</baseAddress>
+    <baseAddress>84017152</baseAddress>
     <span>131072</span>
    </memoryBlock>
    <memoryBlock>
@@ -12827,8 +12848,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sdram_controller_0</moduleName>
     <slaveName>s1</slaveName>
     <name>sdram_controller_0.s1</name>
-    <baseAddress>25165824</baseAddress>
-    <span>8388608</span>
+    <baseAddress>33554432</baseAddress>
+    <span>33554432</span>
    </memoryBlock>
   </interface>
  </module>
@@ -14572,14 +14593,14 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s0</slaveName>
     <name>sgdma_bridge.s0</name>
     <baseAddress>0</baseAddress>
-    <span>67108864</span>
+    <span>134217728</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>mem_0</moduleName>
     <slaveName>s1</slaveName>
     <name>mem_0.s1</name>
-    <baseAddress>33685504</baseAddress>
+    <baseAddress>84017152</baseAddress>
     <span>131072</span>
    </memoryBlock>
    <memoryBlock>
@@ -14587,8 +14608,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sdram_controller_0</moduleName>
     <slaveName>s1</slaveName>
     <name>sdram_controller_0.s1</name>
-    <baseAddress>25165824</baseAddress>
-    <span>8388608</span>
+    <baseAddress>33554432</baseAddress>
+    <span>33554432</span>
    </memoryBlock>
   </interface>
   <interface name="out" kind="avalon_streaming_source" version="18.1">
@@ -14774,11 +14795,11 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.FREQ</name>
-   <value>50000000</value>
+   <value>100000000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.LOAD_VALUE</name>
-   <value>49999</value>
+   <value>99999</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MULT</name>
@@ -14822,7 +14843,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.clock-frequency</name>
-   <value>50000000</value>
+   <value>100000000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -14894,7 +14915,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="systemFrequency">
    <type>long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -14936,7 +14957,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="loadValue">
    <type>java.lang.String</type>
-   <value>49999</value>
+   <value>99999</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -15028,7 +15049,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -18751,7 +18772,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.FREQ</name>
-   <value>50000000</value>
+   <value>100000000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.PARITY</name>
@@ -18795,7 +18816,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.clock-frequency</name>
-   <value>50000000</value>
+   <value>100000000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.current-speed</name>
@@ -18911,7 +18932,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="clockRate">
    <type>long</type>
-   <value>50000000</value>
+   <value>100000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -18997,7 +19018,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="clockRate">
     <type>java.lang.Long</type>
-    <value>50000000</value>
+    <value>100000000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -19579,7 +19600,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02041050</value>
+   <value>0x05041050</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -19630,7 +19651,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02040800</value>
+   <value>0x05040800</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -19681,7 +19702,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02041040</value>
+   <value>0x05041040</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -19732,7 +19753,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0000</value>
+   <value>0x04000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -19783,7 +19804,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x01800000</value>
+   <value>0x02000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -19834,7 +19855,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02020000</value>
+   <value>0x05020000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -19885,7 +19906,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02041020</value>
+   <value>0x05041020</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -19936,7 +19957,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02041000</value>
+   <value>0x05041000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -20191,7 +20212,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02040800</value>
+   <value>0x05040800</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -20242,7 +20263,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x0000</value>
+   <value>0x04000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -20293,7 +20314,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x01800000</value>
+   <value>0x02000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -20344,7 +20365,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02020000</value>
+   <value>0x05020000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -20548,7 +20569,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x02020000</value>
+   <value>0x05020000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -20599,7 +20620,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x01800000</value>
+   <value>0x02000000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -21940,7 +21961,7 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>4</instanceCount>
+  <instanceCount>3</instanceCount>
   <name>clock_source</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
@@ -21948,7 +21969,7 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>7</instanceCount>
+  <instanceCount>9</instanceCount>
   <name>conduit_end</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>

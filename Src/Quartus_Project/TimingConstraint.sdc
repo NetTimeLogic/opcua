@@ -25,20 +25,20 @@ derive_clock_uncertainty
 #**************************************************************
 # t_AC, max delay and t_OH, min delay
 # added 0.5 ns turn-around time to max delay
-set_input_delay -max -clock [get_clocks {PllMhz50ClkSdram}]  5.900 [get_ports {Sdram_DqInOut[*]}]
-set_input_delay -min -clock [get_clocks {PllMhz50ClkSdram}]  2.500 [get_ports {Sdram_DqInOut[*]}]
+set_input_delay -add_delay -rise -max -clock [get_clocks {PllMhz50Clk}]  5.900 [get_ports {Sdram_DqInOut[*]}]
+set_input_delay -add_delay -rise -min -clock [get_clocks {PllMhz50Clk}]  2.500 [get_ports {Sdram_DqInOut[*]}]
 
 # t_CS, max delay and t_CH, min delay
-set_output_delay -max -clock [get_clocks {PllMhz50ClkSdram}]  1.500 [get_ports {Sdram_CsNOut Sdram_RasNOut Sdram_CasNOut Sdram_WeNOut}]
-set_output_delay -min -clock [get_clocks {PllMhz50ClkSdram}]  -0.800 [get_ports {Sdram_CsNOut Sdram_RasNOut Sdram_CasNOut Sdram_WeNOut}]
+set_output_delay -add_delay -rise -max -clock [get_clocks {PllMhz50Clk}]  -1.500 [get_ports {Sdram_CsNOut Sdram_RasNOut Sdram_CasNOut Sdram_WeNOut}]
+set_output_delay -add_delay -rise -min -clock [get_clocks {PllMhz50Clk}]  0.800 [get_ports {Sdram_CsNOut Sdram_RasNOut Sdram_CasNOut Sdram_WeNOut}]
 
 # t_AS, max delay and t_AH, min delay
-set_output_delay -max -clock [get_clocks {PllMhz50ClkSdram}]  1.500 [get_ports {Sdram_AddrOut[*] Sdram_BaOut[*]}]
-set_output_delay -min -clock [get_clocks {PllMhz50ClkSdram}]  -0.800 [get_ports {Sdram_AddrOut[*] Sdram_BaOut[*]}]
+set_output_delay -add_delay -rise -max -clock [get_clocks {PllMhz50Clk}]  -1.500 [get_ports {Sdram_AddrOut[*] Sdram_BaOut[*]}]
+set_output_delay -add_delay -rise -min -clock [get_clocks {PllMhz50Clk}]  0.800 [get_ports {Sdram_AddrOut[*] Sdram_BaOut[*]}]
 
 # t_DS, max delay and Hold time t_DH, min delay
-set_output_delay -max -clock [get_clocks {PllMhz50ClkSdram}]  1.500 [get_ports {Sdram_DqInOut[*]}]
-set_output_delay -min -clock [get_clocks {PllMhz50ClkSdram}]  -0.800 [get_ports {Sdram_DqInOut[*]}]
+set_output_delay -add_delay -rise -max -clock [get_clocks {PllMhz50Clk}]  -1.500 [get_ports {Sdram_DqInOut[*]}]
+set_output_delay -add_delay -rise -min -clock [get_clocks {PllMhz50Clk}]  0.800 [get_ports {Sdram_DqInOut[*]}]
 
 #**************************************************************
 # Port1

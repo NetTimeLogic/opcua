@@ -108,6 +108,7 @@ set_location_assignment PIN_AB7 -to Sdram_AddrOut[8]
 set_location_assignment PIN_AA5 -to Sdram_AddrOut[9]
 set_location_assignment PIN_V6 -to Sdram_AddrOut[10]
 set_location_assignment PIN_AA8 -to Sdram_AddrOut[11]
+set_location_assignment PIN_AB8 -to Sdram_AddrOut[12]
 set_location_assignment PIN_Y6 -to Sdram_BaOut[0]
 set_location_assignment PIN_V7 -to Sdram_BaOut[1]
 set_location_assignment PIN_AA4 -to Sdram_CkenOut
@@ -137,6 +138,7 @@ set_location_assignment PIN_AA3 -to Sdram_ClkOut
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_DqInOut[13]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_CkenOut
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_AddrOut[12]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_RasNOut
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_WeNOut
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sdram_ClkOut
@@ -215,14 +217,29 @@ set_location_assignment PIN_T19 -to Port1MiiCol_DatIn
 set_location_assignment PIN_M21 -to Port2RstN_RstOut
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Port2RstN_RstOut
 
+#QSPI
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to qspi_data[3]
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to qspi_ncs_n
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to qspi_dclk
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to qspi_data[0]
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to qspi_data[1]
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to qspi_data[2]
+#set_location_assignment PIN_F16 -to qspi_dclk
+#set_location_assignment PIN_F15 -to qspi_ncs_n
+#set_location_assignment PIN_G16 -to qspi_data[0]
+#set_location_assignment PIN_D15 -to qspi_data[1]
+#set_location_assignment PIN_E16 -to qspi_data[2]
+#set_location_assignment PIN_E15 -to qspi_data[3]
+
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name ENABLE_SIGNALTAP OFF
 set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut
 set_global_assignment -name SDC_FILE TimingConstraint.sdc
 set_global_assignment -name QSYS_FILE Nios.qsys
 set_global_assignment -name VHDL_FILE NiosIITop.vhd
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to Sdram_AddrOut
+set_global_assignment -name SOURCE_FILE db/NiosIITop.cmp.rdb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

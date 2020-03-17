@@ -1,12 +1,11 @@
 	component Nios is
 		port (
 			clk_clk                                   : in    std_logic                     := 'X';             -- clk
-			clk_300_clk                               : out   std_logic;                                        -- clk
 			clk_sdram_clk                             : out   std_logic;                                        -- clk
 			locked_export                             : out   std_logic;                                        -- export
 			reset_reset_n                             : in    std_logic                     := 'X';             -- reset_n
 			reset_bridge_0_in_reset_reset_n           : in    std_logic                     := 'X';             -- reset_n
-			sdram_controller_0_addr                   : out   std_logic_vector(11 downto 0);                    -- addr
+			sdram_controller_0_addr                   : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_controller_0_ba                     : out   std_logic_vector(1 downto 0);                     -- ba
 			sdram_controller_0_cas_n                  : out   std_logic;                                        -- cas_n
 			sdram_controller_0_cke                    : out   std_logic;                                        -- cke
@@ -52,7 +51,6 @@
 	u0 : component Nios
 		port map (
 			clk_clk                                   => CONNECTED_TO_clk_clk,                                   --                                 clk.clk
-			clk_300_clk                               => CONNECTED_TO_clk_300_clk,                               --                             clk_300.clk
 			clk_sdram_clk                             => CONNECTED_TO_clk_sdram_clk,                             --                           clk_sdram.clk
 			locked_export                             => CONNECTED_TO_locked_export,                             --                              locked.export
 			reset_reset_n                             => CONNECTED_TO_reset_reset_n,                             --                               reset.reset_n

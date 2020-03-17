@@ -50,7 +50,7 @@ entity NiosIITop is
         Uart_DatOut                     : out   std_logic;
         
         -- SDRAM
-        Sdram_AddrOut                   : out   std_logic_vector(11 downto 0);
+        Sdram_AddrOut                   : out   std_logic_vector(12 downto 0);
         Sdram_BaOut                     : out   std_logic_vector(1 downto 0);
         Sdram_CasNOut                   : out   std_logic;
         Sdram_CkenOut                   : out   std_logic;
@@ -100,12 +100,12 @@ architecture NiosIITop_Arch of NiosIITop is
     component Nios is
     port (
         clk_clk                                   : in    std_logic                     := 'X';             -- clk
-        clk_300_clk                               : out   std_logic;                                        -- clk
         clk_sdram_clk                             : out   std_logic;                                        -- clk
+        --clk_300mhz_clk                            : out   std_logic;                                         -- clk
         locked_export                             : out   std_logic;                                        -- export
         reset_reset_n                             : in    std_logic                     := 'X';             -- reset_n
         reset_bridge_0_in_reset_reset_n           : in    std_logic                     := 'X';             -- reset_n
-        sdram_controller_0_addr                   : out   std_logic_vector(11 downto 0);                    -- addr
+        sdram_controller_0_addr                   : out   std_logic_vector(12 downto 0);                    -- addr
         sdram_controller_0_ba                     : out   std_logic_vector(1 downto 0);                     -- ba
         sdram_controller_0_cas_n                  : out   std_logic;                                        -- cas_n
         sdram_controller_0_cke                    : out   std_logic;                                        -- cke
@@ -197,6 +197,7 @@ architecture NiosIITop_Arch of NiosIITop is
     signal Mhz25RstNShift_DatReg        : std_logic_vector(7 downto 0) := (others => '0');
 
     signal Mhz50Clk_Clk                 : std_logic;
+    signal Mhz300Clk_Clk                : std_logic;
     signal Mhz50RstN_Rst                : std_logic;
     signal Mhz50RstNShift_DatReg        : std_logic_vector(7 downto 0) := (others => '0');
     
@@ -316,10 +317,10 @@ begin
         reset_reset_n                               => not Mhz25PllRst_Rst,
         
         sys_clk_clk                                 => Mhz50Clk_Clk,
+        --clk_300mhz_clk                              => Mhz300Clk_Clk,
         reset_bridge_0_in_reset_reset_n             => SysRstN_Rst,
         
         clk_sdram_clk                               => Sdram_ClkOut,
-        clk_300_clk                                 => open,
         locked_export                               => PllLocked_Val,
         
         tse_mac_mac_mdio_connection_mdc             => Port1SmiMdc_ClkOut,
@@ -362,7 +363,8 @@ begin
         sdram_controller_0_we_n                     => Sdram_WeNOut, 
 
         uart_0_rxd                                  => Uart_DatIn,   
-        uart_0_txd                                  => Uart_DatOut   
+        uart_0_txd                                  => Uart_DatOut 
+        
     );
     
 

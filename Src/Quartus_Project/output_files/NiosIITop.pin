@@ -119,7 +119,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :      
 Sdram_AddrOut[4]             : AB5       : output : 3.3-V LVTTL       :         : 3         : Y              
 Sdram_AddrOut[5]             : AB6       : output : 3.3-V LVTTL       :         : 3         : Y              
 Sdram_AddrOut[8]             : AB7       : output : 3.3-V LVTTL       :         : 3         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :         : 3         :                
+Sdram_AddrOut[12]            : AB8       : output : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 3         :                
 Led_DatOut[0]                : AB10      : output : 3.3-V LVCMOS      :         : 3         : Y              
 GND+                         : AB11      :        :                   :         : 3         :                

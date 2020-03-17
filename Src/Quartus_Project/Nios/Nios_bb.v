@@ -1,7 +1,6 @@
 
 module Nios (
 	clk_clk,
-	clk_300_clk,
 	clk_sdram_clk,
 	locked_export,
 	reset_reset_n,
@@ -48,12 +47,11 @@ module Nios (
 	uart_0_txd);	
 
 	input		clk_clk;
-	output		clk_300_clk;
 	output		clk_sdram_clk;
 	output		locked_export;
 	input		reset_reset_n;
 	input		reset_bridge_0_in_reset_reset_n;
-	output	[11:0]	sdram_controller_0_addr;
+	output	[12:0]	sdram_controller_0_addr;
 	output	[1:0]	sdram_controller_0_ba;
 	output		sdram_controller_0_cas_n;
 	output		sdram_controller_0_cke;
