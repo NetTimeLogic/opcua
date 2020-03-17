@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>freertos</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>17.03.2020 14:57:30</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1584453450795</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>17.03.2020 17:29:48</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1584462588991</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios.sopcinfo</SopcDesignFile>
@@ -50,7 +50,7 @@
                 <SettingName>hal.enable_instruction_related_exceptions_api</SettingName>
                 <Identifier>ALT_INCLUDE_INSTRUCTION_RELATED_EXCEPTION_API</Identifier>
                 <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
+                <Value>true</Value>
                 <DefaultValue>false</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Enables API for registering handlers to service instruction-related exceptions. Enabling this setting increases the size of the exception entry code.</Description>
@@ -110,7 +110,7 @@
                 <SettingName>hal.linker.enable_alt_load_copy_exceptions</SettingName>
                 <Identifier>none</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>none</DestinationFile>
                 <Description>Causes the alt_load() facility to copy the .exceptions section. If true, this setting defines the macro ALT_LOAD_COPY_EXCEPTIONS in linker.h.</Description>
@@ -818,7 +818,7 @@
                 <SettingName>hal.enable_mul_div_emulation</SettingName>
                 <Identifier>ALT_NO_INSTRUCTION_EMULATION</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Adds code to emulate multiply and divide instructions in case they are executed but aren't present in the CPU. Normally this isn't required because the compiler won't use multiply and divide instructions that aren't present in the CPU. If false, adds -DALT_NO_INSTRUCTION_EMULATION to ALT_CPPFLAGS in public.mk.</Description>
@@ -982,7 +982,7 @@ Each available priority consumes RAM within the kernel so this value should not 
                 <SettingName>freertos.task.minimal_stack_size</SettingName>
                 <Identifier>OS_MINIMAL_STACK_SIZE</Identifier>
                 <Type>DecimalNumber</Type>
-                <Value>2048</Value>
+                <Value>4096</Value>
                 <DefaultValue>4096</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>The size of the stack used by the idle task. Generally this should not be reduced from the value set in the FreeRTOSConfig.h file provided with the demo application for the port you are using.</Description>
@@ -1003,10 +1003,23 @@ Each available priority consumes RAM within the kernel so this value should not 
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <Setting>
+                <SettingName>freertos.memory.total_heap_size</SettingName>
+                <Identifier>OS_TOTAL_HEAP_SIZE</Identifier>
+                <Type>DecimalNumber</Type>
+                <Value>1048576</Value>
+                <DefaultValue>1048576</DefaultValue>
+                <DestinationFile>system_h_define</DestinationFile>
+                <Description>The total amount of RAM available to the kernel.
+This value will only be used if your application makes use of one of the sample memory allocation schemes provided in the FreeRTOS source code download. See the memory configuration section for further details.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
                 <SettingName>freertos.memory.malloc_failed_hook</SettingName>
                 <Identifier>OS_USE_MALLOC_FAILED_HOOK</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Defines whether vApplicationMallocFailedHook should be called on memory allocation failure</Description>
@@ -1030,7 +1043,7 @@ Each available priority consumes RAM within the kernel so this value should not 
                 <SettingName>freertos.memory.check_for_stack_overflow</SettingName>
                 <Identifier>OS_CHECK_FOR_STACK_OVERFLOW</Identifier>
                 <Type>DecimalNumber</Type>
-                <Value>0</Value>
+                <Value>2</Value>
                 <DefaultValue>2</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Stack Overflow Detection - Method 1
@@ -1620,7 +1633,7 @@ configQUEUE_REGISTRY_SIZE defines the maximum number of queues and semaphores th
                 <SettingName>altera_eth_tse_driver_hal.autoneg_timeout</SettingName>
                 <Identifier>ALTERA_AUTONEG_TIMEOUT_THRESHOLD</Identifier>
                 <Type>DecimalNumber</Type>
-                <Value>250000</Value>
+                <Value>2500</Value>
                 <DefaultValue>2500</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Auto Negotiation Timeout in milliseconds</Description>
@@ -1632,7 +1645,7 @@ configQUEUE_REGISTRY_SIZE defines the maximum number of queues and semaphores th
                 <SettingName>altera_eth_tse_driver_hal.checklink_timeout</SettingName>
                 <Identifier>ALTERA_CHECKLINK_TIMEOUT_THRESHOLD</Identifier>
                 <Type>DecimalNumber</Type>
-                <Value>1000000</Value>
+                <Value>10000</Value>
                 <DefaultValue>10000</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>CheckLink Timeout in milliseconds</Description>

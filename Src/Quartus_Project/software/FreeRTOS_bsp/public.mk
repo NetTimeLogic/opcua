@@ -163,10 +163,10 @@ ELF_PATCH_FLAG  += --simulation_enabled false
 # setting altera_avalon_uart_driver.enable_small_driver is false
 
 # Auto Negotiation Timeout in milliseconds none 
-# setting altera_eth_tse_driver_hal.autoneg_timeout is 250000
+# setting altera_eth_tse_driver_hal.autoneg_timeout is 2500
 
 # CheckLink Timeout in milliseconds none 
-# setting altera_eth_tse_driver_hal.checklink_timeout is 1000000
+# setting altera_eth_tse_driver_hal.checklink_timeout is 10000
 
 # "No MDIO" Timeout in microseconds none 
 # setting altera_eth_tse_driver_hal.nomdio_timeout is 1000000
@@ -213,7 +213,8 @@ ELF_PATCH_FLAG  += --simulation_enabled false
 # the compiler won't use multiply and divide instructions that aren't present 
 # in the CPU. If false, adds -DALT_NO_INSTRUCTION_EMULATION to ALT_CPPFLAGS in 
 # public.mk. none 
-# setting hal.enable_mul_div_emulation is true
+# setting hal.enable_mul_div_emulation is false
+ALT_CPPFLAGS += -DALT_NO_INSTRUCTION_EMULATION
 
 # Certain drivers are compiled with reduced functionality to reduce code 
 # footprint. Not all drivers observe this setting. The altera_avalon_uart and 
@@ -382,8 +383,8 @@ ALT_CPPFLAGS += -D__freertos__
 #        SOFTWARE COMPONENT & DRIVER SETTING-PRODUCED DEFINITIONS
 #------------------------------------------------------------------------------
 
-ALT_CPPFLAGS += -DALTERA_AUTONEG_TIMEOUT_THRESHOLD=250000
-ALT_CPPFLAGS += -DALTERA_CHECKLINK_TIMEOUT_THRESHOLD=1000000
+ALT_CPPFLAGS += -DALTERA_AUTONEG_TIMEOUT_THRESHOLD=2500
+ALT_CPPFLAGS += -DALTERA_CHECKLINK_TIMEOUT_THRESHOLD=10000
 ALT_CPPFLAGS += -DALTERA_NOMDIO_TIMEOUT_THRESHOLD=1000000
 
 #END MANAGED

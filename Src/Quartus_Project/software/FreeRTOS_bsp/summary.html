@@ -22,10 +22,10 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>17.03.2020 14:57:30</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>17.03.2020 17:29:48</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1584453450795</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1584462588991</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</td>
@@ -235,7 +235,7 @@
 <td width="20%">Default Value:</td><td>2500</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>250000</td>
+<td width="20%">Value:</td><td>2500</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>DecimalNumber</td>
@@ -262,7 +262,7 @@
 <td width="20%">Default Value:</td><td>10000</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>1000000</td>
+<td width="20%">Value:</td><td>10000</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>DecimalNumber</td>
@@ -667,7 +667,7 @@
 <td width="20%">Default Value:</td><td>2</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>0</td>
+<td width="20%">Value:</td><td>2</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>DecimalNumber</td>
@@ -705,7 +705,7 @@ To use this method in combination with method 1 set configCHECK_FOR_STACK_OVERFL
 <td width="20%">Default Value:</td><td>0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>1</td>
+<td width="20%">Value:</td><td>0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -742,6 +742,34 @@ To use this method in combination with method 1 set configCHECK_FOR_STACK_OVERFL
 </tr>
 <tr mode="wrap">
 <td width="20%">Description:</td><td>Defines whether if we lock malloc with a recursive mutex so we it would be safe to malloc from different applications simultaniously</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Restrictions:</td><td>none</td>
+</tr>
+</table>
+<br>
+<table border="1" bgcolor="#FFFFCC" width="60%">
+<tr bgcolor="#77BBFF">
+<td align="left" width="15%">Setting Name:</td><td align="left">freertos.memory.total_heap_size</td>
+</tr>
+<tr>
+<td width="20%">Identifier:</td><td>OS_TOTAL_HEAP_SIZE</td>
+</tr>
+<tr>
+<td width="20%">Default Value:</td><td>1048576</td>
+</tr>
+<tr>
+<td width="20%">Value:</td><td>1048576</td>
+</tr>
+<tr>
+<td width="20%">Type:</td><td>DecimalNumber</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Destination:</td><td>system_h_define</td>
+</tr>
+<tr mode="wrap">
+<td width="20%">Description:</td><td>The total amount of RAM available to the kernel.
+This value will only be used if your application makes use of one of the sample memory allocation schemes provided in the FreeRTOS source code download. See the memory configuration section for further details.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>
@@ -1134,7 +1162,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>4096</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>2048</td>
+<td width="20%">Value:</td><td>4096</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>DecimalNumber</td>
@@ -1350,7 +1378,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>false</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>false</td>
+<td width="20%">Value:</td><td>true</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>BooleanDefineOnly</td>
@@ -1404,7 +1432,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>1</td>
+<td width="20%">Value:</td><td>0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -1620,7 +1648,7 @@ Each available priority consumes RAM within the kernel so this value should not 
 <td width="20%">Default Value:</td><td>0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>1</td>
+<td width="20%">Value:</td><td>0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
