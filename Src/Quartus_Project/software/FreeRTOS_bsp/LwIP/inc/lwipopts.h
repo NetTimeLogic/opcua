@@ -48,6 +48,10 @@
 // include Altera system configuraion
 #include <system.h>
 
+
+#define LWIP_IPV4                       1
+
+
 /*
    -----------------------------------------------
    ---------- Platform specific locking ----------
@@ -950,7 +954,7 @@
  * The priority value itself is platform-dependent, but is passed to
  * sys_thread_new() when the thread is created.
  */
-#define TCPIP_THREAD_PRIO               		(configMAX_PRIORITIES  - 2)
+#define TCPIP_THREAD_PRIO               		(5  - 2)
 
 /**
  * TCPIP_MBOX_SIZE: The mailbox size for the tcpip thread messages

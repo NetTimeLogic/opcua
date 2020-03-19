@@ -37,9 +37,9 @@
 #include <lwip/dhcp.h>
 #include <lwip/tcp.h>
 #include <lwip/stats.h>
-#include <lwip/ip_frag.h>
+#include <lwip/sys.h>
 #include <lwip/ip_addr.h>
-#include <lwip/tcp_impl.h>
+//#include <lwip/tcp_impl.h>
 #include <lwip/tcpip.h>
 #include <lwip/sockets.h>
 
@@ -52,7 +52,7 @@
 #include <FreeRTOS.h>
 #include <task.h>
 #include <semphr.h>
-#include <timers.h>
+//#include <timers.h>
 
 // don't forget our header
 #include "lwip_main.h"
@@ -291,8 +291,8 @@ void lwip_handle_interfaces(__unused void *params)
 		tmpbuf[(OS_MAX_TASK_NAME_LEN - 1)] = 0;
 
 		// create input task, this must be started before we can do any DHCP request
-		if (sys_thread_new(tmpbuf, lwip_handle_ethernet_input, eth, KB(32), TCPIP_THREAD_PRIO) == NULL)
-			printf("LwIP Couldn't create input / output task for ethernet\n");
+		sys_thread_new(tmpbuf, lwip_handle_ethernet_input, eth, KB(32), TCPIP_THREAD_PRIO);// == NULL)
+			//printf("LwIP Couldn't create input / output task for ethernet\n");
 
 		// wait previous DHCP to finish
 		if (dhcp) {
@@ -416,7 +416,8 @@ alt_u32 rx_faulty_packets = 0;
 // Input / monitor task per ethernet device
 static void lwip_handle_ethernet_input(void *pvParameters)
 {
-	sys_sem_t rcvsem = NULL;
+	sys_sem_t rcvsem;
+	err_t err;
 	np_tse_mac* base = NULL;
 	struct netif *cur_netif = (struct netif*)pvParameters;
 	struct ethernetif *cur_ethif = (struct ethernetif*)cur_netif->state;
@@ -425,6 +426,11 @@ static void lwip_handle_ethernet_input(void *pvParameters)
 	/* Intermediate buffers used for temporary copy of frames that cannot be directrly DMA'ed*/
 	char buf2[1560]; // TODO remove
 	int replug_state = 0; // TODO remove
+
+	err = sys_sem_new(&rcvsem, 0);
+	if (err != ERR_OK) {
+		return;
+	}
 
 #if LWIP_RECEIVE_SEMAPHORE
 	rcvsem = cur_ethif->tse_info->rx_semaphore;
@@ -441,7 +447,7 @@ static void lwip_handle_ethernet_input(void *pvParameters)
 		// if we have a semaphore wait for it to be released by the SGDMA IRQ, or sleep for 1 ms
 			// if we timeout also call ethernetif_input although most likely it would be useless
 			// it is use full however to check the link status
-		if (rcvsem)
+		if (sys_sem_valid(&rcvsem))
 			sys_arch_sem_wait(&rcvsem, 100);
 		else if (packets_waiting <= 0)	// only sleep if there are no packets waiting
 			mssleep(1);					// sleep a bit to be nice to the CPU

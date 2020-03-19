@@ -54,7 +54,7 @@ typedef alt_16							s16_t;
 typedef alt_u32							u32_t;
 typedef alt_32							s32_t;
 
-typedef u32_t							mem_ptr_t;
+typedef u32_t				     	mem_ptr_t;
 typedef u32_t							ipaddr_t;
 
 // Set printf formats

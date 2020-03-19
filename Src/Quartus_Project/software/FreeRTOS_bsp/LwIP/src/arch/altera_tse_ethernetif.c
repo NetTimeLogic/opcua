@@ -48,7 +48,7 @@
 #include <lwip/stats.h>
 #include <lwip/snmp.h>
 #include <netif/etharp.h>
-#include <netif/ppp_oe.h>
+//#include <netif/ppp_oe.h>
 #include "altera_tse_ethernetif.h"
 
 #include <sys/alt_irq.h>

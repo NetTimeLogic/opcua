@@ -97,7 +97,7 @@ int tse_mac_init(int iface, struct ethernetif *ethernetif)
 	alt_tse_mac_info *pmac_info;
 
 #if LWIP_RECEIVE_SEMAPHORE
-	if (!tse[iface].rx_semaphore) {
+	if (sys_sem_valid(&tse[iface].rx_semaphore)==0) {
 		dprintf(("creating RX SGDMA semaphore\n"));
 		// create a counting semaphore so we can 'release' the semaphore for each rx input buffer filled
 		if (sys_sem_new(&tse[iface].rx_semaphore, LWIP_RX_ETH_BUFFER) != ERR_OK) {
@@ -534,7 +534,7 @@ err_t tse_mac_raw_send(struct netif *netif, struct pbuf *pkt)
 int tse_mac_rcv(struct ethernetif *ethernetif)
 {
 #if LWIP_RECEIVE_SEMAPHORE
-	signed portBASE_TYPE switch_context = 0;
+	signed long switch_context = 0;
 #endif
 
 	int pklen;
