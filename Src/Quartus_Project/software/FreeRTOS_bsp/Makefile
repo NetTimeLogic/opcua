@@ -384,7 +384,7 @@ lwip_C_LIB_SRCS := \
 	$(lwip_SRCS_ROOT)/src/arch/lwip_tse_mac.c \
 	$(lwip_SRCS_ROOT)/src/arch/sys_arch.c \
 	$(lwip_SRCS_ROOT)/src/core/def.c \
-	$(lwip_SRCS_ROOT)/src/core/dhcp.c \
+	#$(lwip_SRCS_ROOT)/src/core/dhcp.c \
 	$(lwip_SRCS_ROOT)/src/core/dns.c \
 	$(lwip_SRCS_ROOT)/src/core/init.c \
 	$(lwip_SRCS_ROOT)/src/core/ipv4/autoip.c \
