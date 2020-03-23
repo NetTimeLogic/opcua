@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>freertos</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>17.03.2020 17:29:48</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1584462588991</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>23.03.2020 11:16:23</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1584958583094</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios.sopcinfo</SopcDesignFile>
@@ -38,7 +38,7 @@
                 <SettingName>hal.max_file_descriptors</SettingName>
                 <Identifier>ALT_MAX_FD</Identifier>
                 <Type>DecimalNumber</Type>
-                <Value>32</Value>
+                <Value>16</Value>
                 <DefaultValue>32</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Determines the number of file descriptors statically allocated. This setting defines the value of ALT_MAX_FD in system.h.</Description>

@@ -27,7 +27,7 @@ obj/LwIP/src/arch/lwip_main.o: LwIP/src/arch/lwip_main.c system.h \
  FreeRTOS/inc/portable.h FreeRTOS/inc/portmacro.h HAL/inc/sys/alt_irq.h \
  HAL/inc/nios2.h FreeRTOS/inc/mpu_wrappers.h FreeRTOS/inc/task.h \
  FreeRTOS/inc/list.h FreeRTOS/inc/semphr.h FreeRTOS/inc/queue.h \
- FreeRTOS/inc/task.h LwIP/inc/lwip_main.h
+ FreeRTOS/inc/task.h FreeRTOS/inc/timers.h LwIP/inc/lwip_main.h
 
 system.h:
 
@@ -182,5 +182,7 @@ FreeRTOS/inc/semphr.h:
 FreeRTOS/inc/queue.h:
 
 FreeRTOS/inc/task.h:
+
+FreeRTOS/inc/timers.h:
 
 LwIP/inc/lwip_main.h:

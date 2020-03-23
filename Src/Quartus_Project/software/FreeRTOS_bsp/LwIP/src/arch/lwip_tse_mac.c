@@ -55,6 +55,12 @@
 #include "lwip/sys.h"
 #include "arch/sys_arch.h"
 
+// include FreeRTOS headers
+#include <FreeRTOS.h>
+#include <task.h>
+#include <semphr.h>
+#include <timers.h>
+
 //  Local prototypes
 int tse_sgdma_rx_isr(void * context, u_long intnum);
 int tse_sgdma_read_init(lwip_tse_info* tse_ptr);
@@ -573,7 +579,7 @@ int tse_mac_rcv(struct ethernetif *ethernetif)
 #if LWIP_RECEIVE_SEMAPHORE
 			// we can't use the LwIP sys_signal_sem since this can't be used in an ISR
 			// release the semaphore and check if a task with a higher priority then the current one is waiting for it
-			xSemaphoreGiveFromISR(ethernetif->tse_info->rx_semaphore, &switch_context);
+			xSemaphoreGiveFromISR(&ethernetif->tse_info->rx_semaphore, &switch_context);
 #endif
 		}
 	}

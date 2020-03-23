@@ -52,7 +52,7 @@
 #include <FreeRTOS.h>
 #include <task.h>
 #include <semphr.h>
-//#include <timers.h>
+#include <timers.h>
 
 // don't forget our header
 #include "lwip_main.h"

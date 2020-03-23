@@ -48,7 +48,7 @@
 // include Altera system configuraion
 #include <system.h>
 
-
+#define LWIP_DONT_PROVIDE_BYTEORDER_FUNCTIONS
 #define LWIP_IPV4                       1
 
 

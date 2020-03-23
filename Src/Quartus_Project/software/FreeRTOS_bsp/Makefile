@@ -368,6 +368,7 @@ lwip_C_LIB_SRCS := \
 	$(lwip_SRCS_ROOT)/src/api/api_lib.c \
 	$(lwip_SRCS_ROOT)/src/api/api_msg.c \
 	$(lwip_SRCS_ROOT)/src/api/err.c \
+	$(lwip_SRCS_ROOT)/src/api/if_api.c \
 	$(lwip_SRCS_ROOT)/src/api/netbuf.c \
 	$(lwip_SRCS_ROOT)/src/api/netdb.c \
 	$(lwip_SRCS_ROOT)/src/api/netifapi.c \
@@ -383,52 +384,72 @@ lwip_C_LIB_SRCS := \
 	$(lwip_SRCS_ROOT)/src/arch/lwip_main.c \
 	$(lwip_SRCS_ROOT)/src/arch/lwip_tse_mac.c \
 	$(lwip_SRCS_ROOT)/src/arch/sys_arch.c \
-	$(lwip_SRCS_ROOT)/src/core/def.c \
-	#$(lwip_SRCS_ROOT)/src/core/dhcp.c \
-	$(lwip_SRCS_ROOT)/src/core/dns.c \
-	$(lwip_SRCS_ROOT)/src/core/init.c \
+	$(lwip_SRCS_ROOT)/src/core/ipv4/acd.c \
 	$(lwip_SRCS_ROOT)/src/core/ipv4/autoip.c \
+	$(lwip_SRCS_ROOT)/src/core/ipv4/dhcp.c \
+	$(lwip_SRCS_ROOT)/src/core/ipv4/etharp.c \
 	$(lwip_SRCS_ROOT)/src/core/ipv4/icmp.c \
 	$(lwip_SRCS_ROOT)/src/core/ipv4/igmp.c \
-	$(lwip_SRCS_ROOT)/src/core/ipv4/inet.c \
-	$(lwip_SRCS_ROOT)/src/core/ipv4/inet_chksum.c \
-	$(lwip_SRCS_ROOT)/src/core/ipv4/ip.c \
-	$(lwip_SRCS_ROOT)/src/core/ipv4/ip_addr.c \
-	$(lwip_SRCS_ROOT)/src/core/ipv4/ip_frag.c \
+	$(lwip_SRCS_ROOT)/src/core/ipv4/ip4.c \
+	$(lwip_SRCS_ROOT)/src/core/ipv4/ip4_addr.c \
+	$(lwip_SRCS_ROOT)/src/core/ipv4/ip4_frag.c \
+	$(lwip_SRCS_ROOT)/src/core/altcp.c \
+	$(lwip_SRCS_ROOT)/src/core/altcp_alloc.c \
+	$(lwip_SRCS_ROOT)/src/core/altcp_tcp.c \
+	$(lwip_SRCS_ROOT)/src/core/def.c \
+	$(lwip_SRCS_ROOT)/src/core/dns.c \
+	$(lwip_SRCS_ROOT)/src/core/inet_chksum.c \
+	$(lwip_SRCS_ROOT)/src/core/init.c \
+	$(lwip_SRCS_ROOT)/src/core/ip.c \
 	$(lwip_SRCS_ROOT)/src/core/mem.c \
 	$(lwip_SRCS_ROOT)/src/core/memp.c \
 	$(lwip_SRCS_ROOT)/src/core/netif.c \
 	$(lwip_SRCS_ROOT)/src/core/pbuf.c \
 	$(lwip_SRCS_ROOT)/src/core/raw.c \
-	$(lwip_SRCS_ROOT)/src/core/snmp/asn1_dec.c \
-	$(lwip_SRCS_ROOT)/src/core/snmp/asn1_enc.c \
-	$(lwip_SRCS_ROOT)/src/core/snmp/mib2.c \
-	$(lwip_SRCS_ROOT)/src/core/snmp/mib_structs.c \
-	$(lwip_SRCS_ROOT)/src/core/snmp/msg_in.c \
-	$(lwip_SRCS_ROOT)/src/core/snmp/msg_out.c \
 	$(lwip_SRCS_ROOT)/src/core/stats.c \
 	$(lwip_SRCS_ROOT)/src/core/sys.c \
 	$(lwip_SRCS_ROOT)/src/core/tcp.c \
 	$(lwip_SRCS_ROOT)/src/core/tcp_in.c \
 	$(lwip_SRCS_ROOT)/src/core/tcp_out.c \
-	$(lwip_SRCS_ROOT)/src/core/timers.c \
+	$(lwip_SRCS_ROOT)/src/core/timeouts.c \
 	$(lwip_SRCS_ROOT)/src/core/udp.c \
-	$(lwip_SRCS_ROOT)/src/netif/etharp.c \
-	$(lwip_SRCS_ROOT)/src/netif/ethernetif.c \
+	$(lwip_SRCS_ROOT)/src/netif/bridgeif.c \
+	$(lwip_SRCS_ROOT)/src/netif/bridgeif_fdb.c \
+	$(lwip_SRCS_ROOT)/src/netif/ethernet.c \
+	$(lwip_SRCS_ROOT)/src/netif/lowpan6.c \
+	$(lwip_SRCS_ROOT)/src/netif/lowpan6_ble.c \
+	$(lwip_SRCS_ROOT)/src/netif/lowpan6_common.c \
 	$(lwip_SRCS_ROOT)/src/netif/slipif.c \
+	$(lwip_SRCS_ROOT)/src/netif/zepif.c \
 	$(lwip_SRCS_ROOT)/src/netif/ppp/auth.c \
-	$(lwip_SRCS_ROOT)/src/netif/ppp/chap.c \
-	$(lwip_SRCS_ROOT)/src/netif/ppp/chpms.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/ccp.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/chap_ms.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/chap-md5.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/chap-new.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/demand.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/eap.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/ecp.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/eui64.c \
 	$(lwip_SRCS_ROOT)/src/netif/ppp/fsm.c \
 	$(lwip_SRCS_ROOT)/src/netif/ppp/ipcp.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/ipv6cp.c \
 	$(lwip_SRCS_ROOT)/src/netif/ppp/lcp.c \
 	$(lwip_SRCS_ROOT)/src/netif/ppp/magic.c \
-	$(lwip_SRCS_ROOT)/src/netif/ppp/md5.c \
-	$(lwip_SRCS_ROOT)/src/netif/ppp/pap.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/mppe.c \
 	$(lwip_SRCS_ROOT)/src/netif/ppp/ppp.c \
-	$(lwip_SRCS_ROOT)/src/netif/ppp/ppp_oe.c \
-	$(lwip_SRCS_ROOT)/src/netif/ppp/randm.c \
-	$(lwip_SRCS_ROOT)/src/netif/ppp/vj.c
+	$(lwip_SRCS_ROOT)/src/netif/ppp/pppapi.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/pppcrypt.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/pppoe.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/pppol2tp.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/pppos.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/upap.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/utils.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/vj.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/polarssl/arc4.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/polarssl/des.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/polarssl/md4.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/polarssl/md5.c \
+	$(lwip_SRCS_ROOT)/src/netif/ppp/polarssl/sha1.c
 
 
 # Assemble all component C source files 

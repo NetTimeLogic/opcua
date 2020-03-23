@@ -84,7 +84,7 @@ err_t ping_send(int s, ip_addr_t *addr, u8_t *data, u16_t size) {
 	// set the appropriate ethernet header
 	to.sin_len = sizeof(to);
 	to.sin_family = AF_INET;
-	inet_addr_from_ipaddr(&to.sin_addr, addr);
+	inet_addr_from_ip4addr(&to.sin_addr, addr);
 	//to.sin_addr.s_addr = addr->addr;
 
 	// send the packet
@@ -112,7 +112,7 @@ int ping_recv(int s)
 		if (len >= (int)(sizeof(struct ip_hdr)+sizeof(struct icmp_echo_hdr))) {
 			ip_addr_t fromaddr;
 
-			inet_addr_to_ipaddr(&fromaddr, &from.sin_addr);
+			inet_addr_to_ip4addr(&fromaddr, &from.sin_addr);
 
 			LWIP_DEBUGF( PING_DEBUG, ("ping: recv "));
 			ip_addr_debug_print(PING_DEBUG, &fromaddr);

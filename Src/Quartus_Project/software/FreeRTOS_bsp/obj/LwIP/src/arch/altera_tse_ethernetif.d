@@ -12,7 +12,8 @@ obj/LwIP/src/arch/altera_tse_ethernetif.o: \
  LwIP/inc/lwip/etharp.h LwIP/inc/lwip/netif.h LwIP/inc/lwip/ip4.h \
  LwIP/inc/lwip/prot/ip4.h LwIP/inc/lwip/prot/ethernet.h \
  LwIP/inc/lwip/prot/ieee.h LwIP/inc/lwip/prot/etharp.h \
- LwIP/inc/netif/ethernet.h LwIP/inc/altera_tse_ethernetif.h \
+ LwIP/inc/netif/ethernet.h LwIP/inc/netif/ppp/pppoe.h \
+ LwIP/inc/netif/ppp/ppp_opts.h LwIP/inc/altera_tse_ethernetif.h \
  LwIP/inc/altera_avalon_tse.h LwIP/inc/triple_speed_ethernet_regs.h \
  HAL/inc/io.h HAL/inc/alt_types.h drivers/inc/altera_avalon_sgdma.h \
  HAL/inc/sys/alt_dev.h HAL/inc/sys/alt_llist.h \
@@ -87,6 +88,10 @@ LwIP/inc/lwip/prot/ieee.h:
 LwIP/inc/lwip/prot/etharp.h:
 
 LwIP/inc/netif/ethernet.h:
+
+LwIP/inc/netif/ppp/pppoe.h:
+
+LwIP/inc/netif/ppp/ppp_opts.h:
 
 LwIP/inc/altera_tse_ethernetif.h:
 

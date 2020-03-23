@@ -17,9 +17,13 @@ obj/LwIP/src/arch/lwip_tse_mac.o: LwIP/src/arch/lwip_tse_mac.c \
  drivers/inc/altera_avalon_sgdma_descriptor.h LwIP/inc/netif/etharp.h \
  LwIP/inc/lwip/etharp.h LwIP/inc/lwip/ip4.h LwIP/inc/lwip/prot/ip4.h \
  LwIP/inc/lwip/prot/ethernet.h LwIP/inc/lwip/prot/ieee.h \
- LwIP/inc/lwip/prot/etharp.h LwIP/inc/netif/ethernet.h LwIP/inc/lwip/ip.h \
- LwIP/inc/lwip/ip6.h LwIP/inc/lwip/prot/ip.h LwIP/inc/lwip/icmp.h \
- LwIP/inc/lwip/prot/icmp.h
+ LwIP/inc/lwip/prot/etharp.h LwIP/inc/netif/ethernet.h \
+ FreeRTOS/inc/FreeRTOS.h FreeRTOS/inc/FreeRTOSConfig.h \
+ FreeRTOS/inc/projdefs.h FreeRTOS/inc/portable.h FreeRTOS/inc/portmacro.h \
+ FreeRTOS/inc/mpu_wrappers.h FreeRTOS/inc/task.h FreeRTOS/inc/list.h \
+ FreeRTOS/inc/semphr.h FreeRTOS/inc/queue.h FreeRTOS/inc/task.h \
+ FreeRTOS/inc/timers.h LwIP/inc/lwip/ip.h LwIP/inc/lwip/ip6.h \
+ LwIP/inc/lwip/prot/ip.h LwIP/inc/lwip/icmp.h LwIP/inc/lwip/prot/icmp.h
 
 HAL/inc/io.h:
 
@@ -116,6 +120,30 @@ LwIP/inc/lwip/prot/ieee.h:
 LwIP/inc/lwip/prot/etharp.h:
 
 LwIP/inc/netif/ethernet.h:
+
+FreeRTOS/inc/FreeRTOS.h:
+
+FreeRTOS/inc/FreeRTOSConfig.h:
+
+FreeRTOS/inc/projdefs.h:
+
+FreeRTOS/inc/portable.h:
+
+FreeRTOS/inc/portmacro.h:
+
+FreeRTOS/inc/mpu_wrappers.h:
+
+FreeRTOS/inc/task.h:
+
+FreeRTOS/inc/list.h:
+
+FreeRTOS/inc/semphr.h:
+
+FreeRTOS/inc/queue.h:
+
+FreeRTOS/inc/task.h:
+
+FreeRTOS/inc/timers.h:
 
 LwIP/inc/lwip/ip.h:
 
