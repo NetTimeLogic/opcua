@@ -11,6 +11,7 @@
 #include <lwip/dhcp.h>
 #include <lwip/sockets.h>
 #include <lwip/stats.h>
+#include <lwip/ip4_addr.h>
 #include <netif/etharp.h>
 #include <ping.h>
 #include <math.h>
@@ -41,8 +42,8 @@ int main_thread();
 //  Define netif for lwIP
 struct netif eth_tse;
 
-struct ip_addr lwipStaticIp;
-struct ip_addr PingIp;
+struct ip4_addr lwipStaticIp;
+struct ip4_addr PingIp;
 
 static int nw_ready;
 static sys_thread_t main_thread_handle;
