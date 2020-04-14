@@ -60,7 +60,8 @@ int write (int fd, const void *ptr, size_t len)
     return ALT_WRITE(fd, ptr, len);
 #if LWIP_SOCKET
   else
-    return send (fd, (void*) ptr, len, 0);
+	  return 1;
+   // return send(fd, (void*) ptr, len, 0);
 #else
 	else
 		return -1;

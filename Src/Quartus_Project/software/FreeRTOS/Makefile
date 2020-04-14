@@ -12,12 +12,12 @@ ALT_LIBRARY_DIRS :=
 
 # List of library names for -l linker option (-l added when used).
 # Includes the BSP.
-ALT_LIBRARY_NAMES :=
+ALT_LIBRARY_NAMES := 
 
 # List of library names for -msys-lib linker option (-msys-lib added when used).
 # These are libraries that might be located in the BSP and depend on the BSP
 # library, or vice versa
-ALT_BSP_DEP_LIBRARY_NAMES :=
+ALT_BSP_DEP_LIBRARY_NAMES := 
 
 # List of dependencies for the linker.  This is usually the full pathname
 # of each library (*.a) file.
@@ -142,7 +142,8 @@ ACDS_VERSION := 18.1
 ELF := FreeRTOS.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := main.c
+C_SRCS += open62541.c
+C_SRCS += main.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -160,11 +161,11 @@ CREATE_ELF_DERIVED_FILES := 0
 CREATE_LINKER_MAP := 1
 
 # Common arguments for ALT_CFLAGSs
-APP_CFLAGS_DEFINED_SYMBOLS :=
+APP_CFLAGS_DEFINED_SYMBOLS := -DUA_ARCHITECTURE_FREERTOSLWIP
 APP_CFLAGS_UNDEFINED_SYMBOLS :=
 APP_CFLAGS_OPTIMIZATION := -O0
 APP_CFLAGS_DEBUG_LEVEL := -g
-APP_CFLAGS_WARNINGS := -Wall
+APP_CFLAGS_WARNINGS := -Wall -Wfatal-errors
 APP_CFLAGS_USER_FLAGS :=
 
 APP_ASFLAGS_USER :=

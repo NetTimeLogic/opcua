@@ -6,6 +6,8 @@
 #include <stdbool.h>
 
 
+
+
 // include LwIP
 #include <lwip_main.h>
 #include <lwip/dhcp.h>
@@ -29,6 +31,8 @@
 #include "queue.h"
 
 #include <arch/cc.h>
+
+#include "open62541.h"
 
 #define THREAD_STACKSIZE 4096
 #define mssleep(x)						vTaskDelay(x)
@@ -273,6 +277,79 @@ int main(){
 }
 
 
+static void addObject(UA_Server *server) {
+    UA_NodeId NetTimeLogicId = UA_NODEID_STRING(1, "NetTimeLogic");
+    UA_ObjectAttributes oAttr = UA_ObjectAttributes_default;
+    oAttr.displayName = UA_LOCALIZEDTEXT("en-US", "NetTimeLogic GmbH");
+    UA_Server_addObjectNode(server, UA_NODEID_NULL,
+                            UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER),
+                            UA_NODEID_NUMERIC(0, UA_NS0ID_ORGANIZES),
+                            UA_QUALIFIEDNAME(1, "NetTimeLogic"),
+                            UA_NODEID_NUMERIC(0, UA_NS0ID_BASEOBJECTTYPE),
+                            oAttr, NULL, &NetTimeLogicId);
+}
+
+static void addVariable(UA_Server *server) {
+    UA_Boolean ledValue = false;
+
+    UA_VariableAttributes vAttr = UA_VariableAttributes_default;
+    vAttr.description = UA_LOCALIZEDTEXT("en_US","LED on/off");
+    vAttr.displayName = UA_LOCALIZEDTEXT("en_US","LED");
+    vAttr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
+
+    UA_Variant_setScalar(&vAttr.value, &ledValue, &UA_TYPES[UA_TYPES_BOOLEAN]);
+
+    UA_NodeId currentNodeId  = UA_NODEID_STRING(1, "LedNode");
+    UA_Server_addVariableNode(server, currentNodeId,
+                            UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER),
+                            UA_NODEID_NUMERIC(0, UA_NS0ID_ORGANIZES),
+                            UA_QUALIFIEDNAME(1, "LedNode"),
+                            UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE),
+                            vAttr, NULL, NULL);
+
+}
+
+static void opcua_thread(void *arg) {
+
+    UA_Boolean running = true;
+
+    printf("--------- Init OPC UA Server ---------\r\n");
+
+    UA_Server *server = UA_Server_new();
+    UA_ServerConfig *config = UA_Server_getConfig(server);
+    UA_ServerConfig_setDefault(UA_Server_getConfig(server));
+
+    // Server buffer size config
+    config->networkLayers->localConnectionConfig.recvBufferSize = 32768;
+    config->networkLayers->localConnectionConfig.sendBufferSize = 32768;
+
+    // Discovery/Url config
+    UA_String UaUrl = UA_String_fromChars("opc.tcp://192.168.1.10:4840");
+    config->networkLayers[0].discoveryUrl = UA_STRING("opc.tcp://192.168.1.10:4840");
+
+    config->applicationDescription.discoveryUrls = &UaUrl;
+    config->applicationDescription.discoveryUrlsSize = 1;
+    config->applicationDescription.applicationUri = UA_STRING("192.168.1.10");
+    config->applicationDescription.applicationName = UA_LOCALIZEDTEXT("en-US", "NetTimeLogic");
+    config->applicationDescription.applicationType = UA_APPLICATIONTYPE_SERVER;
+
+    UA_ServerConfig_setCustomHostname(config, UA_STRING("192.168.1.10"));
+
+    // Define object and variables
+    addObject(server);
+    addVariable(server);
+    //addVariableCallback(server);
+
+    printf("---------Starting UA Server ---------\r\n");
+    UA_StatusCode retval = UA_Server_run(server, &running);
+    printf("--------- Stopping UA Server---------\r\n");
+
+    UA_Server_delete(server);
+    vTaskDelete(NULL);
+}
+
+
+
 int main_thread(){
 	alt_printf("------------------------------------------------------\r\n");
 	alt_printf("--------- Starting OPC UA Server application ---------\r\n");
@@ -290,7 +367,10 @@ int main_thread(){
     		THREAD_STACKSIZE,
             DEFAULT_THREAD_PRIO);
 
-
+    // starting OPC UA thread
+    sys_thread_new("opcua_thread", opcua_thread, NULL,
+            THREAD_STACKSIZE,
+            DEFAULT_THREAD_PRIO);
 
     //vTaskStartScheduler();
     while(1);

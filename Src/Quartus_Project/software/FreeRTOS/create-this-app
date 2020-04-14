@@ -5,7 +5,7 @@
 
 BSP_DIR=../FreeRTOS_bsp
 QUARTUS_PROJECT_DIR=../../
-NIOS2_APP_GEN_ARGS="--elf-name FreeRTOS.elf  --set OBJDUMP_INCLUDE_SOURCE 1 --src-files main.c echo_server.c ethernet.c BasicWEB.c BlockQ.c blocktim.c countsem.c  death.c dynamic.c GenQTest.c  integer.c PollQ.c QPeek.c recmutex.c semtest.c"
+NIOS2_APP_GEN_ARGS="--elf-name FreeRTOS.elf  --set OBJDUMP_INCLUDE_SOURCE 1 --src-files open62541.c main.c"
 
 
 # First, check to see if $SOPC_KIT_NIOS2 environmental variable is set.

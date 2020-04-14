@@ -68,9 +68,9 @@
 #endif
 
 /** Define random number generator function of your system */
-#ifdef __DOXYGEN__
+//#ifdef __DOXYGEN__
 #define LWIP_RAND() ((u32_t)rand())
-#endif
+//#endif
 
 /** Platform specific diagnostic output.<br>
  * Note the default implementation pulls in printf, which may
@@ -122,17 +122,17 @@
 #if !defined(LWIP_HAVE_INT64) && defined(UINT64_MAX)
 #define LWIP_HAVE_INT64 1
 #endif
-typedef uint8_t   u8_t;
-typedef int8_t    s8_t;
-typedef uint16_t  u16_t;
-typedef int16_t   s16_t;
-typedef uint32_t  u32_t;
-typedef int32_t   s32_t;
+//typedef uint8_t   u8_t;
+//typedef int8_t    s8_t;
+ //typedef uint16_t  u16_t;
+//typedef int16_t   s16_t;
+//typedef uint32_t  u32_t;
+//typedef int32_t   s32_t;
 #if LWIP_HAVE_INT64
-typedef uint64_t  u64_t;
-typedef int64_t   s64_t;
+//typedef uint64_t  u64_t;
+//typedef int64_t   s64_t;
 #endif
-typedef u32_t mem_ptr_t;
+//typedef u32_t mem_ptr_t;
 #endif
 
 /** Define this to 1 in arch/cc.h of your port if your compiler does not provide

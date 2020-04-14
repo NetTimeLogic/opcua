@@ -61,7 +61,11 @@ obj/default/main.o: main.c ../FreeRTOS_bsp//LwIP/inc/lwip_main.h \
  ../FreeRTOS_bsp//FreeRTOS/inc/task.h \
  ../FreeRTOS_bsp//FreeRTOS/inc/list.h \
  ../FreeRTOS_bsp//FreeRTOS/inc/queue.h \
- ../FreeRTOS_bsp//FreeRTOS/inc/task.h
+ ../FreeRTOS_bsp//FreeRTOS/inc/task.h open62541.h \
+ ../FreeRTOS_bsp//LwIP/inc/lwip/tcpip.h \
+ ../FreeRTOS_bsp//LwIP/inc/lwip/timeouts.h \
+ ../FreeRTOS_bsp//LwIP/inc/lwip/netdb.h \
+ ../FreeRTOS_bsp//LwIP/inc/lwip/init.h
 
 ../FreeRTOS_bsp//LwIP/inc/lwip_main.h:
 
@@ -200,3 +204,13 @@ obj/default/main.o: main.c ../FreeRTOS_bsp//LwIP/inc/lwip_main.h \
 ../FreeRTOS_bsp//FreeRTOS/inc/queue.h:
 
 ../FreeRTOS_bsp//FreeRTOS/inc/task.h:
+
+open62541.h:
+
+../FreeRTOS_bsp//LwIP/inc/lwip/tcpip.h:
+
+../FreeRTOS_bsp//LwIP/inc/lwip/timeouts.h:
+
+../FreeRTOS_bsp//LwIP/inc/lwip/netdb.h:
+
+../FreeRTOS_bsp//LwIP/inc/lwip/init.h:

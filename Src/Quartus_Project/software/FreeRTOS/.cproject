@@ -6,24 +6,24 @@
 		</buildSystem>
 		<cconfiguration id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.324788289">
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration buildProperties="" description="" id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.324788289" name="Nios II" parent="org.eclipse.cdt.build.core.prefbase.cfg">
+				<configuration artifactName="${ProjName}" buildProperties="" description="" id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.324788289" name="Nios II" parent="org.eclipse.cdt.build.core.prefbase.cfg">
 					<folderInfo id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.324788289." name="/" resourcePath="">
-						<toolChain id="altera.nios2.mingw.gcc4.247877336" name="MinGW Nios II GCC4" superClass="altera.nios2.mingw.gcc4">
+						<toolChain id="altera.nios2.mingw.gcc4.247877336" name="MinGW Nios II GCC4" superClass="altera.nios2.mingw.gcc4" unusedChildren="altera.tool.gnu.cpp.compiler.mingw;altera.tool.gnu.archiver.mingw">
 							<targetPlatform id="altera.nios2.mingw.gcc4.956502230" name="Nios II" superClass="altera.nios2.mingw.gcc4"/>
-							<builder buildPath="${workspace_loc://FreeRTOS}" id="altera.tool.gnu.builder.mingw.1505533152" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="altera.tool.gnu.builder.mingw"/>
-							<tool id="altera.tool.gnu.c.compiler.mingw.1977391296" name="Nios II GCC C Compiler" superClass="altera.tool.gnu.c.compiler.mingw">
-								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.274162168" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
-							</tool>
-							<tool id="altera.tool.gnu.cpp.compiler.mingw.1812401877" name="Nios II GCC C++ Compiler" superClass="altera.tool.gnu.cpp.compiler.mingw">
-								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.26831862" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-							</tool>
-							<tool id="altera.tool.gnu.archiver.mingw.1960099481" name="Nios II GCC Archiver" superClass="altera.tool.gnu.archiver.mingw"/>
+							<builder buildPath="${workspace_loc://FreeRTOS}" id="altera.tool.gnu.builder.135098293" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="altera.tool.gnu.builder"/>
 							<tool id="altera.tool.gnu.c.linker.mingw.978423464" name="Nios II GCC C Linker" superClass="altera.tool.gnu.c.linker.mingw"/>
 							<tool id="altera.tool.gnu.assembler.mingw.1222829569" name="Nios II GCC Assembler" superClass="altera.tool.gnu.assembler.mingw">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.823221577" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
+							<tool id="altera.tool.gnu.c.compiler.mingw.1977391296" name="Nios II GCC C Compiler" superClass="altera.tool.gnu.c.compiler.mingw">
+								<option id="gnu.c.compiler.option.include.paths.1879125618" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.274162168" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.324788289" moduleId="org.eclipse.cdt.core.settings" name="Nios II">
@@ -80,4 +80,10 @@
 			</target>
 		</buildTargets>
 	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Nios II">
+			<resource resourceType="PROJECT" workspacePath="/FreeRTOS"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

@@ -48,10 +48,8 @@
 // include Altera system configuraion
 #include <system.h>
 
-#define LWIP_DONT_PROVIDE_BYTEORDER_FUNCTIONS
 #define LWIP_IPV4                       1
-
-
+#define LWIP_DONT_PROVIDE_BYTEORDER_FUNCTIONS
 /*
    -----------------------------------------------
    ---------- Platform specific locking ----------
@@ -602,6 +600,8 @@
  */
 #define SNMP_MAX_VALUE_SIZE             LWIP_MAX((SNMP_MAX_OCTET_STRING_LEN)+1, sizeof(s32_t)*(SNMP_MAX_TREE_DEPTH))
 
+
+#define LWIP_MULTICAST_TX_OPTIONS 1
 /*
    ----------------------------------
    ---------- IGMP options ----------
@@ -1091,8 +1091,8 @@
  * LWIP_COMPAT_SOCKETS==1: Enable BSD-style sockets functions names.
  * (only used if you use sockets.c)
  */
-#define LWIP_COMPAT_SOCKETS             		1
-
+#define LWIP_COMPAT_SOCKETS             		0
+#define LWIP_COMPAT_MUTEX                       0
 /**
  * LWIP_SOCKET_OFFSET==n: Increases the file descriptor number created by LwIP with n.
  * This can be usefull when there are multiple API's which create file descriptors.
