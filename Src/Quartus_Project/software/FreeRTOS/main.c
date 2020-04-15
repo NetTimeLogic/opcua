@@ -6,8 +6,6 @@
 #include <stdbool.h>
 
 
-
-
 // include LwIP
 #include <lwip_main.h>
 #include <lwip/dhcp.h>
@@ -19,9 +17,9 @@
 #include <math.h>
 
 // include low-level network support
-#include <triple_speed_ethernet_regs.h>
-#include <altera_tse_ethernetif.h>
-#include <altera_avalon_tse.h>
+//#include <triple_speed_ethernet_regs.h>
+//#include <altera_tse_ethernetif.h>
+//#include <altera_avalon_tse.h>
 
 #include "system.h"
 
@@ -34,7 +32,7 @@
 
 #include "open62541.h"
 
-#define THREAD_STACKSIZE 4096
+#define THREAD_STACKSIZE 102400
 #define mssleep(x)						vTaskDelay(x)
 #define MDIO_IFACE						mdio1
 
@@ -56,14 +54,14 @@ static sys_thread_t main_thread_handle;
 void vApplicationMallocFailedHook(){
     for(;;){
         vTaskDelay(pdMS_TO_TICKS(1000));
-        alt_printf("vApplicationMallocFailedHook \r\n");
+        printf("vApplicationMallocFailedHook \r\n");
     }
 }
 
 void vApplicationStackOverflowHook( TaskHandle_t xTask, char *pcTaskName ){
     for(;;){
         vTaskDelay(pdMS_TO_TICKS(1000));
-        alt_printf("vApplicationStackOverflowHook \r\n");
+        printf("vApplicationStackOverflowHook \r\n");
     }
 }
 
@@ -91,7 +89,7 @@ static void LinkCallback(struct netif* netif)
 	// TODO release semaphore
 	// TODO switch context
 
-	alt_printf("[ethernet] Link Callback for interface: %s\n", netif->name);
+	printf("[ethernet] Link Callback for interface: %s\n", netif->name);
 }
 
 int InitNetwork(void)
@@ -118,7 +116,7 @@ static int WaitOnPHY(void)
 	bool bInitialized = false;
 
 	while (!bInitialized) {
-		alt_printf("[ethernet] PHY INFO: Interface: %d Waiting for PHY\n", 0);
+		printf("[ethernet] PHY INFO: Interface: %d Waiting for PHY\n", 0);
 
 		// initialize the structure necessary for "pmac" to function.
 		pmac = (np_tse_mac*)TSE_MAC_0_BASE;
@@ -131,13 +129,13 @@ static int WaitOnPHY(void)
 			phyid2 = IORD(&pmac->MDIO_IFACE.PHY_ID2, 0);
 
 			if (phyid != phyid2) {
-				alt_printf("[ethernet] PHY INFO: [PHY ID] 0x%x %x %x\n", phyadd, phyid, phyid2);
+				printf("[ethernet] PHY INFO: [PHY ID] 0x%x %x %x\n", phyadd, phyid, phyid2);
 				phyadd = 0xff;
 			}
 		}
 
 		if ((phyadd == 0xff) && (phyid == phyid2)) {
-			alt_printf("[ethernet] PHY INFO: No PHY found... restart detect\n");
+			printf("[ethernet] PHY INFO: No PHY found... restart detect\n");
 			bInitialized = true;
 			mssleep(1000);
 		}
@@ -149,17 +147,17 @@ static int WaitOnPHY(void)
 	IOWR(&pmac->MDIO_IFACE.CONTROL, 0, PCS_CTL_an_enable | PCS_CTL_sw_reset);
 	if (((IORD(&pmac->MDIO_IFACE.CONTROL, 0) & PCS_CTL_rx_slpbk) != 0) || ((IORD(&pmac->MDIO_IFACE.STATUS, 0) & PCS_ST_an_done) == 0)) {
 		IOWR(&pmac->MDIO_IFACE.CONTROL, 0, PCS_CTL_an_enable | PCS_CTL_sw_reset);
-		alt_printf("[ethernet] PHY INFO: Issuing PHY Reset\n");
+		printf("[ethernet] PHY INFO: Issuing PHY Reset\n");
 	}
 
 	// holding pattern until autonegotiation completes.
 	if ((IORD(&pmac->MDIO_IFACE.STATUS, 0) & PCS_ST_an_done) == 0) {
-		alt_printf("[ethernet] PHY INFO: Waiting on PHY link...\n");
+		printf("[ethernet] PHY INFO: Waiting on PHY link...\n");
 
 		while ((IORD(&pmac->MDIO_IFACE.STATUS, 0) & PCS_ST_an_done) == 0)
 			mssleep(10);
 
-		alt_printf("[ethernet] PHY INFO: PHY link detected, allowing network to start.\n");
+		printf("[ethernet] PHY INFO: PHY link detected, allowing network to start.\n");
 		
 		mssleep(1000);
 	}
@@ -172,18 +170,18 @@ static int WaitOnPHY(void)
 
 void xEthernetRun()
 {
-    alt_printf("--------- Init Network ---------\r\n");
+	printf("--------- Init Network ---------\r\n");
 
 	// initialize PHY
 	WaitOnPHY();
 
 	if (InitNetwork() != EXIT_SUCCESS) {
 		// the network initialization has failed.
-		alt_printf("[ethernet] Network initialize failed!\n");
+		printf("[ethernet] Network initialize failed!\n");
 	}
 
     nw_ready = 1;
-	alt_printf("--------- Init Done ---------\r\n");
+    printf("--------- Init Done ---------\r\n");
 
 
     // starting the network thread
@@ -230,7 +228,7 @@ int get_mac_addr(int iface, struct netif* ethif, unsigned char mac_addr[6])
 int get_ip_addr(int iface, ip_addr_t* ipaddr, ip_addr_t* netmask, ip_addr_t* gw, int* use_dhcp)
 {
 	// set configuration
-	IP4_ADDR(ipaddr, 192, 168, 1, 218);
+	IP4_ADDR(ipaddr, 192, 168, 1, 10);
 	IP4_ADDR(netmask, 255, 255, 255, 0);
 	IP4_ADDR(gw, 192, 168, 1, 1);
 	*use_dhcp = 0;
@@ -270,7 +268,7 @@ int is_interface_active(int iface)
 int main(){
     main_thread_handle = sys_thread_new("main_thrd", (void(*)(void*))main_thread, 0,
                     THREAD_STACKSIZE,
-					DEFAULT_THREAD_PRIO);
+                    DEFAULT_THREAD_PRIO);
     vTaskStartScheduler();
     while(1);
     return 0;
@@ -316,19 +314,17 @@ static void opcua_thread(void *arg) {
     printf("--------- Init OPC UA Server ---------\r\n");
 
     UA_Server *server = UA_Server_new();
+    printf("--------- Get Server Config---------\r\n");
     UA_ServerConfig *config = UA_Server_getConfig(server);
-    UA_ServerConfig_setDefault(UA_Server_getConfig(server));
+    printf("--------- Set Server Config ---------\r\n");
+    UA_ServerConfig_setDefault(config);
 
     // Server buffer size config
-    config->networkLayers->localConnectionConfig.recvBufferSize = 32768;
-    config->networkLayers->localConnectionConfig.sendBufferSize = 32768;
+    config->networkLayers->localConnectionConfig.recvBufferSize = 16384;
+    config->networkLayers->localConnectionConfig.sendBufferSize = 16384;
 
     // Discovery/Url config
-    UA_String UaUrl = UA_String_fromChars("opc.tcp://192.168.1.10:4840");
     config->networkLayers[0].discoveryUrl = UA_STRING("opc.tcp://192.168.1.10:4840");
-
-    config->applicationDescription.discoveryUrls = &UaUrl;
-    config->applicationDescription.discoveryUrlsSize = 1;
     config->applicationDescription.applicationUri = UA_STRING("192.168.1.10");
     config->applicationDescription.applicationName = UA_LOCALIZEDTEXT("en-US", "NetTimeLogic");
     config->applicationDescription.applicationType = UA_APPLICATIONTYPE_SERVER;
@@ -341,7 +337,8 @@ static void opcua_thread(void *arg) {
     //addVariableCallback(server);
 
     printf("---------Starting UA Server ---------\r\n");
-    UA_StatusCode retval = UA_Server_run(server, &running);
+    //UA_StatusCode retval = UA_Server_run(server, &running);
+    UA_Server_run(server, &running);
     printf("--------- Stopping UA Server---------\r\n");
 
     UA_Server_delete(server);
@@ -351,15 +348,15 @@ static void opcua_thread(void *arg) {
 
 
 int main_thread(){
-	alt_printf("------------------------------------------------------\r\n");
-	alt_printf("--------- Starting OPC UA Server application ---------\r\n");
-	alt_printf("------------------------------------------------------\r\n");
-	alt_printf("--------- open62541 example created for a    ---------\r\n");
-    alt_printf("--------- MicroBlaze design on a Artix7 FPGA ---------\r\n");
-    alt_printf("------------------------------------------------------\r\n");
-    alt_printf("--------- NetTImeLogic GmbH, Switzerland     ---------\r\n");
-    alt_printf("--------- contact@nettimelogic.com           ---------\r\n");
-    alt_printf("------------------------------------------------------\r\n");
+	printf("------------------------------------------------------\r\n");
+	printf("--------- Starting OPC UA Server application ---------\r\n");
+	printf("------------------------------------------------------\r\n");
+	printf("--------- open62541 example created for a    ---------\r\n");
+	printf("--------- MicroBlaze design on a Artix7 FPGA ---------\r\n");
+	printf("------------------------------------------------------\r\n");
+	printf("--------- NetTImeLogic GmbH, Switzerland     ---------\r\n");
+	printf("--------- contact@nettimelogic.com           ---------\r\n");
+	printf("------------------------------------------------------\r\n");
 
 	//xTaskCreate(xEthernetRun, "eth0", KB(4), NULL, tskIDLE_PRIORITY + 2, NULL);
 

@@ -50,7 +50,6 @@ obj/default/main.o: main.c ../FreeRTOS_bsp//LwIP/inc/lwip_main.h \
  ../FreeRTOS_bsp//LwIP/inc/netif/etharp.h \
  ../FreeRTOS_bsp//LwIP/inc/netif/ethernet.h \
  ../FreeRTOS_bsp//LwIP/inc/ping.h \
- ../FreeRTOS_bsp//LwIP/inc/triple_speed_ethernet_regs.h \
  ../FreeRTOS_bsp//FreeRTOS/inc/FreeRTOS.h \
  ../FreeRTOS_bsp//FreeRTOS/inc/FreeRTOSConfig.h \
  ../FreeRTOS_bsp//FreeRTOS/inc/projdefs.h \
@@ -178,8 +177,6 @@ obj/default/main.o: main.c ../FreeRTOS_bsp//LwIP/inc/lwip_main.h \
 ../FreeRTOS_bsp//LwIP/inc/netif/ethernet.h:
 
 ../FreeRTOS_bsp//LwIP/inc/ping.h:
-
-../FreeRTOS_bsp//LwIP/inc/triple_speed_ethernet_regs.h:
 
 ../FreeRTOS_bsp//FreeRTOS/inc/FreeRTOS.h:
 
