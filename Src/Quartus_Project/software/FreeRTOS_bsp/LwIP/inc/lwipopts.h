@@ -461,6 +461,17 @@
  * filter on recv operations.
  */
 #define IP_SOF_BROADCAST_RECV           0
+/*
+   ----------------------------------
+   -------- Multicast options -------
+   ----------------------------------
+*/
+/**
+ * LWIP_MULTICAST_TX_OPTIONS==1: Enable multicast TX support like the socket options
+ * IP_MULTICAST_TTL/IP_MULTICAST_IF/IP_MULTICAST_LOOP, as well as (currently only)
+ * core support for the corresponding IPv6 options.
+ */
+#define LWIP_MULTICAST_TX_OPTIONS 1
 
 /*
    ----------------------------------
@@ -600,8 +611,6 @@
  */
 #define SNMP_MAX_VALUE_SIZE             LWIP_MAX((SNMP_MAX_OCTET_STRING_LEN)+1, sizeof(s32_t)*(SNMP_MAX_TREE_DEPTH))
 
-
-#define LWIP_MULTICAST_TX_OPTIONS 1
 /*
    ----------------------------------
    ---------- IGMP options ----------

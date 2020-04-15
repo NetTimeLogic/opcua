@@ -61,8 +61,7 @@ int read (int fd, void *ptr, size_t len)
 		return ALT_READ (fd, ptr, len);
 #if LWIP_SOCKET
 	else
-		//return recvfrom(fd, ptr, len, 0, NULL, NULL);
-		return 1;
+		return lwip_recvfrom(fd, ptr, len, 0, NULL, NULL);
 #else
 	else
 		return -1;

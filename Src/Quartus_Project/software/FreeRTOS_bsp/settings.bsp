@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>freertos</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>14.04.2020 15:34:12</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1586871252755</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>15.04.2020 16:24:35</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1586960675519</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios.sopcinfo</SopcDesignFile>
@@ -1429,8 +1429,8 @@ configQUEUE_REGISTRY_SIZE defines the maximum number of queues and semaphores th
                 <SettingName>lwip.proto.enable_igmp</SettingName>
                 <Identifier>CONF_LWIP_PROTO_IGMP</Identifier>
                 <Type>Boolean</Type>
-                <Value>0</Value>
-                <DefaultValue>0</DefaultValue>
+                <Value>1</Value>
+                <DefaultValue>1</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Enable IGMP support</Description>
                 <Restrictions>none</Restrictions>
