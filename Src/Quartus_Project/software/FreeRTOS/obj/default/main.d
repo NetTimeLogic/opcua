@@ -64,7 +64,7 @@ obj/default/main.o: main.c ../FreeRTOS_bsp//LwIP/inc/lwip_main.h \
  ../FreeRTOS_bsp//LwIP/inc/lwip/tcpip.h \
  ../FreeRTOS_bsp//LwIP/inc/lwip/timeouts.h \
  ../FreeRTOS_bsp//LwIP/inc/lwip/netdb.h \
- ../FreeRTOS_bsp//LwIP/inc/lwip/init.h
+ ../FreeRTOS_bsp//LwIP/inc/lwip/init.h iicNs.h
 
 ../FreeRTOS_bsp//LwIP/inc/lwip_main.h:
 
@@ -211,3 +211,5 @@ open62541.h:
 ../FreeRTOS_bsp//LwIP/inc/lwip/netdb.h:
 
 ../FreeRTOS_bsp//LwIP/inc/lwip/init.h:
+
+iicNs.h:
