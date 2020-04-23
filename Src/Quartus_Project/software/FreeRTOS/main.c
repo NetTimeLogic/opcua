@@ -45,7 +45,7 @@
 // #define UA_PUBSUB_RT_CONFIG_DIRECT_VALUE_ACCESS 
 // #define UA_PUBSUB_RT_CONFIG_FIXED_SIZE
 
-// #define ALL_DATASETS
+#define ALL_DATASETS
 #define DYNAMIC_FIELDS 2
 
 int main_thread();
@@ -480,13 +480,10 @@ addDataSetWriter(UA_Server *server) {
 }
 
 static int opcua_pubsub() {
-
-
-	do {
-
-	  vTaskDelay(1);
-
-	} while(!nw_ready);
+    // Waiting until Network is ready
+    do {
+        vTaskDelay(1);
+    } while(!nw_ready);
 
 
     UA_Boolean running = true;
@@ -527,11 +524,11 @@ static int opcua_pubsub() {
 
     UA_StatusCode retval;
     /* create nodes from nodeset */
-  /*  if (iicNs(server) != UA_STATUSCODE_GOOD) {
+    if (iicNs(server) != UA_STATUSCODE_GOOD) {
         UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the example nodeset. "
             "Check previous output for any error.");
         retval = UA_STATUSCODE_BADUNEXPECTEDERROR;
-    } else {*/
+    } else {
 
         printf("--------- Add PubSubConnection ---------\r\n");
         addPubSubConnection(server, &transportProfile, &networkAddressUrl);
@@ -723,7 +720,7 @@ static int opcua_pubsub() {
         UA_Server_addRepeatedCallback(server, valueUpdateCallback, NULL, PUBSUB_CONFIG_PUBLISH_CYCLE_MS, &callbackId);
 
         retval = UA_Server_run(server, &running);
-   // }
+    }
 
     UA_Server_delete(server);
     return retval == UA_STATUSCODE_GOOD ? EXIT_SUCCESS : EXIT_FAILURE;

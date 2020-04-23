@@ -51,9 +51,9 @@
 /* #undef UA_ENABLE_PUBSUB_ETH_UADP_ETF */
 /* #undef UA_ENABLE_PUBSUB_ETH_UADP_XDP */
 /* #undef UA_ENABLE_PUBSUB_DELTAFRAMES */
-/* #undef UA_ENABLE_PUBSUB_INFORMATIONMODEL */
+#define UA_ENABLE_PUBSUB_INFORMATIONMODEL
 /* #undef UA_ENABLE_PUBSUB_INFORMATIONMODEL_METHODS */
-#define UA_ENABLE_DA
+/* #undef UA_ENABLE_DA */
 /* #undef UA_ENABLE_ENCRYPTION */
 /* #undef UA_ENABLE_HISTORIZING */
 #define UA_ENABLE_PARSING
@@ -13778,7 +13778,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "C:/open62541_Nios/src_generated/open62541/types_generated.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2020-04-21 03:05:03 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2020-04-23 01:47:15 */
 
 
 #ifdef UA_ENABLE_AMALGAMATION
@@ -13793,7 +13793,7 @@ _UA_BEGIN_DECLS
  * Every type is assigned an index in an array containing the type descriptions.
  * These descriptions are used during type handling (copying, deletion,
  * binary encoding, ...). */
-#define UA_TYPES_COUNT 234
+#define UA_TYPES_COUNT 227
 extern UA_EXPORT const UA_DataType UA_TYPES[UA_TYPES_COUNT];
 
 /**
@@ -16578,92 +16578,6 @@ typedef struct {
 #define UA_TYPES_SERVERSTATUSDATATYPE 213
 
 /**
- * Range
- * ^^^^^
- */
-typedef struct {
-    UA_Double low;
-    UA_Double high;
-} UA_Range;
-
-#define UA_TYPES_RANGE 214
-
-/**
- * EUInformation
- * ^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_String namespaceUri;
-    UA_Int32 unitId;
-    UA_LocalizedText displayName;
-    UA_LocalizedText description;
-} UA_EUInformation;
-
-#define UA_TYPES_EUINFORMATION 215
-
-/**
- * AxisScaleEnumeration
- * ^^^^^^^^^^^^^^^^^^^^
- */
-typedef enum {
-    UA_AXISSCALEENUMERATION_LINEAR = 0,
-    UA_AXISSCALEENUMERATION_LOG = 1,
-    UA_AXISSCALEENUMERATION_LN = 2,
-    __UA_AXISSCALEENUMERATION_FORCE32BIT = 0x7fffffff
-} UA_AxisScaleEnumeration;
-UA_STATIC_ASSERT(sizeof(UA_AxisScaleEnumeration) == sizeof(UA_Int32), enum_must_be_32bit);
-
-#define UA_TYPES_AXISSCALEENUMERATION 216
-
-/**
- * ComplexNumberType
- * ^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_Float real;
-    UA_Float imaginary;
-} UA_ComplexNumberType;
-
-#define UA_TYPES_COMPLEXNUMBERTYPE 217
-
-/**
- * DoubleComplexNumberType
- * ^^^^^^^^^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_Double real;
-    UA_Double imaginary;
-} UA_DoubleComplexNumberType;
-
-#define UA_TYPES_DOUBLECOMPLEXNUMBERTYPE 218
-
-/**
- * AxisInformation
- * ^^^^^^^^^^^^^^^
- */
-typedef struct {
-    UA_EUInformation engineeringUnits;
-    UA_Range eURange;
-    UA_LocalizedText title;
-    UA_AxisScaleEnumeration axisScaleType;
-    size_t axisStepsSize;
-    UA_Double *axisSteps;
-} UA_AxisInformation;
-
-#define UA_TYPES_AXISINFORMATION 219
-
-/**
- * XVType
- * ^^^^^^
- */
-typedef struct {
-    UA_Double x;
-    UA_Float value;
-} UA_XVType;
-
-#define UA_TYPES_XVTYPE 220
-
-/**
  * StructureDescription
  * ^^^^^^^^^^^^^^^^^^^^
  */
@@ -16673,7 +16587,7 @@ typedef struct {
     UA_StructureDefinition structureDefinition;
 } UA_StructureDescription;
 
-#define UA_TYPES_STRUCTUREDESCRIPTION 221
+#define UA_TYPES_STRUCTUREDESCRIPTION 214
 
 /**
  * FieldMetaData
@@ -16694,7 +16608,7 @@ typedef struct {
     UA_KeyValuePair *properties;
 } UA_FieldMetaData;
 
-#define UA_TYPES_FIELDMETADATA 222
+#define UA_TYPES_FIELDMETADATA 215
 
 /**
  * WriterGroupDataType
@@ -16723,7 +16637,7 @@ typedef struct {
     UA_DataSetWriterDataType *dataSetWriters;
 } UA_WriterGroupDataType;
 
-#define UA_TYPES_WRITERGROUPDATATYPE 223
+#define UA_TYPES_WRITERGROUPDATATYPE 216
 
 /**
  * FieldTargetDataType
@@ -16739,7 +16653,7 @@ typedef struct {
     UA_Variant overrideValue;
 } UA_FieldTargetDataType;
 
-#define UA_TYPES_FIELDTARGETDATATYPE 224
+#define UA_TYPES_FIELDTARGETDATATYPE 217
 
 /**
  * EnumDefinition
@@ -16750,7 +16664,7 @@ typedef struct {
     UA_EnumField *fields;
 } UA_EnumDefinition;
 
-#define UA_TYPES_ENUMDEFINITION 225
+#define UA_TYPES_ENUMDEFINITION 218
 
 /**
  * DataChangeNotification
@@ -16763,7 +16677,7 @@ typedef struct {
     UA_DiagnosticInfo *diagnosticInfos;
 } UA_DataChangeNotification;
 
-#define UA_TYPES_DATACHANGENOTIFICATION 226
+#define UA_TYPES_DATACHANGENOTIFICATION 219
 
 /**
  * EventNotificationList
@@ -16774,7 +16688,7 @@ typedef struct {
     UA_EventFieldList *events;
 } UA_EventNotificationList;
 
-#define UA_TYPES_EVENTNOTIFICATIONLIST 227
+#define UA_TYPES_EVENTNOTIFICATIONLIST 220
 
 /**
  * EnumDescription
@@ -16787,7 +16701,7 @@ typedef struct {
     UA_Byte builtInType;
 } UA_EnumDescription;
 
-#define UA_TYPES_ENUMDESCRIPTION 228
+#define UA_TYPES_ENUMDESCRIPTION 221
 
 /**
  * DataSetMetaDataType
@@ -16810,7 +16724,7 @@ typedef struct {
     UA_ConfigurationVersionDataType configurationVersion;
 } UA_DataSetMetaDataType;
 
-#define UA_TYPES_DATASETMETADATATYPE 229
+#define UA_TYPES_DATASETMETADATATYPE 222
 
 /**
  * DataSetReaderDataType
@@ -16838,7 +16752,7 @@ typedef struct {
     UA_ExtensionObject subscribedDataSet;
 } UA_DataSetReaderDataType;
 
-#define UA_TYPES_DATASETREADERDATATYPE 230
+#define UA_TYPES_DATASETREADERDATATYPE 223
 
 /**
  * TargetVariablesDataType
@@ -16849,7 +16763,7 @@ typedef struct {
     UA_FieldTargetDataType *targetVariables;
 } UA_TargetVariablesDataType;
 
-#define UA_TYPES_TARGETVARIABLESDATATYPE 231
+#define UA_TYPES_TARGETVARIABLESDATATYPE 224
 
 /**
  * ReaderGroupDataType
@@ -16871,7 +16785,7 @@ typedef struct {
     UA_DataSetReaderDataType *dataSetReaders;
 } UA_ReaderGroupDataType;
 
-#define UA_TYPES_READERGROUPDATATYPE 232
+#define UA_TYPES_READERGROUPDATATYPE 225
 
 /**
  * PubSubConnectionDataType
@@ -16892,7 +16806,7 @@ typedef struct {
     UA_ReaderGroupDataType *readerGroups;
 } UA_PubSubConnectionDataType;
 
-#define UA_TYPES_PUBSUBCONNECTIONDATATYPE 233
+#define UA_TYPES_PUBSUBCONNECTIONDATATYPE 226
 
 
 _UA_END_DECLS
@@ -16901,7 +16815,7 @@ _UA_END_DECLS
 /*********************************** amalgamated original file "C:/open62541_Nios/src_generated/open62541/types_generated_handling.h" ***********************************/
 
 /* Generated from Opc.Ua.Types.bsd with script C:/open62541/tools/generate_datatypes.py
- * on host DESKTOP-3IHKOKB by user thomas at 2020-04-21 03:05:03 */
+ * on host DESKTOP-3IHKOKB by user thomas at 2020-04-23 01:47:15 */
 
 
 
@@ -23546,223 +23460,6 @@ UA_ServerStatusDataType_clear(UA_ServerStatusDataType *p) {
 static UA_INLINE void
 UA_ServerStatusDataType_delete(UA_ServerStatusDataType *p) {
     UA_delete(p, &UA_TYPES[UA_TYPES_SERVERSTATUSDATATYPE]);
-}
-
-/* Range */
-static UA_INLINE void
-UA_Range_init(UA_Range *p) {
-    memset(p, 0, sizeof(UA_Range));
-}
-
-static UA_INLINE UA_Range *
-UA_Range_new(void) {
-    return (UA_Range*)UA_new(&UA_TYPES[UA_TYPES_RANGE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_Range_copy(const UA_Range *src, UA_Range *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_RANGE]);
-}
-
-static UA_INLINE void
-UA_Range_deleteMembers(UA_Range *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_RANGE]);
-}
-
-static UA_INLINE void
-UA_Range_clear(UA_Range *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_RANGE]);
-}
-
-static UA_INLINE void
-UA_Range_delete(UA_Range *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_RANGE]);
-}
-
-/* EUInformation */
-static UA_INLINE void
-UA_EUInformation_init(UA_EUInformation *p) {
-    memset(p, 0, sizeof(UA_EUInformation));
-}
-
-static UA_INLINE UA_EUInformation *
-UA_EUInformation_new(void) {
-    return (UA_EUInformation*)UA_new(&UA_TYPES[UA_TYPES_EUINFORMATION]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_EUInformation_copy(const UA_EUInformation *src, UA_EUInformation *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_EUINFORMATION]);
-}
-
-static UA_INLINE void
-UA_EUInformation_deleteMembers(UA_EUInformation *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_EUINFORMATION]);
-}
-
-static UA_INLINE void
-UA_EUInformation_clear(UA_EUInformation *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_EUINFORMATION]);
-}
-
-static UA_INLINE void
-UA_EUInformation_delete(UA_EUInformation *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_EUINFORMATION]);
-}
-
-/* AxisScaleEnumeration */
-static UA_INLINE void
-UA_AxisScaleEnumeration_init(UA_AxisScaleEnumeration *p) {
-    memset(p, 0, sizeof(UA_AxisScaleEnumeration));
-}
-
-static UA_INLINE UA_AxisScaleEnumeration *
-UA_AxisScaleEnumeration_new(void) {
-    return (UA_AxisScaleEnumeration*)UA_new(&UA_TYPES[UA_TYPES_AXISSCALEENUMERATION]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_AxisScaleEnumeration_copy(const UA_AxisScaleEnumeration *src, UA_AxisScaleEnumeration *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_AXISSCALEENUMERATION]);
-}
-
-static UA_INLINE void
-UA_AxisScaleEnumeration_deleteMembers(UA_AxisScaleEnumeration *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_AXISSCALEENUMERATION]);
-}
-
-static UA_INLINE void
-UA_AxisScaleEnumeration_clear(UA_AxisScaleEnumeration *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_AXISSCALEENUMERATION]);
-}
-
-static UA_INLINE void
-UA_AxisScaleEnumeration_delete(UA_AxisScaleEnumeration *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_AXISSCALEENUMERATION]);
-}
-
-/* ComplexNumberType */
-static UA_INLINE void
-UA_ComplexNumberType_init(UA_ComplexNumberType *p) {
-    memset(p, 0, sizeof(UA_ComplexNumberType));
-}
-
-static UA_INLINE UA_ComplexNumberType *
-UA_ComplexNumberType_new(void) {
-    return (UA_ComplexNumberType*)UA_new(&UA_TYPES[UA_TYPES_COMPLEXNUMBERTYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_ComplexNumberType_copy(const UA_ComplexNumberType *src, UA_ComplexNumberType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_COMPLEXNUMBERTYPE]);
-}
-
-static UA_INLINE void
-UA_ComplexNumberType_deleteMembers(UA_ComplexNumberType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_COMPLEXNUMBERTYPE]);
-}
-
-static UA_INLINE void
-UA_ComplexNumberType_clear(UA_ComplexNumberType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_COMPLEXNUMBERTYPE]);
-}
-
-static UA_INLINE void
-UA_ComplexNumberType_delete(UA_ComplexNumberType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_COMPLEXNUMBERTYPE]);
-}
-
-/* DoubleComplexNumberType */
-static UA_INLINE void
-UA_DoubleComplexNumberType_init(UA_DoubleComplexNumberType *p) {
-    memset(p, 0, sizeof(UA_DoubleComplexNumberType));
-}
-
-static UA_INLINE UA_DoubleComplexNumberType *
-UA_DoubleComplexNumberType_new(void) {
-    return (UA_DoubleComplexNumberType*)UA_new(&UA_TYPES[UA_TYPES_DOUBLECOMPLEXNUMBERTYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DoubleComplexNumberType_copy(const UA_DoubleComplexNumberType *src, UA_DoubleComplexNumberType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_DOUBLECOMPLEXNUMBERTYPE]);
-}
-
-static UA_INLINE void
-UA_DoubleComplexNumberType_deleteMembers(UA_DoubleComplexNumberType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DOUBLECOMPLEXNUMBERTYPE]);
-}
-
-static UA_INLINE void
-UA_DoubleComplexNumberType_clear(UA_DoubleComplexNumberType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_DOUBLECOMPLEXNUMBERTYPE]);
-}
-
-static UA_INLINE void
-UA_DoubleComplexNumberType_delete(UA_DoubleComplexNumberType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_DOUBLECOMPLEXNUMBERTYPE]);
-}
-
-/* AxisInformation */
-static UA_INLINE void
-UA_AxisInformation_init(UA_AxisInformation *p) {
-    memset(p, 0, sizeof(UA_AxisInformation));
-}
-
-static UA_INLINE UA_AxisInformation *
-UA_AxisInformation_new(void) {
-    return (UA_AxisInformation*)UA_new(&UA_TYPES[UA_TYPES_AXISINFORMATION]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_AxisInformation_copy(const UA_AxisInformation *src, UA_AxisInformation *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_AXISINFORMATION]);
-}
-
-static UA_INLINE void
-UA_AxisInformation_deleteMembers(UA_AxisInformation *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_AXISINFORMATION]);
-}
-
-static UA_INLINE void
-UA_AxisInformation_clear(UA_AxisInformation *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_AXISINFORMATION]);
-}
-
-static UA_INLINE void
-UA_AxisInformation_delete(UA_AxisInformation *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_AXISINFORMATION]);
-}
-
-/* XVType */
-static UA_INLINE void
-UA_XVType_init(UA_XVType *p) {
-    memset(p, 0, sizeof(UA_XVType));
-}
-
-static UA_INLINE UA_XVType *
-UA_XVType_new(void) {
-    return (UA_XVType*)UA_new(&UA_TYPES[UA_TYPES_XVTYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_XVType_copy(const UA_XVType *src, UA_XVType *dst) {
-    return UA_copy(src, dst, &UA_TYPES[UA_TYPES_XVTYPE]);
-}
-
-static UA_INLINE void
-UA_XVType_deleteMembers(UA_XVType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_XVTYPE]);
-}
-
-static UA_INLINE void
-UA_XVType_clear(UA_XVType *p) {
-    UA_clear(p, &UA_TYPES[UA_TYPES_XVTYPE]);
-}
-
-static UA_INLINE void
-UA_XVType_delete(UA_XVType *p) {
-    UA_delete(p, &UA_TYPES[UA_TYPES_XVTYPE]);
 }
 
 /* StructureDescription */
