@@ -1,4 +1,9 @@
-
+/*
+ * FreeRTOS.c
+ *
+ *  Created on: 27.04.2020
+ *  Author:     NetTimeLogic GmbH
+ */
 /* Standard includes. */
 #include <stddef.h>
 #include <stdio.h>
@@ -97,7 +102,6 @@ static void LinkCallback(struct netif* netif)
     // link change callback
     // TODO release semaphore
     // TODO switch context
-
     printf("[ethernet] Link Callback for interface: %s\n", netif->name);
 }
 
@@ -192,7 +196,6 @@ void xEthernetRun()
     nw_ready = 1;
     printf("--------- Init Done ---------\r\n");
 
-
     // starting the network thread
     /*sys_thread_new("ping", PingThread, NULL,
             THREAD_STACKSIZE,
@@ -203,16 +206,10 @@ void xEthernetRun()
 
     IP4_ADDR(&PingIp, 192, 168, 1, 100);
     while(1) {
-
-        //lwip_ping_target(PingIp.addr, 1, 0, 100);
-        // sleep for 1 second
         //lwip_ping_target(PingIp.addr, 10, 0, 100);
         ethernetif_input(ethif);
         vTaskDelay(10);
     }
-
-
-    //vTaskDelete(NULL);
 }
 
 // callback wrapper for lwip to get the interface configurations
@@ -272,7 +269,6 @@ int is_interface_active(int iface)
 {
     return 1;
 }
-
 
 int main(){
     main_thread_handle = sys_thread_new("main_thrd", (void(*)(void*))main_thread, 0,

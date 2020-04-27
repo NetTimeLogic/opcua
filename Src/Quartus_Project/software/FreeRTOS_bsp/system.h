@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'Nios'
  * SOPC Builder design path: ../../Nios.sopcinfo
  *
- * Generated: Wed Apr 15 16:11:39 CEST 2020
+ * Generated: Mon Apr 27 15:18:30 CEST 2020
  */
 
 /*
@@ -220,7 +220,7 @@
 #define OS_TICK_RATE_HZ 1000
 #define OS_TIMER_QUEUE_LENGTH 10
 #define OS_TIMER_TASK_PRIORITY 5
-#define OS_TOTAL_HEAP_SIZE 2097152
+#define OS_TOTAL_HEAP_SIZE 1048576
 #define OS_USE_16_BIT_TICKS 0
 #define OS_USE_ALTERNATIVE_API 0
 #define OS_USE_COUNTING_SEMAPHORES 1

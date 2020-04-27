@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>freertos</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>15.04.2020 16:24:35</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1586960675519</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>27.04.2020 15:18:30</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1587993510299</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios.sopcinfo</SopcDesignFile>
