@@ -28845,7 +28845,7 @@ UA_Server_freezeWriterGroupConfiguration(UA_Server *server, const UA_NodeId writ
                 if(!dsf->config.field.variable.staticValueSourceEnabled){
                     UA_LOG_WARNING(&server->config.logger, UA_LOGCATEGORY_SERVER,
                                    "PubSub-RT configuration fail: PDS contains variables with dynamic length types.");
-                    return UA_STATUSCODE_BADNOTSUPPORTED;
+                    // return UA_STATUSCODE_BADNOTSUPPORTED;
                 }
                 if((UA_NodeId_equal(&dsf->fieldMetaData.dataType, &UA_TYPES[UA_TYPES_STRING].typeId) ||
                     UA_NodeId_equal(&dsf->fieldMetaData.dataType,
@@ -28854,12 +28854,12 @@ UA_Server_freezeWriterGroupConfiguration(UA_Server *server, const UA_NodeId writ
                     UA_LOG_WARNING(&server->config.logger, UA_LOGCATEGORY_SERVER,
                                    "PubSub-RT configuration fail: "
                                    "PDS contains String/ByteString with dynamic length.");
-                    return UA_STATUSCODE_BADNOTSUPPORTED;
+                    // return UA_STATUSCODE_BADNOTSUPPORTED;
                 } else if(!UA_DataType_isNumeric(UA_findDataType(&dsf->fieldMetaData.dataType))){
                     UA_LOG_WARNING(&server->config.logger, UA_LOGCATEGORY_SERVER,
                                    "PubSub-RT configuration fail: "
                                    "PDS contains variable with dynamic size.");
-                    return UA_STATUSCODE_BADNOTSUPPORTED;
+                    // return UA_STATUSCODE_BADNOTSUPPORTED;
                 }
             }
             /* Generate the DSM */
@@ -30430,6 +30430,8 @@ generateNetworkMessage(UA_PubSubConnection *connection, UA_WriterGroup *wg,
     networkMessage->payloadHeader.dataSetPayloadHeader.count = dsmCount;
     networkMessage->payloadHeader.dataSetPayloadHeader.dataSetWriterIds = writerIds;
     networkMessage->groupHeader.writerGroupId = wg->config.writerGroupId;
+    networkMessage->groupHeader.groupVersion = wgm->groupVersion;
+    networkMessage->timestamp = UA_DateTime_now();
     /* number of the NetworkMessage inside a PublishingInterval */
     networkMessage->groupHeader.networkMessageNumber = 1;
     networkMessage->payload.dataSetPayload.sizes = dsmLengths;
@@ -30585,6 +30587,8 @@ UA_WriterGroup_publishCallback(UA_Server *server, UA_WriterGroup *writerGroup) {
             if(res != UA_STATUSCODE_GOOD)
                 UA_LOG_WARNING(&server->config.logger, UA_LOGCATEGORY_SERVER,
                                "PubSub Publish: Could not send a NetworkMessage");
+            else
+                writerGroup->sequenceNumber++;
 
             if(writerGroup->config.rtLevel == UA_PUBSUB_RT_DIRECT_VALUE_ACCESS) {
                 for(size_t i = 0; i < dsmStore[dsmCount].data.keyFrameData.fieldCount; ++i) {
