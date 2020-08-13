@@ -835,7 +835,7 @@
  * link level header. The default is 14, the standard value for
  * Ethernet.
  */
-#define PBUF_LINK_HLEN                  (14 + ETH_PAD_SIZE)
+#define PBUF_LINK_HLEN                  (18 + ETH_PAD_SIZE)
 
 
 /**

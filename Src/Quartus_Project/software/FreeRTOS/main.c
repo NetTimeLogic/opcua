@@ -487,8 +487,8 @@ static int opcua_pubsub() {
     // UA_String transportProfile = UA_STRING("http://opcfoundation.org/UA-Profile/Transport/pubsub-udp-uadp");
     // UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.udp://224.0.0.22:4840/")};
     UA_String transportProfile = UA_STRING("http://opcfoundation.org/UA-Profile/Transport/pubsub-eth-uadp");
-    //UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.eth://03-c0-ff-ee-03-f5:3000.5")};
-    UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.eth://03-c0-ff-ee-03-f5")};
+    UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.eth://03-c0-ff-ee-03-f5:3000.5")};
+    //UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.eth://03-c0-ff-ee-03-f5")};
 
     printf("--------- Init OPC UA Server (pub/sub) ---------\r\n");
 

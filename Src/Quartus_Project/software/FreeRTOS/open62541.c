@@ -72211,7 +72211,7 @@ UA_PubSubChannelEthernet_send(UA_PubSubChannel *channel, UA_ExtensionObject *tra
     size_t lenBuf;
     lenBuf = buf->length;
     struct pbuf *p;
-    
+
     p = pbuf_alloc(PBUF_LINK, lenBuf, PBUF_RAM);
     pbuf_take(p, (void *)buf->data, (u16_t)lenBuf);
     if (p == NULL) {
