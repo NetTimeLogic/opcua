@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>freertos</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>27.04.2020 15:18:30</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1587993510299</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>12.08.2020 16:57:11</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1597244231822</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\opcua\Src\Quartus_Project\software\FreeRTOS_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\Nios.sopcinfo</SopcDesignFile>
@@ -1442,7 +1442,7 @@ configQUEUE_REGISTRY_SIZE defines the maximum number of queues and semaphores th
                 <Identifier>CONF_LWIP_PROTO_DNS</Identifier>
                 <Type>Boolean</Type>
                 <Value>1</Value>
-                <DefaultValue>0</DefaultValue>
+                <DefaultValue>1</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Enable DNS support</Description>
                 <Restrictions>none</Restrictions>

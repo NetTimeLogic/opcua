@@ -260,7 +260,7 @@ int get_hostname(int iface, const char **hostname)
 int get_iface_name(int iface, char name[ETH_IFACE_NAME_LENGTH])
 {
     name[0] = 'e';
-    name[1] = (iface + 0x30);
+    name[1] = '0';
 
     return ERR_OK;
 }
@@ -370,11 +370,11 @@ addDataSetField(UA_Server *server, UA_Variant myVar, const UA_DataType *type, in
     dataSetFieldConfig.field.variable.publishParameters.publishedVariable = UA_NODEID_NUMERIC(nsIndex, nsId);
     dataSetFieldConfig.field.variable.publishParameters.attributeId = UA_ATTRIBUTEID_VALUE;
    
+
 #if defined UA_PUBSUB_RT_CONFIG_DIRECT_VALUE_ACCESS || defined UA_PUBSUB_RT_CONFIG_FIXED_SIZE
-    dataSetFieldConfig.field.variable.staticValueSourceEnabled = UA_TRUE;
-    dataSetFieldConfig.field.variable.staticValueSource.value = myVar;
-    dataSetFieldConfig.field.variable.staticValueSource.value.storageType = UA_VARIANT_DATA_NODELETE;
+    dataSetFieldConfig.field.variable.rtValueSource.rtFieldSourceEnabled = UA_TRUE;
 #endif
+
     UA_Server_addDataSetField(server, publishedDataSetIdent, &dataSetFieldConfig, &dataSetFieldIdent);  
 }
 
@@ -484,8 +484,11 @@ static int opcua_pubsub() {
 
     UA_Boolean running = true;
 
-    UA_String transportProfile = UA_STRING("http://opcfoundation.org/UA-Profile/Transport/pubsub-udp-uadp");
-    UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.udp://224.0.0.22:4840/")};
+    // UA_String transportProfile = UA_STRING("http://opcfoundation.org/UA-Profile/Transport/pubsub-udp-uadp");
+    // UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.udp://224.0.0.22:4840/")};
+    UA_String transportProfile = UA_STRING("http://opcfoundation.org/UA-Profile/Transport/pubsub-eth-uadp");
+    //UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.eth://03-c0-ff-ee-03-f5:3000.5")};
+    UA_NetworkAddressUrlDataType networkAddressUrl = {UA_STRING_NULL , UA_STRING("opc.eth://03-c0-ff-ee-03-f5")};
 
     printf("--------- Init OPC UA Server (pub/sub) ---------\r\n");
 
@@ -515,7 +518,8 @@ static int opcua_pubsub() {
         UA_Server_delete(server);
         return EXIT_FAILURE;
     }
-    config->pubsubTransportLayers[0] = UA_PubSubTransportLayerUDPMP();
+    //config->pubsubTransportLayers[0] = UA_PubSubTransportLayerUDPMP();
+    config->pubsubTransportLayers[0] = UA_PubSubTransportLayerEthernet();
     config->pubsubTransportLayersSize++;
 
     UA_StatusCode retval;
@@ -610,13 +614,15 @@ static int opcua_pubsub() {
         UA_UInt16 *SeqCounter = UA_UInt16_new();
         *SeqCounter = (UA_UInt16)0;
         ApplicationSequenceNr = SeqCounter;
-        UA_Variant variant;
-        memset(&variant, 0, sizeof(UA_Variant));
-        UA_Variant_setScalar(&variant, SeqCounter, &UA_TYPES[UA_TYPES_UINT16]);
+        UA_DataValue *dataValue = UA_DataValue_new();
+        UA_Variant_setScalar(&dataValue->value, SeqCounter, &UA_TYPES[UA_TYPES_UINT16]);
+
+        dsfConfig.field.variable.rtValueSource.rtFieldSourceEnabled = UA_TRUE;
+        dsfConfig.field.variable.rtValueSource.staticValueSource = &dataValue;
         
-        dsfConfig.field.variable.staticValueSourceEnabled = UA_TRUE;
-        dsfConfig.field.variable.staticValueSource.value = variant;
         UA_Server_addDataSetField(server, publishedDataSetIdent, &dsfConfig, &dataSetFieldIdent);
+
+        UA_DataValue_delete(dataValue);
 #else
         // unsigned uint16
         myNodeId = UA_NODEID_NUMERIC(2, 6045);
@@ -657,17 +663,20 @@ static int opcua_pubsub() {
         // dynamic value ApplicationSequenceNr
         ////////////////////////////////////////////////////////////
 #if defined UA_PUBSUB_RT_CONFIG_DIRECT_VALUE_ACCESS || defined UA_PUBSUB_RT_CONFIG_FIXED_SIZE && DYNAMIC_FIELDS == 2
-        dsfConfig;
         memset(&dsfConfig, 0, sizeof(UA_DataSetFieldConfig));
         UA_UInt32 *OffsetCounter = UA_UInt32_new();
         *OffsetCounter = (UA_UInt32)0;
         AsOffsetCounter = OffsetCounter;
-        memset(&variant, 0, sizeof(UA_Variant));
-        UA_Variant_setScalar(&variant, OffsetCounter, &UA_TYPES[UA_TYPES_UINT32]);
         
-        dsfConfig.field.variable.staticValueSourceEnabled = UA_TRUE;
-        dsfConfig.field.variable.staticValueSource.value = variant;
+        dataValue = UA_DataValue_new();
+        UA_Variant_setScalar(&dataValue->value, OffsetCounter, &UA_TYPES[UA_TYPES_UINT32]);
+
+        dsfConfig.field.variable.rtValueSource.rtFieldSourceEnabled = UA_TRUE;
+        dsfConfig.field.variable.rtValueSource.staticValueSource = &dataValue;
+
         UA_Server_addDataSetField(server, publishedDataSetIdent, &dsfConfig, &dataSetFieldIdent);
+
+        UA_DataValue_delete(dataValue);
 #else
         // int32
         myNodeId = UA_NODEID_NUMERIC(2, 6074);
