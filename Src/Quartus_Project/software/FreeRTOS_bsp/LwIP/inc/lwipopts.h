@@ -243,7 +243,7 @@
  * MEMP_NUM_SYS_TIMEOUT: the number of simulateously active timeouts.
  * (requires NO_SYS==0)
  */
-#define MEMP_NUM_SYS_TIMEOUT            50
+#define MEMP_NUM_SYS_TIMEOUT            10
 
 /**
  * MEMP_NUM_NETBUF: the number of struct netbufs.
@@ -833,7 +833,7 @@
 /**
  * PBUF_LINK_HLEN: the number of bytes that should be allocated for a
  * link level header. The default is 14, the standard value for
- * Ethernet.
+ * Ethernet. For optional VLAN 4 additional bytes are added.
  */
 #define PBUF_LINK_HLEN                  (18 + ETH_PAD_SIZE)
 

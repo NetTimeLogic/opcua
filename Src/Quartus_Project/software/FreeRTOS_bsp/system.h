@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'Nios'
  * SOPC Builder design path: ../../Nios.sopcinfo
  *
- * Generated: Mon Aug 10 14:51:11 CEST 2020
+ * Generated: Fri Aug 14 10:14:36 CEST 2020
  */
 
 /*
@@ -299,7 +299,7 @@
 #define CONF_LWIP_PROTO_SNMP 0
 #define CONF_LWIP_PROTO_TCP 1
 #define CONF_LWIP_PROTO_UDP 1
-#define CONF_LWIP_PROTO_VLAN 1
+#define CONF_LWIP_PROTO_VLAN 0
 #define CONF_LWIP_RAW_PCB 2
 #define CONF_LWIP_STATS 1
 #define CONF_LWIP_TCP_PCB 15
