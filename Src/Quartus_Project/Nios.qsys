@@ -33,6 +33,22 @@
          type = "String";
       }
    }
+   element axi_ext
+   {
+      datum _sortIndex
+      {
+         value = "17";
+         type = "int";
+      }
+   }
+   element axi_ext.s0
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -81,6 +97,14 @@
          type = "String";
       }
    }
+   element irq_bridge_ext
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
    element jtag_uart_0
    {
       datum _sortIndex
@@ -115,6 +139,22 @@
       datum baseAddress
       {
          value = "84017152";
+         type = "String";
+      }
+   }
+   element mm_bridge_ext
+   {
+      datum _sortIndex
+      {
+         value = "16";
+         type = "int";
+      }
+   }
+   element mm_bridge_ext.s0
+   {
+      datum baseAddress
+      {
+         value = "1610612736";
          type = "String";
       }
    }
@@ -297,10 +337,16 @@
  <interface name="clk_300mhz" internal="altpll_0.c2" />
  <interface name="clk_sdram" internal="altpll_0.c1" type="clock" dir="start" />
  <interface
+   name="irq_bridge_0_receiver_irq"
+   internal="irq_bridge_ext.receiver_irq"
+   type="interrupt"
+   dir="start" />
+ <interface
    name="locked"
    internal="altpll_0.locked_conduit"
    type="conduit"
    dir="end" />
+ <interface name="m_axi_ext" internal="axi_ext.m0" type="axi4" dir="start" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
    name="reset_bridge_0_in_reset"
@@ -519,6 +565,71 @@
   <parameter name="WIDTH_CLOCK" value="5" />
   <parameter name="WIDTH_PHASECOUNTERSELECT" value="" />
  </module>
+ <module name="axi_ext" kind="altera_axi_bridge" version="18.1" enabled="1">
+  <parameter name="ADDR_WIDTH" value="28" />
+  <parameter name="AXI_VERSION" value="AXI4" />
+  <parameter name="COMBINED_ACCEPTANCE_CAPABILITY" value="16" />
+  <parameter name="COMBINED_ISSUING_CAPABILITY" value="16" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="M0_ID_WIDTH" value="18" />
+  <parameter name="READ_ACCEPTANCE_CAPABILITY" value="16" />
+  <parameter name="READ_ADDR_USER_WIDTH" value="32" />
+  <parameter name="READ_DATA_REORDERING_DEPTH" value="1" />
+  <parameter name="READ_DATA_USER_WIDTH" value="32" />
+  <parameter name="READ_ISSUING_CAPABILITY" value="16" />
+  <parameter name="S0_ID_WIDTH" value="8" />
+  <parameter name="USE_M0_ARBURST" value="0" />
+  <parameter name="USE_M0_ARCACHE" value="0" />
+  <parameter name="USE_M0_ARID" value="0" />
+  <parameter name="USE_M0_ARLEN" value="0" />
+  <parameter name="USE_M0_ARLOCK" value="0" />
+  <parameter name="USE_M0_ARQOS" value="0" />
+  <parameter name="USE_M0_ARREGION" value="0" />
+  <parameter name="USE_M0_ARSIZE" value="0" />
+  <parameter name="USE_M0_ARUSER" value="0" />
+  <parameter name="USE_M0_AWBURST" value="0" />
+  <parameter name="USE_M0_AWCACHE" value="0" />
+  <parameter name="USE_M0_AWID" value="0" />
+  <parameter name="USE_M0_AWLEN" value="0" />
+  <parameter name="USE_M0_AWLOCK" value="0" />
+  <parameter name="USE_M0_AWQOS" value="0" />
+  <parameter name="USE_M0_AWREGION" value="0" />
+  <parameter name="USE_M0_AWSIZE" value="0" />
+  <parameter name="USE_M0_AWUSER" value="0" />
+  <parameter name="USE_M0_BID" value="0" />
+  <parameter name="USE_M0_BRESP" value="1" />
+  <parameter name="USE_M0_BUSER" value="0" />
+  <parameter name="USE_M0_RID" value="0" />
+  <parameter name="USE_M0_RLAST" value="0" />
+  <parameter name="USE_M0_RRESP" value="1" />
+  <parameter name="USE_M0_RUSER" value="0" />
+  <parameter name="USE_M0_WSTRB" value="1" />
+  <parameter name="USE_M0_WUSER" value="0" />
+  <parameter name="USE_PIPELINE" value="1" />
+  <parameter name="USE_S0_ARCACHE" value="0" />
+  <parameter name="USE_S0_ARLOCK" value="0" />
+  <parameter name="USE_S0_ARPROT" value="0" />
+  <parameter name="USE_S0_ARQOS" value="0" />
+  <parameter name="USE_S0_ARREGION" value="0" />
+  <parameter name="USE_S0_ARUSER" value="0" />
+  <parameter name="USE_S0_AWCACHE" value="0" />
+  <parameter name="USE_S0_AWLOCK" value="0" />
+  <parameter name="USE_S0_AWPROT" value="0" />
+  <parameter name="USE_S0_AWQOS" value="0" />
+  <parameter name="USE_S0_AWREGION" value="0" />
+  <parameter name="USE_S0_AWUSER" value="0" />
+  <parameter name="USE_S0_BRESP" value="1" />
+  <parameter name="USE_S0_BUSER" value="0" />
+  <parameter name="USE_S0_RRESP" value="1" />
+  <parameter name="USE_S0_RUSER" value="0" />
+  <parameter name="USE_S0_WLAST" value="0" />
+  <parameter name="USE_S0_WUSER" value="0" />
+  <parameter name="WRITE_ACCEPTANCE_CAPABILITY" value="16" />
+  <parameter name="WRITE_ADDR_USER_WIDTH" value="32" />
+  <parameter name="WRITE_DATA_USER_WIDTH" value="32" />
+  <parameter name="WRITE_ISSUING_CAPABILITY" value="16" />
+  <parameter name="WRITE_RESP_USER_WIDTH" value="32" />
+ </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="25000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -551,10 +662,10 @@
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
-  <parameter name="dataAddrWidth" value="27" />
+  <parameter name="dataAddrWidth" value="31" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_controller_0.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='tse_descriptor_memory_0.s2' start='0x4000000' end='0x4002000' type='altera_avalon_onchip_memory2.s2' /><slave name='tse_mac_0.control_port' start='0x4002000' end='0x4002400' type='altera_eth_tse.control_port' /><slave name='sgdma_tse_rx_0.csr' start='0x4002400' end='0x4002440' type='altera_avalon_sgdma.csr' /><slave name='sgdma_tse_tx_0.csr' start='0x4002440' end='0x4002480' type='altera_avalon_sgdma.csr' /><slave name='mem_0.s1' start='0x5020000' end='0x5040000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu_0.debug_mem_slave' start='0x5040800' end='0x5041000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='uart_0.s1' start='0x5041000' end='0x5041020' type='altera_avalon_uart.s1' /><slave name='timer_0.s1' start='0x5041020' end='0x5041040' type='altera_avalon_timer.s1' /><slave name='altpll_0.pll_slave' start='0x5041040' end='0x5041050' type='altpll.pll_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x5041050' end='0x5041058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram_controller_0.s1' start='0x2000000' end='0x4000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='tse_descriptor_memory_0.s2' start='0x4000000' end='0x4002000' type='altera_avalon_onchip_memory2.s2' /><slave name='tse_mac_0.control_port' start='0x4002000' end='0x4002400' type='altera_eth_tse.control_port' /><slave name='sgdma_tse_rx_0.csr' start='0x4002400' end='0x4002440' type='altera_avalon_sgdma.csr' /><slave name='sgdma_tse_tx_0.csr' start='0x4002440' end='0x4002480' type='altera_avalon_sgdma.csr' /><slave name='mem_0.s1' start='0x5020000' end='0x5040000' type='altera_avalon_onchip_memory2.s1' /><slave name='cpu_0.debug_mem_slave' start='0x5040800' end='0x5041000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='uart_0.s1' start='0x5041000' end='0x5041020' type='altera_avalon_uart.s1' /><slave name='timer_0.s1' start='0x5041020' end='0x5041040' type='altera_avalon_timer.s1' /><slave name='altpll_0.pll_slave' start='0x5041040' end='0x5041050' type='altpll.pll_slave' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x5041050' end='0x5041058' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='axi_ext.s0' start='0x60000000' end='0x70000000' type='altera_axi_bridge.s0' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -600,7 +711,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="31" />
+  <parameter name="internalIrqMaskSystemInfo" value="127" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -731,6 +842,15 @@
   <parameter name="USE_RESPONSE" value="0" />
  </module>
  <module
+   name="irq_bridge_ext"
+   kind="altera_irq_bridge"
+   version="18.1"
+   enabled="1">
+  <parameter name="AUTO_RECEIVER_IRQ_INTERRUPTS_USED" value="0" />
+  <parameter name="IRQ_N" value="0" />
+  <parameter name="IRQ_WIDTH" value="2" />
+ </module>
+ <module
    name="jtag_uart_0"
    kind="altera_avalon_jtag_uart"
    version="18.1"
@@ -780,6 +900,24 @@
   <parameter name="useNonDefaultInitFile" value="false" />
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="true" />
+ </module>
+ <module
+   name="mm_bridge_ext"
+   kind="altera_avalon_mm_bridge"
+   version="18.1"
+   enabled="1">
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="ADDRESS_WIDTH" value="32" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="LINEWRAPBURSTS" value="0" />
+  <parameter name="MAX_BURST_SIZE" value="1" />
+  <parameter name="MAX_PENDING_RESPONSES" value="4" />
+  <parameter name="PIPELINE_COMMAND" value="1" />
+  <parameter name="PIPELINE_RESPONSE" value="1" />
+  <parameter name="SYMBOL_WIDTH" value="8" />
+  <parameter name="SYSINFO_ADDR_WIDTH" value="28" />
+  <parameter name="USE_AUTO_ADDRESS_WIDTH" value="1" />
+  <parameter name="USE_RESPONSE" value="0" />
  </module>
  <module
    name="reset_bridge_0"
@@ -1027,6 +1165,15 @@
    kind="avalon"
    version="18.1"
    start="cpu_0.data_master"
+   end="mm_bridge_ext.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x60000000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="cpu_0.data_master"
    end="sdram_controller_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x02000000" />
@@ -1154,6 +1301,15 @@
   <parameter name="baseAddress" value="0x2400" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="mm_bridge_ext.m0"
+   end="axi_ext.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection kind="avalon" version="18.1" start="sgdma_bridge.m0" end="mem_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x05020000" />
@@ -1239,6 +1395,17 @@
    version="18.1"
    start="altpll_0.c0"
    end="reset_bridge_0.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="altpll_0.c0"
+   end="irq_bridge_ext.clk" />
+ <connection kind="clock" version="18.1" start="altpll_0.c0" end="axi_ext.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="altpll_0.c0"
+   end="mm_bridge_ext.clk" />
  <connection kind="clock" version="18.1" start="altpll_0.c0" end="mem_0.clk1" />
  <connection
    kind="clock"
@@ -1303,6 +1470,20 @@
   <parameter name="irqNumber" value="4" />
  </connection>
  <connection
+   kind="interrupt"
+   version="18.1"
+   start="cpu_0.irq"
+   end="irq_bridge_ext.sender0_irq">
+  <parameter name="irqNumber" value="5" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="cpu_0.irq"
+   end="irq_bridge_ext.sender1_irq">
+  <parameter name="irqNumber" value="6" />
+ </connection>
+ <connection
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
@@ -1312,6 +1493,16 @@
    version="18.1"
    start="cpu_0.debug_reset_request"
    end="cpu_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="reset_bridge_0.out_reset"
+   end="irq_bridge_ext.clk_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="reset_bridge_0.out_reset"
+   end="axi_ext.clk_reset" />
  <connection
    kind="reset"
    version="18.1"
@@ -1357,6 +1548,11 @@
    version="18.1"
    start="reset_bridge_0.out_reset"
    end="cpu_0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="reset_bridge_0.out_reset"
+   end="mm_bridge_ext.reset" />
  <connection
    kind="reset"
    version="18.1"

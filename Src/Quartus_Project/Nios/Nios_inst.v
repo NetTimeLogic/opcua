@@ -1,7 +1,28 @@
 	Nios u0 (
 		.clk_clk                                   (<connected-to-clk_clk>),                                   //                                 clk.clk
 		.clk_sdram_clk                             (<connected-to-clk_sdram_clk>),                             //                           clk_sdram.clk
+		.irq_bridge_0_receiver_irq_irq             (<connected-to-irq_bridge_0_receiver_irq_irq>),             //           irq_bridge_0_receiver_irq.irq
 		.locked_export                             (<connected-to-locked_export>),                             //                              locked.export
+		.m_axi_ext_awaddr                          (<connected-to-m_axi_ext_awaddr>),                          //                           m_axi_ext.awaddr
+		.m_axi_ext_awprot                          (<connected-to-m_axi_ext_awprot>),                          //                                    .awprot
+		.m_axi_ext_awvalid                         (<connected-to-m_axi_ext_awvalid>),                         //                                    .awvalid
+		.m_axi_ext_awready                         (<connected-to-m_axi_ext_awready>),                         //                                    .awready
+		.m_axi_ext_wdata                           (<connected-to-m_axi_ext_wdata>),                           //                                    .wdata
+		.m_axi_ext_wstrb                           (<connected-to-m_axi_ext_wstrb>),                           //                                    .wstrb
+		.m_axi_ext_wlast                           (<connected-to-m_axi_ext_wlast>),                           //                                    .wlast
+		.m_axi_ext_wvalid                          (<connected-to-m_axi_ext_wvalid>),                          //                                    .wvalid
+		.m_axi_ext_wready                          (<connected-to-m_axi_ext_wready>),                          //                                    .wready
+		.m_axi_ext_bresp                           (<connected-to-m_axi_ext_bresp>),                           //                                    .bresp
+		.m_axi_ext_bvalid                          (<connected-to-m_axi_ext_bvalid>),                          //                                    .bvalid
+		.m_axi_ext_bready                          (<connected-to-m_axi_ext_bready>),                          //                                    .bready
+		.m_axi_ext_araddr                          (<connected-to-m_axi_ext_araddr>),                          //                                    .araddr
+		.m_axi_ext_arprot                          (<connected-to-m_axi_ext_arprot>),                          //                                    .arprot
+		.m_axi_ext_arvalid                         (<connected-to-m_axi_ext_arvalid>),                         //                                    .arvalid
+		.m_axi_ext_arready                         (<connected-to-m_axi_ext_arready>),                         //                                    .arready
+		.m_axi_ext_rdata                           (<connected-to-m_axi_ext_rdata>),                           //                                    .rdata
+		.m_axi_ext_rresp                           (<connected-to-m_axi_ext_rresp>),                           //                                    .rresp
+		.m_axi_ext_rvalid                          (<connected-to-m_axi_ext_rvalid>),                          //                                    .rvalid
+		.m_axi_ext_rready                          (<connected-to-m_axi_ext_rready>),                          //                                    .rready
 		.reset_reset_n                             (<connected-to-reset_reset_n>),                             //                               reset.reset_n
 		.reset_bridge_0_in_reset_reset_n           (<connected-to-reset_bridge_0_in_reset_reset_n>),           //             reset_bridge_0_in_reset.reset_n
 		.sdram_controller_0_addr                   (<connected-to-sdram_controller_0_addr>),                   //                  sdram_controller_0.addr
