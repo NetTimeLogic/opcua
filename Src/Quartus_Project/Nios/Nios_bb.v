@@ -2,28 +2,7 @@
 module Nios (
 	clk_clk,
 	clk_sdram_clk,
-	irq_bridge_0_receiver_irq_irq,
 	locked_export,
-	m_axi_ext_awaddr,
-	m_axi_ext_awprot,
-	m_axi_ext_awvalid,
-	m_axi_ext_awready,
-	m_axi_ext_wdata,
-	m_axi_ext_wstrb,
-	m_axi_ext_wlast,
-	m_axi_ext_wvalid,
-	m_axi_ext_wready,
-	m_axi_ext_bresp,
-	m_axi_ext_bvalid,
-	m_axi_ext_bready,
-	m_axi_ext_araddr,
-	m_axi_ext_arprot,
-	m_axi_ext_arvalid,
-	m_axi_ext_arready,
-	m_axi_ext_rdata,
-	m_axi_ext_rresp,
-	m_axi_ext_rvalid,
-	m_axi_ext_rready,
 	reset_reset_n,
 	reset_bridge_0_in_reset_reset_n,
 	sdram_controller_0_addr,
@@ -69,28 +48,7 @@ module Nios (
 
 	input		clk_clk;
 	output		clk_sdram_clk;
-	input	[1:0]	irq_bridge_0_receiver_irq_irq;
 	output		locked_export;
-	output	[27:0]	m_axi_ext_awaddr;
-	output	[2:0]	m_axi_ext_awprot;
-	output		m_axi_ext_awvalid;
-	input		m_axi_ext_awready;
-	output	[31:0]	m_axi_ext_wdata;
-	output	[3:0]	m_axi_ext_wstrb;
-	output		m_axi_ext_wlast;
-	output		m_axi_ext_wvalid;
-	input		m_axi_ext_wready;
-	input	[1:0]	m_axi_ext_bresp;
-	input		m_axi_ext_bvalid;
-	output		m_axi_ext_bready;
-	output	[27:0]	m_axi_ext_araddr;
-	output	[2:0]	m_axi_ext_arprot;
-	output		m_axi_ext_arvalid;
-	input		m_axi_ext_arready;
-	input	[31:0]	m_axi_ext_rdata;
-	input	[1:0]	m_axi_ext_rresp;
-	input		m_axi_ext_rvalid;
-	output		m_axi_ext_rready;
 	input		reset_reset_n;
 	input		reset_bridge_0_in_reset_reset_n;
 	output	[12:0]	sdram_controller_0_addr;

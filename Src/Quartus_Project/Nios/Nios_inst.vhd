@@ -2,28 +2,7 @@
 		port (
 			clk_clk                                   : in    std_logic                     := 'X';             -- clk
 			clk_sdram_clk                             : out   std_logic;                                        -- clk
-			irq_bridge_0_receiver_irq_irq             : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq
 			locked_export                             : out   std_logic;                                        -- export
-			m_axi_ext_awaddr                          : out   std_logic_vector(27 downto 0);                    -- awaddr
-			m_axi_ext_awprot                          : out   std_logic_vector(2 downto 0);                     -- awprot
-			m_axi_ext_awvalid                         : out   std_logic;                                        -- awvalid
-			m_axi_ext_awready                         : in    std_logic                     := 'X';             -- awready
-			m_axi_ext_wdata                           : out   std_logic_vector(31 downto 0);                    -- wdata
-			m_axi_ext_wstrb                           : out   std_logic_vector(3 downto 0);                     -- wstrb
-			m_axi_ext_wlast                           : out   std_logic;                                        -- wlast
-			m_axi_ext_wvalid                          : out   std_logic;                                        -- wvalid
-			m_axi_ext_wready                          : in    std_logic                     := 'X';             -- wready
-			m_axi_ext_bresp                           : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- bresp
-			m_axi_ext_bvalid                          : in    std_logic                     := 'X';             -- bvalid
-			m_axi_ext_bready                          : out   std_logic;                                        -- bready
-			m_axi_ext_araddr                          : out   std_logic_vector(27 downto 0);                    -- araddr
-			m_axi_ext_arprot                          : out   std_logic_vector(2 downto 0);                     -- arprot
-			m_axi_ext_arvalid                         : out   std_logic;                                        -- arvalid
-			m_axi_ext_arready                         : in    std_logic                     := 'X';             -- arready
-			m_axi_ext_rdata                           : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rdata
-			m_axi_ext_rresp                           : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rresp
-			m_axi_ext_rvalid                          : in    std_logic                     := 'X';             -- rvalid
-			m_axi_ext_rready                          : out   std_logic;                                        -- rready
 			reset_reset_n                             : in    std_logic                     := 'X';             -- reset_n
 			reset_bridge_0_in_reset_reset_n           : in    std_logic                     := 'X';             -- reset_n
 			sdram_controller_0_addr                   : out   std_logic_vector(12 downto 0);                    -- addr
@@ -73,28 +52,7 @@
 		port map (
 			clk_clk                                   => CONNECTED_TO_clk_clk,                                   --                                 clk.clk
 			clk_sdram_clk                             => CONNECTED_TO_clk_sdram_clk,                             --                           clk_sdram.clk
-			irq_bridge_0_receiver_irq_irq             => CONNECTED_TO_irq_bridge_0_receiver_irq_irq,             --           irq_bridge_0_receiver_irq.irq
 			locked_export                             => CONNECTED_TO_locked_export,                             --                              locked.export
-			m_axi_ext_awaddr                          => CONNECTED_TO_m_axi_ext_awaddr,                          --                           m_axi_ext.awaddr
-			m_axi_ext_awprot                          => CONNECTED_TO_m_axi_ext_awprot,                          --                                    .awprot
-			m_axi_ext_awvalid                         => CONNECTED_TO_m_axi_ext_awvalid,                         --                                    .awvalid
-			m_axi_ext_awready                         => CONNECTED_TO_m_axi_ext_awready,                         --                                    .awready
-			m_axi_ext_wdata                           => CONNECTED_TO_m_axi_ext_wdata,                           --                                    .wdata
-			m_axi_ext_wstrb                           => CONNECTED_TO_m_axi_ext_wstrb,                           --                                    .wstrb
-			m_axi_ext_wlast                           => CONNECTED_TO_m_axi_ext_wlast,                           --                                    .wlast
-			m_axi_ext_wvalid                          => CONNECTED_TO_m_axi_ext_wvalid,                          --                                    .wvalid
-			m_axi_ext_wready                          => CONNECTED_TO_m_axi_ext_wready,                          --                                    .wready
-			m_axi_ext_bresp                           => CONNECTED_TO_m_axi_ext_bresp,                           --                                    .bresp
-			m_axi_ext_bvalid                          => CONNECTED_TO_m_axi_ext_bvalid,                          --                                    .bvalid
-			m_axi_ext_bready                          => CONNECTED_TO_m_axi_ext_bready,                          --                                    .bready
-			m_axi_ext_araddr                          => CONNECTED_TO_m_axi_ext_araddr,                          --                                    .araddr
-			m_axi_ext_arprot                          => CONNECTED_TO_m_axi_ext_arprot,                          --                                    .arprot
-			m_axi_ext_arvalid                         => CONNECTED_TO_m_axi_ext_arvalid,                         --                                    .arvalid
-			m_axi_ext_arready                         => CONNECTED_TO_m_axi_ext_arready,                         --                                    .arready
-			m_axi_ext_rdata                           => CONNECTED_TO_m_axi_ext_rdata,                           --                                    .rdata
-			m_axi_ext_rresp                           => CONNECTED_TO_m_axi_ext_rresp,                           --                                    .rresp
-			m_axi_ext_rvalid                          => CONNECTED_TO_m_axi_ext_rvalid,                          --                                    .rvalid
-			m_axi_ext_rready                          => CONNECTED_TO_m_axi_ext_rready,                          --                                    .rready
 			reset_reset_n                             => CONNECTED_TO_reset_reset_n,                             --                               reset.reset_n
 			reset_bridge_0_in_reset_reset_n           => CONNECTED_TO_reset_bridge_0_in_reset_reset_n,           --             reset_bridge_0_in_reset.reset_n
 			sdram_controller_0_addr                   => CONNECTED_TO_sdram_controller_0_addr,                   --                  sdram_controller_0.addr

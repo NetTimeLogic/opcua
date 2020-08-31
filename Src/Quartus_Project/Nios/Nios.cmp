@@ -2,28 +2,7 @@
 		port (
 			clk_clk                                   : in    std_logic                     := 'X';             -- clk
 			clk_sdram_clk                             : out   std_logic;                                        -- clk
-			irq_bridge_0_receiver_irq_irq             : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq
 			locked_export                             : out   std_logic;                                        -- export
-			m_axi_ext_awaddr                          : out   std_logic_vector(27 downto 0);                    -- awaddr
-			m_axi_ext_awprot                          : out   std_logic_vector(2 downto 0);                     -- awprot
-			m_axi_ext_awvalid                         : out   std_logic;                                        -- awvalid
-			m_axi_ext_awready                         : in    std_logic                     := 'X';             -- awready
-			m_axi_ext_wdata                           : out   std_logic_vector(31 downto 0);                    -- wdata
-			m_axi_ext_wstrb                           : out   std_logic_vector(3 downto 0);                     -- wstrb
-			m_axi_ext_wlast                           : out   std_logic;                                        -- wlast
-			m_axi_ext_wvalid                          : out   std_logic;                                        -- wvalid
-			m_axi_ext_wready                          : in    std_logic                     := 'X';             -- wready
-			m_axi_ext_bresp                           : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- bresp
-			m_axi_ext_bvalid                          : in    std_logic                     := 'X';             -- bvalid
-			m_axi_ext_bready                          : out   std_logic;                                        -- bready
-			m_axi_ext_araddr                          : out   std_logic_vector(27 downto 0);                    -- araddr
-			m_axi_ext_arprot                          : out   std_logic_vector(2 downto 0);                     -- arprot
-			m_axi_ext_arvalid                         : out   std_logic;                                        -- arvalid
-			m_axi_ext_arready                         : in    std_logic                     := 'X';             -- arready
-			m_axi_ext_rdata                           : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rdata
-			m_axi_ext_rresp                           : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rresp
-			m_axi_ext_rvalid                          : in    std_logic                     := 'X';             -- rvalid
-			m_axi_ext_rready                          : out   std_logic;                                        -- rready
 			reset_reset_n                             : in    std_logic                     := 'X';             -- reset_n
 			reset_bridge_0_in_reset_reset_n           : in    std_logic                     := 'X';             -- reset_n
 			sdram_controller_0_addr                   : out   std_logic_vector(12 downto 0);                    -- addr
