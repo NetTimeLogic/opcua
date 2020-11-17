@@ -145,7 +145,6 @@ ELF := FreeRTOS.elf
 C_SRCS += open62541.c
 C_SRCS += main.c
 C_SRCS += iicNs.c
-C_SRCS += hooks.c
 CXX_SRCS :=
 ASM_SRCS :=
 
